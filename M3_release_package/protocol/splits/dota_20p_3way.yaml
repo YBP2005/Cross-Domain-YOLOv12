@@ -1,0 +1,7 @@
+# three-way protocol, built 2026-09-15T01:01:15Z
+path: /root/datasets_mask/dota_yolo
+train: images/train_dota_20p
+val: carve_dota20/images
+test: images/val
+nc: 15
+names: ['plane', 'ship', 'storage-tank', 'baseball-diamond', 'tennis-court', 'basketball-court', 'ground-track-field', 'harbor', 'bridge', 'large-vehicle', 'small-vehicle', 'helicopter', 'roundabout', 'soccer-ball-field', 'swimming-pool']
