@@ -11,7 +11,7 @@
   （A4 单栏 / **1.5 倍**行距 / Times New Roman **10 pt**，表格 10 pt、图注 8 pt /
   页边距 上 4.3 · 右 4.8 · 下 4.3 · 左 4.8 cm / 两端对齐 / 有页码）实测 **34 页**。
   上限 20–35 页。**两道阳性对照**：注入 600 词后官方口径页数由 **34→36**、两套版式读数不同（⇒ 版式参数生效、测量器对内容有响应；对照件 `_ctl_filler__official` 见 `measurement.json`）。
-- 主稿词数（同一把尺子，口径内）：**12126 词**。
+- 主稿词数（**与 `measurement.json` 同口径**，Word `ComputeStatistics`）：**13976 词**；同页 `f1__official` 记 34 页。★ 该口径与"按空白切分"的粗算不同，两者不可混用。
 - 补充材料 **1383 行、约 38250 词**。**期刊明写 "Appendices are not included in the page limit"**
   （Guide for Authors 第 567 行），故补材**不计入**上表页数；此数仅作记录。
 - 主稿 md5 `91EBB50F2A8010493CBFDF4E445442AA`；补充材料 md5 `0C1289EFC5F6163B5477C4B2F7F74111`。

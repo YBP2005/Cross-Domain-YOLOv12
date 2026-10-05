@@ -654,7 +654,7 @@ Each main-text pointer names its subsection, and no claim, number or disclosure 
 
 ### 3.1 Task and evaluation metrics
 
-Object detection requires, for every object of interest, a localisation (bounding box) and a classification decision. Accuracy is summarised by mAP. We report **mAP50** (detection; accepts IoU ≥ 0.5) and **mAP50-95** (localisation tightness; averaged over IoU 0.50–0.95 with 101-point interpolation and `max_det = 300` detections per class per image, the Ultralytics default). All comparisons report both, because the two can move in opposite directions at long budgets (§5.2, §8.5). All experiments use YOLOv12n [10] unless a second architecture is named explicitly — the only exception is the YOLO11n control of §8.3, added because one architecture cannot separate an optimisation effect from an architectural one.
+Object detection requires, for every object of interest, a localisation (bounding box) and a classification decision. Accuracy is summarised by mAP. We report **mAP50** (detection; accepts IoU ≥ 0.5) and **mAP50-95** (localisation tightness; averaged over IoU 0.50–0.95 with 101-point interpolation and `max_det = 300` detections per class per image, the Ultralytics default). The per-cell mAP50 column is carried in Table T12 below, because the two metrics can move in opposite directions at long budgets (§5.2, §8.5). All experiments use YOLOv12n [10] unless a second architecture is named explicitly — the only exception is the YOLO11n control of §8.3, added because one architecture cannot separate an optimisation effect from an architectural one.
 
 ### 3.2 Quantifying domain shift
 
