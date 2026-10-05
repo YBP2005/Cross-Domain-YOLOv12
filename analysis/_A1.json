@@ -1,0 +1,19 @@
+{
+ "pairs": 55,
+ "budgets": [
+  10,
+  20,
+  30,
+  40,
+  50
+ ],
+ "grid_ok": 153,
+ "grid_weak": 30,
+ "grid_none": 29,
+ "loss_nondefault": 129,
+ "arch": {
+  "y12n": 2271,
+  "y11": 82,
+  "amod": 9
+ }
+}

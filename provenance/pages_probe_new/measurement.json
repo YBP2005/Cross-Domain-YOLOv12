@@ -1,0 +1,133 @@
+{
+  "measured_at": "2026-10-05T16:20:28",
+  "measured_by": "measure_pages.py (probe_figcost parser -> RTF -> Word Documents.Open -> ComputeStatistics(2))",
+  "layouts": {
+    "conservative": "A4, single column, double spaced, 12 pt Times New Roman, 2.54 cm margins",
+    "official": "A4, single column, 1.5 line spacing, 10 pt TNR (tables 10 pt, captions 8 pt), margins T4.3 R4.8 B4.3 L4.8 cm, fully justified (PR L567/L569/L571)"
+  },
+  "layout": "A4, single column, double spaced, 12 pt Times New Roman, 2.54 cm margins",
+  "probe_scope": "article markdown up to (and excluding) the \"# References\" heading, with all tables flattened to single-spaced rows, plus the 39-entry reference list",
+  "inputs": {
+    "main_md5": "DB36F2ED95415CCD6D36A3BC48AF6C0C",
+    "supplementary_md5": "A5BBEB61E472ED70313C33FB0EB1DD59",
+    "references_md5": "0EE79A1EFB02976FD909EA36DF7D7F3A",
+    "reference_entries": 39
+  },
+  "variants": {
+    "no_figures__conservative": {
+      "pages": 39,
+      "words": 13937,
+      "content": "no_figures",
+      "layout": "conservative",
+      "figures": [],
+      "figure_width_cm": null,
+      "refs_pt": 9,
+      "figbox": null,
+      "expect": 0
+    },
+    "no_figures__official": {
+      "pages": 33,
+      "words": 13937,
+      "content": "no_figures",
+      "layout": "official",
+      "figures": [],
+      "figure_width_cm": null,
+      "refs_pt": 9,
+      "figbox": 0,
+      "expect": 0
+    },
+    "f1__conservative": {
+      "pages": 39,
+      "words": 13953,
+      "content": "f1",
+      "layout": "conservative",
+      "figures": [
+        "F1"
+      ],
+      "figure_width_cm": 12.0,
+      "refs_pt": 9,
+      "figbox": null,
+      "expect": 1
+    },
+    "f1__official": {
+      "pages": 34,
+      "words": 13953,
+      "content": "f1",
+      "layout": "official",
+      "figures": [
+        "F1"
+      ],
+      "figure_width_cm": 12.0,
+      "refs_pt": 9,
+      "figbox": 1,
+      "expect": 1
+    },
+    "_ctl_filler__conservative": {
+      "pages": 41,
+      "words": 14553,
+      "content": "_ctl_filler",
+      "layout": "conservative",
+      "figures": [
+        "F1"
+      ],
+      "figure_width_cm": 12.0,
+      "refs_pt": 9,
+      "figbox": null,
+      "expect": 1
+    },
+    "_ctl_filler__official": {
+      "pages": 36,
+      "words": 14553,
+      "content": "_ctl_filler",
+      "layout": "official",
+      "figures": [
+        "F1"
+      ],
+      "figure_width_cm": 12.0,
+      "refs_pt": 9,
+      "figbox": 1,
+      "expect": 1
+    }
+  },
+  "paired": {
+    "no_figures": {
+      "conservative": 39,
+      "official": 33
+    },
+    "f1": {
+      "conservative": 39,
+      "official": 34
+    }
+  },
+  "positive_control": {
+    "injected_words": 600,
+    "baseline_variant": "f1__conservative",
+    "compared_variant": "f1__conservative",
+    "pages_before": 39,
+    "pages_after": 41,
+    "responded": true,
+    "direction": "pages must increase"
+  },
+  "positive_controls": {
+    "conservative": {
+      "injected_words": 600,
+      "baseline_variant": "f1__conservative",
+      "compared_variant": "f1__conservative",
+      "pages_before": 39,
+      "pages_after": 41,
+      "responded": true,
+      "direction": "pages must increase"
+    },
+    "official": {
+      "injected_words": 600,
+      "baseline_variant": "f1__official",
+      "compared_variant": "f1__official",
+      "pages_before": 34,
+      "pages_after": 36,
+      "responded": true,
+      "direction": "pages must increase"
+    }
+  },
+  "article_refs_pt": 9,
+  "submission_content": "f1"
+}

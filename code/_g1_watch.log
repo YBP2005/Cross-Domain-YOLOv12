@@ -1,0 +1,1404 @@
+==========================================================================
+第 3 次采样  2026-10-03 15:09:28
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 3/40 ｜ 已完成 1/40 ｜ 日志OOM 0 ｜ 盘余 53 GB
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 28 ｜ 已建 10/40 ｜ 已完成 8/40 ｜ 日志OOM 0 ｜ 盘余 96 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 4 次采样  2026-10-03 15:19:32
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 3/40 ｜ 已完成 1/40 ｜ 日志OOM 0 ｜ 盘余 53 GB
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 28 ｜ 已建 12/40 ｜ 已完成 10/40 ｜ 日志OOM 0 ｜ 盘余 96 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 5 次采样  2026-10-03 15:29:36
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 3/40 ｜ 已完成 1/40 ｜ 日志OOM 0 ｜ 盘余 53 GB
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 28 ｜ 已建 12/40 ｜ 已完成 10/40 ｜ 日志OOM 0 ｜ 盘余 96 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 6 次采样  2026-10-03 15:39:39
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 3/40 ｜ 已完成 1/40 ｜ 日志OOM 0 ｜ 盘余 53 GB
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 28 ｜ 已建 14/40 ｜ 已完成 12/40 ｜ 日志OOM 0 ｜ 盘余 95 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 7 次采样  2026-10-03 15:49:45
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 4/40 ｜ 已完成 2/40 ｜ 日志OOM 0 ｜ 盘余 53 GB
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 28 ｜ 已建 14/40 ｜ 已完成 12/40 ｜ 日志OOM 0 ｜ 盘余 95 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 8 次采样  2026-10-03 15:59:50
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 4/40 ｜ 已完成 2/40 ｜ 日志OOM 0 ｜ 盘余 53 GB
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 28 ｜ 已建 16/40 ｜ 已完成 14/40 ｜ 日志OOM 0 ｜ 盘余 95 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 9 次采样  2026-10-03 16:10:10
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 5/40 ｜ 已完成 3/40 ｜ 日志OOM 0 ｜ 盘余 53 GB
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 28 ｜ 已建 16/40 ｜ 已完成 14/40 ｜ 日志OOM 0 ｜ 盘余 95 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 10 次采样  2026-10-03 16:20:15
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 5/40 ｜ 已完成 3/40 ｜ 日志OOM 0 ｜ 盘余 53 GB
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 28 ｜ 已建 18/40 ｜ 已完成 16/40 ｜ 日志OOM 0 ｜ 盘余 95 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 11 次采样  2026-10-03 16:30:19
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 5/40 ｜ 已完成 3/40 ｜ 日志OOM 0 ｜ 盘余 53 GB
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 28 ｜ 已建 18/40 ｜ 已完成 16/40 ｜ 日志OOM 0 ｜ 盘余 94 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 12 次采样  2026-10-03 16:40:24
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 5/40 ｜ 已完成 3/40 ｜ 日志OOM 0 ｜ 盘余 53 GB
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 28 ｜ 已建 20/40 ｜ 已完成 18/40 ｜ 日志OOM 0 ｜ 盘余 94 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 13 次采样  2026-10-03 16:50:28
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 46 ｜ 已建 5/40 ｜ 已完成 3/40 ｜ 日志OOM 0 ｜ 盘余 53 GB
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 28 ｜ 已建 20/40 ｜ 已完成 18/40 ｜ 日志OOM 0 ｜ 盘余 94 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 14 次采样  2026-10-03 17:00:33
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 7/40 ｜ 已完成 5/40 ｜ 日志OOM 0 ｜ 盘余 52 GB
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 28 ｜ 已建 22/40 ｜ 已完成 20/40 ｜ 日志OOM 0 ｜ 盘余 94 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 15 次采样  2026-10-03 17:10:38
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 7/40 ｜ 已完成 5/40 ｜ 日志OOM 0 ｜ 盘余 52 GB
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 28 ｜ 已建 22/40 ｜ 已完成 20/40 ｜ 日志OOM 0 ｜ 盘余 94 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 16 次采样  2026-10-03 17:20:42
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 7/40 ｜ 已完成 5/40 ｜ 日志OOM 0 ｜ 盘余 52 GB
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 50 ｜ 已建 22/40 ｜ 已完成 20/40 ｜ 日志OOM 0 ｜ 盘余 93 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 17 次采样  2026-10-03 17:30:46
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 7/40 ｜ 已完成 5/40 ｜ 日志OOM 0 ｜ 盘余 52 GB
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 50 ｜ 已建 22/40 ｜ 已完成 20/40 ｜ 日志OOM 0 ｜ 盘余 93 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 18 次采样  2026-10-03 17:40:50
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 7/40 ｜ 已完成 5/40 ｜ 日志OOM 0 ｜ 盘余 52 GB
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 50 ｜ 已建 22/40 ｜ 已完成 20/40 ｜ 日志OOM 0 ｜ 盘余 93 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 19 次采样  2026-10-03 17:50:55
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 7/40 ｜ 已完成 5/40 ｜ 日志OOM 0 ｜ 盘余 52 GB
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 50 ｜ 已建 24/40 ｜ 已完成 22/40 ｜ 日志OOM 0 ｜ 盘余 93 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 20 次采样  2026-10-03 18:01:01
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 7/40 ｜ 已完成 5/40 ｜ 日志OOM 0 ｜ 盘余 52 GB
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 50 ｜ 已建 24/40 ｜ 已完成 22/40 ｜ 日志OOM 0 ｜ 盘余 93 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 21 次采样  2026-10-03 18:11:05
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 7/40 ｜ 已完成 5/40 ｜ 日志OOM 0 ｜ 盘余 52 GB
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 26 ｜ 已建 25/40 ｜ 已完成 23/40 ｜ 日志OOM 0 ｜ 盘余 93 GB
+    ★★★ 空转：GPU 1 只占 4 MiB（无任务）
+--------------------------------------------------------------------------
+本轮发现 1 个问题：
+  ★ B: 空转：GPU 1 只占 4 MiB（无任务）
+==========================================================================
+第 22 次采样  2026-10-03 18:21:09
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 8/40 ｜ 已完成 6/40 ｜ 日志OOM 0 ｜ 盘余 52 GB
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 50 ｜ 已建 26/40 ｜ 已完成 24/40 ｜ 日志OOM 0 ｜ 盘余 92 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 23 次采样  2026-10-03 18:29:22
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 8/40 ｜ 已完成 6/40 ｜ 日志OOM 0 ｜ 盘余 52 GB
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 50 ｜ 已建 26/40 ｜ 已完成 24/40 ｜ 日志OOM 0 ｜ 盘余 92 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 24 次采样  2026-10-03 18:39:27
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 9/40 ｜ 已完成 7/40 ｜ 日志OOM 0 ｜ 盘余 52 GB
+--- B 机（base100@0, strat100@1）---
+    · GPU 0 本次只占 1 MiB —— 疑为 run 边界空档（约 1–2 min，正常）；连续两次才升级为报警
+    · 队列 2 ｜ 训练 26 ｜ 已建 27/40 ｜ 已完成 26/40 ｜ 日志OOM 0 ｜ 盘余 92 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 25 次采样  2026-10-03 18:49:31
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 9/40 ｜ 已完成 7/40 ｜ 日志OOM 0 ｜ 盘余 52 GB
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 50 ｜ 已建 28/40 ｜ 已完成 26/40 ｜ 日志OOM 0 ｜ 盘余 92 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 26 次采样  2026-10-03 18:59:35
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 9/40 ｜ 已完成 7/40 ｜ 日志OOM 0 ｜ 盘余 52 GB
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 50 ｜ 已建 28/40 ｜ 已完成 26/40 ｜ 日志OOM 0 ｜ 盘余 92 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 27 次采样  2026-10-03 19:09:40
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 10/40 ｜ 已完成 8/40 ｜ 日志OOM 0 ｜ 盘余 51 GB
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 50 ｜ 已建 30/40 ｜ 已完成 28/40 ｜ 日志OOM 0 ｜ 盘余 92 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 28 次采样  2026-10-03 19:19:44
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 10/40 ｜ 已完成 8/40 ｜ 日志OOM 0 ｜ 盘余 51 GB
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 50 ｜ 已建 30/40 ｜ 已完成 28/40 ｜ 日志OOM 0 ｜ 盘余 91 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 29 次采样  2026-10-03 19:29:50
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 10/40 ｜ 已完成 8/40 ｜ 日志OOM 0 ｜ 盘余 51 GB
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+--- B 机（base100@0, strat100@1）---
+    · GPU 0 本次只占 4 MiB —— 疑为 run 边界空档（约 1–2 min，正常）；连续两次才升级为报警
+    · 队列 2 ｜ 训练 26 ｜ 已建 32/40 ｜ 已完成 30/40 ｜ 日志OOM 0 ｜ 盘余 91 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 30 次采样  2026-10-03 19:42:12
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 11/40 ｜ 已完成 9/40 ｜ 日志OOM 0 ｜ 盘余 51 GB
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 50 ｜ 已建 32/40 ｜ 已完成 30/40 ｜ 日志OOM 0 ｜ 盘余 91 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 31 次采样  2026-10-03 19:52:48
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 11/40 ｜ 已完成 9/40 ｜ 日志OOM 0 ｜ 盘余 51 GB
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+--- B 机（base100@0, strat100@1）---
+    · GPU 1 本次只占 4 MiB —— 疑为 run 边界空档（约 1–2 min，正常）；连续两次才升级为报警
+    · 队列 2 ｜ 训练 26 ｜ 已建 33/40 ｜ 已完成 31/40 ｜ 日志OOM 0 ｜ 盘余 91 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 32 次采样  2026-10-03 20:03:51
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 12/40 ｜ 已完成 10/40 ｜ 日志OOM 0 ｜ 盘余 51 GB
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 50 ｜ 已建 34/40 ｜ 已完成 32/40 ｜ 日志OOM 0 ｜ 盘余 91 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 33 次采样  2026-10-03 20:15:02
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 12/40 ｜ 已完成 10/40 ｜ 日志OOM 0 ｜ 盘余 51 GB
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 50 ｜ 已建 34/40 ｜ 已完成 32/40 ｜ 日志OOM 0 ｜ 盘余 90 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 34 次采样  2026-10-03 20:25:48
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 12/40 ｜ 已完成 10/40 ｜ 日志OOM 0 ｜ 盘余 51 GB
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+--- B 机（base100@0, strat100@1）---
+    ★★★ **连不上**（SSH 失败）
+--------------------------------------------------------------------------
+本轮发现 1 个问题：
+  ★ B: **连不上**（SSH 失败）
+==========================================================================
+第 35 次采样  2026-10-03 20:36:57
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 12/40 ｜ 已完成 10/40 ｜ 日志OOM 0 ｜ 盘余 51 GB
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 50 ｜ 已建 36/40 ｜ 已完成 34/40 ｜ 日志OOM 0 ｜ 盘余 90 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+==========================================================================
+第 36 次采样  2026-10-03 20:47:01
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 12/40 ｜ 已完成 10/40 ｜ 日志OOM 0 ｜ 盘余 51 GB
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 26 ｜ 已建 37/40 ｜ 已完成 35/40 ｜ 日志OOM 0 ｜ 盘余 90 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+本进程源码指纹 5616613f6f（与盘上文件不符即说明**跑的是旧代码**，需重启）
+==========================================================================
+第 37 次采样  2026-10-03 20:51:28
+--- A 机（base100@0, strat100@1）---
+    · GPU 1 本次只占 4 MiB —— 疑为 run 边界空档（约 1–2 min，正常）；连续两次才升级为报警
+    · 队列 2 ｜ 训练 46 ｜ 已建 14/40 ｜ 已完成 12/40 ｜ 日志OOM 0 ｜ 盘余 51 GB
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 50 ｜ 已建 38/40 ｜ 已完成 36/40 ｜ 日志OOM 0 ｜ 盘余 90 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+本进程源码指纹 5616613f6f（与盘上文件不符即说明**跑的是旧代码**，需重启）
+==========================================================================
+第 38 次采样  2026-10-03 21:02:19
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 14/40 ｜ 已完成 12/40 ｜ 日志OOM 0 ｜ 盘余 51 GB
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 50 ｜ 已建 38/40 ｜ 已完成 36/40 ｜ 日志OOM 0 ｜ 盘余 90 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+本进程源码指纹 5616613f6f（与盘上文件不符即说明**跑的是旧代码**，需重启）
+==========================================================================
+第 39 次采样  2026-10-03 21:12:41
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+--- A 机（base100@0, strat100@1）---
+    ★★★ **连不上**（SSH 失败）
+    · 本机采样失败 ⇒ 沿用上一轮 runs 作基准（12 个 run），以免下一轮跳过停滞比较
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 50 ｜ 已建 40/40 ｜ 已完成 38/40 ｜ 日志OOM 0 ｜ 盘余 90 GB
+--------------------------------------------------------------------------
+本轮发现 1 个问题：
+  ★ A: **连不上**（SSH 失败）
+本进程源码指纹 5616613f6f（与盘上文件不符即说明**跑的是旧代码**，需重启）
+==========================================================================
+第 40 次采样  2026-10-03 21:23:45
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 14/40 ｜ 已完成 12/40 ｜ 日志OOM 0 ｜ 盘余 51 GB
+--- B 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 50 ｜ 已建 40/40 ｜ 已完成 38/40 ｜ 日志OOM 0 ｜ 盘余 89 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+本进程源码指纹 5616613f6f（与盘上文件不符即说明**跑的是旧代码**，需重启）
+==========================================================================
+第 41 次采样  2026-10-03 21:33:50
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 14/40 ｜ 已完成 12/40 ｜ 日志OOM 0 ｜ 盘余 50 GB
+--- B 机（base100@0, strat100@1）---
+    · GPU 1 本次只占 1 MiB —— 疑为 run 边界空档（约 1–2 min，正常）；连续两次才升级为报警
+    · 队列 1 ｜ 训练 25 ｜ 已建 40/40 ｜ 已完成 39/40 ｜ 日志OOM 0 ｜ 盘余 89 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+本进程源码指纹 5616613f6f（与盘上文件不符即说明**跑的是旧代码**，需重启）
+==========================================================================
+第 42 次采样  2026-10-03 21:44:25
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 15/40 ｜ 已完成 13/40 ｜ 日志OOM 0 ｜ 盘余 50 GB
+--- B 机（base100@0, strat100@1）---
+    · GPU 0 本次只占 1 MiB —— 疑为 run 边界空档（约 1–2 min，正常）；连续两次才升级为报警
+    · 队列 0 ｜ 训练 0 ｜ 已建 40/40 ｜ 已完成 40/40 ｜ 日志OOM 0 ｜ 盘余 89 GB
+    ★★★ 空转：GPU 1 连续 2 次只占 1 MiB（无任务）—— 单次是 run 边界空档，**连续两次才判空转**
+--------------------------------------------------------------------------
+本轮发现 1 个问题：
+  ★ B: 空转：GPU 1 连续 2 次只占 1 MiB（无任务）—— 单次是 run 边界空档，**连续两次才判空转**
+本进程源码指纹 5616613f6f（与盘上文件不符即说明**跑的是旧代码**，需重启）
+==========================================================================
+第 43 次采样  2026-10-03 21:54:45
+Exception (client): Error reading SSH protocol banner[WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 663, in _read_timeout
+    x = self.__socket.recv(128)
+        ^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 15/40 ｜ 已完成 13/40 ｜ 日志OOM 0 ｜ 盘余 50 GB
+--- B 机（base100@0, strat100@1）---
+    ★★★ **连不上**（SSH 失败）
+    · 本机采样失败 ⇒ 沿用上一轮 runs 作基准（37 个 run），以免下一轮跳过停滞比较
+--------------------------------------------------------------------------
+本轮发现 1 个问题：
+  ★ B: **连不上**（SSH 失败）
+本进程源码指纹 5616613f6f（与盘上文件不符即说明**跑的是旧代码**，需重启）
+==========================================================================
+第 44 次采样  2026-10-03 22:06:32
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 16/40 ｜ 已完成 14/40 ｜ 日志OOM 0 ｜ 盘余 50 GB
+--- B 机（base100@0, strat100@1）---
+    ★★★ **连不上**（SSH 失败）
+    · 本机采样失败 ⇒ 沿用上一轮 runs 作基准（37 个 run），以免下一轮跳过停滞比较
+--------------------------------------------------------------------------
+本轮发现 1 个问题：
+  ★ B: **连不上**（SSH 失败）
+本进程源码指纹 eb1f4fa95b（与盘上文件不符即说明**跑的是旧代码**，需重启）
+==========================================================================
+第 45 次采样  2026-10-03 22:09:42
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 16/40 ｜ 已完成 14/40 ｜ 日志OOM 0 ｜ 盘余 50 GB
+--- B 机（base100@0, strat100@1）---
+    ★★★ **连不上**（SSH 失败）
+    · 本机采样失败 ⇒ 沿用上一轮 runs 作基准（37 个 run），以免下一轮跳过停滞比较
+--------------------------------------------------------------------------
+本轮发现 1 个问题：
+  ★ B: **连不上**（SSH 失败）
+本进程源码指纹 eb1f4fa95b（与盘上文件不符即说明**跑的是旧代码**，需重启）
+==========================================================================
+第 46 次采样  2026-10-03 22:20:57
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 16/40 ｜ 已完成 14/40 ｜ 日志OOM 0 ｜ 盘余 50 GB
+--- B 机（base100@0, strat100@1）---
+    ★★★ **连不上**（SSH 失败）
+    · 本机采样失败 ⇒ 沿用上一轮 runs 作基准（37 个 run），以免下一轮跳过停滞比较
+--------------------------------------------------------------------------
+本轮发现 1 个问题：
+  ★ B: **连不上**（SSH 失败）
+本进程源码指纹 eb1f4fa95b（与盘上文件不符即说明**跑的是旧代码**，需重启）
+==========================================================================
+第 47 次采样  2026-10-03 22:32:18
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 16/40 ｜ 已完成 14/40 ｜ 日志OOM 0 ｜ 盘余 50 GB
+--- B 机（base100@0, strat100@1）---
+    ★★★ **连不上**（SSH 失败）
+    · 本机采样失败 ⇒ 沿用上一轮 runs 作基准（37 个 run），以免下一轮跳过停滞比较
+--------------------------------------------------------------------------
+本轮发现 1 个问题：
+  ★ B: **连不上**（SSH 失败）
+本进程源码指纹 eb1f4fa95b（与盘上文件不符即说明**跑的是旧代码**，需重启）
+==========================================================================
+第 48 次采样  2026-10-03 22:44:02
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 17/40 ｜ 已完成 15/40 ｜ 日志OOM 0 ｜ 盘余 50 GB
+--- B 机（base100@0, strat100@1）---
+    ★★★ **连不上**（SSH 失败）
+    · 本机采样失败 ⇒ 沿用上一轮 runs 作基准（37 个 run），以免下一轮跳过停滞比较
+--------------------------------------------------------------------------
+本轮发现 1 个问题：
+  ★ B: **连不上**（SSH 失败）
+本进程源码指纹 eb1f4fa95b（与盘上文件不符即说明**跑的是旧代码**，需重启）
+==========================================================================
+第 49 次采样  2026-10-03 22:56:33
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 17/40 ｜ 已完成 15/40 ｜ 日志OOM 0 ｜ 盘余 50 GB
+--- B 机（base100@0, strat100@1）---
+    ★★★ **连不上**（SSH 失败）
+    · 本机采样失败 ⇒ 沿用上一轮 runs 作基准（37 个 run），以免下一轮跳过停滞比较
+--------------------------------------------------------------------------
+本轮发现 1 个问题：
+  ★ B: **连不上**（SSH 失败）
+本进程源码指纹 eb1f4fa95b（与盘上文件不符即说明**跑的是旧代码**，需重启）
+==========================================================================
+第 50 次采样  2026-10-03 23:10:07
+--- A 机（base100@0, strat100@1）---
+    · GPU 0 本次只占 492 MiB —— 疑为 run 边界空档（约 1–2 min，正常）；连续两次才升级为报警
+    · 队列 2 ｜ 训练 60 ｜ 已建 18/40 ｜ 已完成 16/40 ｜ 日志OOM 0 ｜ 盘余 50 GB
+--- B 机（base100@0, strat100@1）---
+    ★★★ **连不上**（SSH 失败）
+    · 本机采样失败 ⇒ 沿用上一轮 runs 作基准（37 个 run），以免下一轮跳过停滞比较
+--------------------------------------------------------------------------
+本轮发现 1 个问题：
+  ★ B: **连不上**（SSH 失败）
+本进程源码指纹 eb1f4fa95b（与盘上文件不符即说明**跑的是旧代码**，需重启）
+==========================================================================
+第 51 次采样  2026-10-03 23:22:21
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 18/40 ｜ 已完成 16/40 ｜ 日志OOM 0 ｜ 盘余 50 GB
+--- B 机（base100@0, strat100@1）---
+    ★★★ **连不上**（SSH 失败）
+    · 本机采样失败 ⇒ 沿用上一轮 runs 作基准（37 个 run），以免下一轮跳过停滞比较
+--------------------------------------------------------------------------
+本轮发现 1 个问题：
+  ★ B: **连不上**（SSH 失败）
+WATCHER A-ONLY: ['A']
+本进程源码指纹 eb1f4fa95b（与盘上文件不符即说明**跑的是旧代码**，需重启）
+==========================================================================
+第 52 次采样  2026-10-03 23:25:49
+Exception (client): Error reading SSH protocol banner[WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 663, in _read_timeout
+    x = self.__socket.recv(128)
+        ^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[WinError 10054] 远程主机强迫关闭了一个现有的连接。
+
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 18/40 ｜ 已完成 16/40 ｜ 日志OOM 0 ｜ 盘余 50 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+本进程源码指纹 eb1f4fa95b（与盘上文件不符即说明**跑的是旧代码**，需重启）
+==========================================================================
+第 53 次采样  2026-10-03 23:37:36
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 19/40 ｜ 已完成 17/40 ｜ 日志OOM 0 ｜ 盘余 50 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+本进程源码指纹 eb1f4fa95b（与盘上文件不符即说明**跑的是旧代码**，需重启）
+==========================================================================
+第 54 次采样  2026-10-03 23:47:53
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+--- A 机（base100@0, strat100@1）---
+    ★★★ **连不上**（SSH 失败）
+    · 本机采样失败 ⇒ 沿用上一轮 runs 作基准（19 个 run），以免下一轮跳过停滞比较
+--------------------------------------------------------------------------
+本轮发现 1 个问题：
+  ★ A: **连不上**（SSH 失败）
+本进程源码指纹 eb1f4fa95b（与盘上文件不符即说明**跑的是旧代码**，需重启）
+==========================================================================
+第 55 次采样  2026-10-03 23:59:17
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 19/40 ｜ 已完成 17/40 ｜ 日志OOM 0 ｜ 盘余 49 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+本进程源码指纹 eb1f4fa95b（与盘上文件不符即说明**跑的是旧代码**，需重启）
+==========================================================================
+第 56 次采样  2026-10-04 00:09:37
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 19/40 ｜ 已完成 17/40 ｜ 日志OOM 0 ｜ 盘余 49 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+本进程源码指纹 eb1f4fa95b（与盘上文件不符即说明**跑的是旧代码**，需重启）
+==========================================================================
+第 57 次采样  2026-10-04 00:19:39
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 20/40 ｜ 已完成 18/40 ｜ 日志OOM 0 ｜ 盘余 49 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+本进程源码指纹 eb1f4fa95b（与盘上文件不符即说明**跑的是旧代码**，需重启）
+==========================================================================
+第 58 次采样  2026-10-04 00:29:57
+--- A 机（base100@0, strat100@1）---
+    · GPU 1 本次只占 492 MiB —— 疑为 run 边界空档（约 1–2 min，正常）；连续两次才升级为报警
+    · 队列 2 ｜ 训练 46 ｜ 已建 21/40 ｜ 已完成 19/40 ｜ 日志OOM 0 ｜ 盘余 49 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+本进程源码指纹 eb1f4fa95b（与盘上文件不符即说明**跑的是旧代码**，需重启）
+==========================================================================
+第 59 次采样  2026-10-04 00:39:59
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 21/40 ｜ 已完成 19/40 ｜ 日志OOM 0 ｜ 盘余 49 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+本进程源码指纹 eb1f4fa95b（与盘上文件不符即说明**跑的是旧代码**，需重启）
+==========================================================================
+第 60 次采样  2026-10-04 00:50:01
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 21/40 ｜ 已完成 19/40 ｜ 日志OOM 0 ｜ 盘余 49 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+本进程源码指纹 eb1f4fa95b（与盘上文件不符即说明**跑的是旧代码**，需重启）
+==========================================================================
+第 61 次采样  2026-10-04 01:00:34
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 21/40 ｜ 已完成 19/40 ｜ 日志OOM 0 ｜ 盘余 49 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+本进程源码指纹 eb1f4fa95b（与盘上文件不符即说明**跑的是旧代码**，需重启）
+==========================================================================
+第 62 次采样  2026-10-04 01:10:37
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 21/40 ｜ 已完成 19/40 ｜ 日志OOM 0 ｜ 盘余 49 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+本进程源码指纹 eb1f4fa95b（与盘上文件不符即说明**跑的是旧代码**，需重启）
+==========================================================================
+第 63 次采样  2026-10-04 01:20:39
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 21/40 ｜ 已完成 19/40 ｜ 日志OOM 0 ｜ 盘余 49 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+本进程源码指纹 eb1f4fa95b（与盘上文件不符即说明**跑的是旧代码**，需重启）
+==========================================================================
+第 64 次采样  2026-10-04 01:30:41
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 22/40 ｜ 已完成 20/40 ｜ 日志OOM 0 ｜ 盘余 49 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。
+本进程源码指纹 eb1f4fa95b（与盘上文件不符即说明**跑的是旧代码**，需重启）
+==========================================================================
+第 65 次采样  2026-10-04 01:40:43
+Exception (client): Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2213, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2029, in run
+    self._check_banner()
+  File "C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Lib\site-packages\paramiko\transport.py", line 2217, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+--- A 机（base100@0, strat100@1）---
+    · 队列 2 ｜ 训练 90 ｜ 已建 22/40 ｜ 已完成 20/40 ｜ 日志OOM 0 ｜ 盘余 49 GB
+--------------------------------------------------------------------------
+本轮无异常、无空转。

@@ -1,0 +1,16 @@
+{
+ "runs": 1117,
+ "machines": {
+  "B": 1117
+ },
+ "outcomes": {
+  "early_stop_legit": 28,
+  "interrupted": 10,
+  "complete": 1047,
+  "archive_snapshot": 32
+ },
+ "no_loss": 68,
+ "cross_dup": 0,
+ "conflict": 0,
+ "summary_only": 53
+}

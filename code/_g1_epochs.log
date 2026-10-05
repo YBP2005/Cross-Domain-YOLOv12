@@ -1,0 +1,2 @@
+2026-10-03 19:29:50 | A | UNREACHABLE
+2026-10-03 19:29:50 | B | GPU=0, 754 MiB, 0 % 1, 14276 MiB, 97 % | procs="161657, 728 MiB\n172791, 14250 MiB" | queue=2 | built=31 done=29 | disk=91GB

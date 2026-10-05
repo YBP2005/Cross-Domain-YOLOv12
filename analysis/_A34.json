@@ -1,0 +1,276 @@
+{
+ "A3": {
+  "zero_families": [
+   "g3_e200",
+   "g3clean_e200",
+   "dd15_200ep",
+   "pn_200ep"
+  ],
+  "high_families": [
+   "_PARTIAL_cg_200ep",
+   "_PARTIAL_srh_200ep",
+   "_PARTIAL_sgh_200ep",
+   "_PARTIAL_vvhr_200ep"
+  ],
+  "lo_runs": 2142,
+  "lo_early": 0,
+  "lo_interrupted": 31,
+  "stop_points": [
+   120,
+   120,
+   120,
+   121,
+   126,
+   129,
+   129,
+   129,
+   133,
+   149,
+   157,
+   158,
+   158,
+   162,
+   163,
+   165,
+   165,
+   167,
+   169,
+   172,
+   173,
+   176,
+   177,
+   182,
+   182,
+   183,
+   186,
+   186,
+   187,
+   187,
+   188,
+   193,
+   219,
+   318,
+   362,
+   375,
+   388
+  ]
+ },
+ "A4": {
+  "sfchd_10p": {
+   "n": 32,
+   "median": 20.82
+  },
+  "sfchd_20p": {
+   "n": 24,
+   "median": 26.64
+  },
+  "sfchd_30p": {
+   "n": 24,
+   "median": 31.5
+  },
+  "sfchd_40p": {
+   "n": 24,
+   "median": 37.04
+  },
+  "sfchd_50p": {
+   "n": 26,
+   "median": 43.56
+  },
+  "sfchd_20p_b": {
+   "n": 379,
+   "median": 26.97
+  },
+  "visdrone_20p_3way": {
+   "n": 48,
+   "median": 12.06
+  },
+  "aitod20_3way": {
+   "n": 75,
+   "median": 20.86
+  },
+  "dota15_10p": {
+   "n": 57,
+   "median": 11.1
+  },
+  "dota15_30p": {
+   "n": 46,
+   "median": 12.21
+  },
+  "dota15_50p": {
+   "n": 51,
+   "median": 14.3
+  },
+  "g1pA_C2": {
+   "n": 10,
+   "median": 3.6
+  },
+  "dota15_20p": {
+   "n": 277,
+   "median": 7.98
+  },
+  "mende20_3way": {
+   "n": 115,
+   "median": 7.86
+  },
+  "visdrone_20p": {
+   "n": 49,
+   "median": 11.5
+  },
+  "mende_20p": {
+   "n": 134,
+   "median": 6.97
+  },
+  "dota15_20p_3way": {
+   "n": 102,
+   "median": 7.35
+  },
+  "dota_20p_3way": {
+   "n": 22,
+   "median": 6.95
+  },
+  "firesmoke20_3way": {
+   "n": 20,
+   "median": 61.77
+  },
+  "shwd_data_b": {
+   "n": 7,
+   "median": 77.7
+  },
+  "sfchd20_3way_a": {
+   "n": 6,
+   "median": 12.71
+  },
+  "mask20_3way": {
+   "n": 20,
+   "median": 8.94
+  },
+  "dota15_40p": {
+   "n": 40,
+   "median": 16.75
+  },
+  "neu_det_10p": {
+   "n": 40,
+   "median": 4.87
+  },
+  "neu_det_20p": {
+   "n": 40,
+   "median": 5.33
+  },
+  "neu_det_30p": {
+   "n": 40,
+   "median": 5.57
+  },
+  "neu_det_40p": {
+   "n": 40,
+   "median": 6.18
+  },
+  "neu_det_50p": {
+   "n": 40,
+   "median": 5.74
+  },
+  "aitod_20p": {
+   "n": 25,
+   "median": 27.56
+  },
+  "data": {
+   "n": 29,
+   "median": 19.63
+  },
+  "sfchd20_3way": {
+   "n": 80,
+   "median": 24.04
+  },
+  "mask_20p": {
+   "n": 25,
+   "median": 8.19
+  },
+  "gdut_hwd": {
+   "n": 24,
+   "median": 8.77
+  },
+  "firesmoke_20p": {
+   "n": 46,
+   "median": 64.33
+  },
+  "g2_val_large": {
+   "n": 10,
+   "median": 3.42
+  },
+  "g2_val_small": {
+   "n": 10,
+   "median": 4.16
+  },
+  "neu_det": {
+   "n": 12,
+   "median": 9.11
+  },
+  "gdut_hwd_10p": {
+   "n": 12,
+   "median": 3.22
+  },
+  "gdut_hwd_20p": {
+   "n": 12,
+   "median": 3.88
+  },
+  "gdut_hwd_30p": {
+   "n": 12,
+   "median": 4.94
+  },
+  "gdut_hwd_40p": {
+   "n": 12,
+   "median": 5.66
+  },
+  "gdut_hwd_50p": {
+   "n": 12,
+   "median": 6.07
+  },
+  "mask_clean_10p": {
+   "n": 12,
+   "median": 6.17
+  },
+  "mask_clean_20p": {
+   "n": 12,
+   "median": 9.0
+  },
+  "mask_clean_30p": {
+   "n": 12,
+   "median": 12.18
+  },
+  "mask_clean_40p": {
+   "n": 12,
+   "median": 15.07
+  },
+  "mask_clean_50p": {
+   "n": 12,
+   "median": 18.27
+  },
+  "smoke_keremberke_10p": {
+   "n": 12,
+   "median": 23.33
+  },
+  "smoke_keremberke_20p": {
+   "n": 12,
+   "median": 31.07
+  },
+  "smoke_keremberke_30p": {
+   "n": 12,
+   "median": 38.57
+  },
+  "smoke_keremberke_40p": {
+   "n": 12,
+   "median": 46.43
+  },
+  "smoke_keremberke_50p": {
+   "n": 12,
+   "median": 54.21
+  },
+  "roboflow_hardhat": {
+   "n": 12,
+   "median": 82.51
+  },
+  "vhr10": {
+   "n": 12,
+   "median": 4.02
+  }
+ }
+}

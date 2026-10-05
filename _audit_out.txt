@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "E:\WorkBuddy\盲审P1\复现仓库\code\43_A24_power_audit.py", line 287, in <module>
+    sys.exit(main(self_test='--self-test' in sys.argv))
+             ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\WorkBuddy\盲审P1\复现仓库\code\43_A24_power_audit.py", line 130, in main
+    m = mde_of(n, r['sd'], lam=lam)
+  File "E:\WorkBuddy\盲审P1\复现仓库\code\43_A24_power_audit.py", line 78, in mde_of
+    return (_t(1 - ALPHA / 2, n - 1) + _t(POWER, n - 1)) * se * lam
+            ~~^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\WorkBuddy\盲审P1\复现仓库\code\43_A24_power_audit.py", line 66, in _t
+    from scipy.stats import t as _tdist
+ModuleNotFoundError: No module named 'scipy'

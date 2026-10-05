@@ -1,0 +1,363 @@
+{
+ "families": {
+  "cg_200ep": {
+   "base": {
+    "n_cells": 3,
+    "n_early": 3,
+    "E": 123.33333333333333,
+    "detail": [
+     {
+      "seed": 42,
+      "act": 121,
+      "outcome": "early_stop_legit",
+      "run": "_PARTIAL_cg_200ep_base_s42n_091556",
+      "n_products": 1
+     },
+     {
+      "seed": 43,
+      "act": 129,
+      "outcome": "early_stop_legit",
+      "run": "_PARTIAL_cg_200ep_base_s43n_095303",
+      "n_products": 1
+     },
+     {
+      "seed": 44,
+      "act": 120,
+      "outcome": "early_stop_legit",
+      "run": "_PARTIAL_cg_200ep_base_s44n_103534",
+      "n_products": 1
+     }
+    ]
+   },
+   "lr005": {
+    "n_cells": 3,
+    "n_early": 3,
+    "E": 136.33333333333334,
+    "detail": [
+     {
+      "seed": 42,
+      "act": 120,
+      "outcome": "early_stop_legit",
+      "run": "_PARTIAL_cg_200ep_lr005_s42n_093319",
+      "n_products": 1
+     },
+     {
+      "seed": 43,
+      "act": 169,
+      "outcome": "early_stop_legit",
+      "run": "_PARTIAL_cg_200ep_lr005_s43n_101643",
+      "n_products": 1
+     },
+     {
+      "seed": 44,
+      "act": 120,
+      "outcome": "early_stop_legit",
+      "run": "_PARTIAL_cg_200ep_lr005_s44n_105252",
+      "n_products": 1
+     }
+    ]
+   }
+  },
+  "dd15_200ep": {
+   "base": {
+    "n_cells": 3,
+    "n_early": 0,
+    "E": 200.0,
+    "detail": [
+     {
+      "seed": 42,
+      "act": 200,
+      "outcome": "complete",
+      "run": "dd15_200ep_base_s42n",
+      "n_products": 1
+     },
+     {
+      "seed": 43,
+      "act": 200,
+      "outcome": "complete",
+      "run": "dd15_200ep_base_s43n",
+      "n_products": 1
+     },
+     {
+      "seed": 44,
+      "act": 200,
+      "outcome": "complete",
+      "run": "dd15_200ep_base_s44n",
+      "n_products": 1
+     }
+    ]
+   },
+   "lr005": {
+    "n_cells": 3,
+    "n_early": 0,
+    "E": 200.0,
+    "detail": [
+     {
+      "seed": 42,
+      "act": 200,
+      "outcome": "complete",
+      "run": "dd15_200ep_lr005_s42n",
+      "n_products": 1
+     },
+     {
+      "seed": 43,
+      "act": 200,
+      "outcome": "complete",
+      "run": "dd15_200ep_lr005_s43n",
+      "n_products": 1
+     },
+     {
+      "seed": 44,
+      "act": 200,
+      "outcome": "complete",
+      "run": "dd15_200ep_lr005_s44n",
+      "n_products": 1
+     }
+    ]
+   }
+  },
+  "pn_200ep": {
+   "base": {
+    "n_cells": 3,
+    "n_early": 0,
+    "E": 200.0,
+    "detail": [
+     {
+      "seed": 42,
+      "act": 200,
+      "outcome": "complete",
+      "run": "pn_200ep_base_s42n",
+      "n_products": 1
+     },
+     {
+      "seed": 43,
+      "act": 200,
+      "outcome": "complete",
+      "run": "pn_200ep_base_s43n",
+      "n_products": 1
+     },
+     {
+      "seed": 44,
+      "act": 200,
+      "outcome": "complete",
+      "run": "pn_200ep_base_s44n",
+      "n_products": 1
+     }
+    ]
+   },
+   "lr005": {
+    "n_cells": 3,
+    "n_early": 0,
+    "E": 200.0,
+    "detail": [
+     {
+      "seed": 42,
+      "act": 200,
+      "outcome": "complete",
+      "run": "pn_200ep_lr005_s42n",
+      "n_products": 1
+     },
+     {
+      "seed": 43,
+      "act": 200,
+      "outcome": "complete",
+      "run": "pn_200ep_lr005_s43n",
+      "n_products": 1
+     },
+     {
+      "seed": 44,
+      "act": 200,
+      "outcome": "complete",
+      "run": "pn_200ep_lr005_s44n",
+      "n_products": 1
+     }
+    ]
+   }
+  },
+  "sgh_200ep": {
+   "base": {
+    "n_cells": 3,
+    "n_early": 2,
+    "E": 151.66666666666666,
+    "detail": [
+     {
+      "seed": 42,
+      "act": 200,
+      "outcome": "complete",
+      "run": "sgh_200ep_base_s42n",
+      "n_products": 1
+     },
+     {
+      "seed": 43,
+      "act": 126,
+      "outcome": "early_stop_legit",
+      "run": "_PARTIAL_sgh_200ep_base_s43n_145800",
+      "n_products": 1
+     },
+     {
+      "seed": 44,
+      "act": 129,
+      "outcome": "early_stop_legit",
+      "run": "_PARTIAL_sgh_200ep_base_s44n_083223",
+      "n_products": 2
+     }
+    ]
+   },
+   "lr005": {
+    "n_cells": 3,
+    "n_early": 3,
+    "E": 164.0,
+    "detail": [
+     {
+      "seed": 42,
+      "act": 149,
+      "outcome": "early_stop_legit",
+      "run": "_PARTIAL_sgh_200ep_lr005_s42n_143909",
+      "n_products": 1
+     },
+     {
+      "seed": 43,
+      "act": 186,
+      "outcome": "early_stop_legit",
+      "run": "_PARTIAL_sgh_200ep_lr005_s43n_152301",
+      "n_products": 1
+     },
+     {
+      "seed": 44,
+      "act": 157,
+      "outcome": "early_stop_legit",
+      "run": "_PARTIAL_sgh_200ep_lr005_s44n_085552",
+      "n_products": 1
+     }
+    ]
+   }
+  },
+  "srh_200ep": {
+   "base": {
+    "n_cells": 3,
+    "n_early": 3,
+    "E": 162.0,
+    "detail": [
+     {
+      "seed": 42,
+      "act": 163,
+      "outcome": "early_stop_legit",
+      "run": "_PARTIAL_srh_200ep_base_s42n_121326",
+      "n_products": 2
+     },
+     {
+      "seed": 43,
+      "act": 158,
+      "outcome": "early_stop_legit",
+      "run": "_PARTIAL_srh_200ep_base_s43n_201114",
+      "n_products": 1
+     },
+     {
+      "seed": 44,
+      "act": 165,
+      "outcome": "early_stop_legit",
+      "run": "_PARTIAL_srh_200ep_base_s44n_145824",
+      "n_products": 1
+     }
+    ]
+   },
+   "lr005": {
+    "n_cells": 3,
+    "n_early": 3,
+    "E": 168.33333333333334,
+    "detail": [
+     {
+      "seed": 42,
+      "act": 162,
+      "outcome": "early_stop_legit",
+      "run": "_PARTIAL_srh_200ep_lr005_s42n_162831",
+      "n_products": 1
+     },
+     {
+      "seed": 43,
+      "act": 176,
+      "outcome": "early_stop_legit",
+      "run": "_PARTIAL_srh_200ep_lr005_s43n_190904",
+      "n_products": 1
+     },
+     {
+      "seed": 44,
+      "act": 167,
+      "outcome": "early_stop_legit",
+      "run": "_PARTIAL_srh_200ep_lr005_s44n_000046",
+      "n_products": 1
+     }
+    ]
+   }
+  },
+  "vvhr_200ep": {
+   "base": {
+    "n_cells": 3,
+    "n_early": 2,
+    "E": 182.66666666666666,
+    "detail": [
+     {
+      "seed": 42,
+      "act": 183,
+      "outcome": "early_stop_legit",
+      "run": "_PARTIAL_vvhr_200ep_base_s42n_130009",
+      "n_products": 1
+     },
+     {
+      "seed": 43,
+      "act": 165,
+      "outcome": "early_stop_legit",
+      "run": "_PARTIAL_vvhr_200ep_base_s43n_132037",
+      "n_products": 1
+     },
+     {
+      "seed": 44,
+      "act": 200,
+      "outcome": "complete",
+      "run": "vvhr_200ep_base_s44n",
+      "n_products": 1
+     }
+    ]
+   },
+   "lr005": {
+    "n_cells": 3,
+    "n_early": 3,
+    "E": 144.66666666666666,
+    "detail": [
+     {
+      "seed": 42,
+      "act": 129,
+      "outcome": "early_stop_legit",
+      "run": "_PARTIAL_vvhr_200ep_lr005_s42n_130930",
+      "n_products": 1
+     },
+     {
+      "seed": 43,
+      "act": 172,
+      "outcome": "early_stop_legit",
+      "run": "_PARTIAL_vvhr_200ep_lr005_s43n_133340",
+      "n_products": 1
+     },
+     {
+      "seed": 44,
+      "act": 133,
+      "outcome": "early_stop_legit",
+      "run": "_PARTIAL_vvhr_200ep_lr005_s44n_140703",
+      "n_products": 1
+     }
+    ]
+   }
+  }
+ },
+ "verdicts": {
+  "cg_200ep": "两臂预算不可比 ⇒ `P 不可判 (c)`",
+  "dd15_200ep": "预算可比 ⇒ 报 ITT + PP",
+  "pn_200ep": "预算可比 ⇒ 报 ITT + PP",
+  "sgh_200ep": "两臂预算不可比 ⇒ `P 不可判 (c)`",
+  "srh_200ep": "预算可比 ⇒ 报 ITT（PP 不可得）",
+  "vvhr_200ep": "两臂预算不可比 ⇒ `P 不可判 (c)`"
+ },
+ "unregistered": [
+  "dd15_200ep"
+ ]
+}

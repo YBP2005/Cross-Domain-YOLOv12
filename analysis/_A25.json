@@ -1,0 +1,13 @@
+{
+ "A5": {
+  "cells": 90,
+  "gate_passed": 50,
+  "three_subset_same_rate": 0.844925296239052,
+  "paired_sd": 1.8582824570379424
+ },
+ "A2": {
+  "cells": 90,
+  "same": 82,
+  "flip": 8
+ }
+}
