@@ -1277,9 +1277,9 @@ not the other's; that is the sense in which the verdict belongs to the conventio
 ## P.9 Boundaries of the released cell definition, and what they do not affect
 
 The per-run tables are keyed on a cell defined as (pair, family, label budget, epoch budget).
-Three properties of the released material bound how far a cell can be read. Each is reported
+Four properties of the released material bound how far a cell can be read. Each is reported
 here because it constrains *interpretation* rather than the arithmetic: the numbers in the
-tables are what the stated key produces, and none of the three changes any reported number.
+tables are what the stated key produces, and none of the four changes any reported number.
 
 **1. The cell key does not carry the box-regression loss prior.** `loss` is one of the axes
 this paper varies, but it is not part of the key. Measured on the released table: in **40**
@@ -1302,7 +1302,11 @@ clean three-way protocol and the published protocol is at the same time a contra
 construction of the split rather than on a between-family contrast, but it does mean the two
 readings are not separable here and should not be presented as if they were.
 
-**3. A residual set of runs records a seed that its run name contradicts.**
+**3. A residual set of runs records a seed that its run name contradicts.** Those runs are named
+with one seed but carry another in their configuration; they are excluded from every seed-gated
+count in this paper, and no reported number rests on them. The residual is small and we do not
+resolve it here.
+
 **4. What fraction of the label axis is actually labelled.** The label budget is the measured
 independent variable of §4 and §4.6, so how much of the archive carries a *checkable* budget
 label is a bound on that axis. Of the **2,362** runs in the released table (the same base as §3), **453 (19.2%) carry no
