@@ -31,7 +31,7 @@ MAP = [
     (os.path.join(SRC_M3, 'base', 'provenance.csv'), 'base/provenance.csv'),
     (os.path.join(SRC_M3, 'base', '数据字典.md'), 'base/数据字典.md'),
     (os.path.join(SRC_M3, 'base', '缺口清单.md'), 'base/缺口清单.md'),
-    (os.path.join(SRC_M3, '03_榨干报告_边界与结论_20261001.md'), '03_榨干报告_边界与结论_20261001.md'),
+    # ★ 2026-10-05：`03_榨干报告_边界与结论_20261001.md` **已按作者指示从放行件移除**，不再拷贝。
     (os.path.join(SRC, 'M3_draft', 'P1_NewDraft_v1_20260927.md'), 'M3_draft/P1_NewDraft_v1_20260927.md'),
     (os.path.join(SRC, 'M3_draft', '00_SUPPLEMENTARY_v0.4.md'), 'M3_draft/00_SUPPLEMENTARY_v0.4.md'),
 ]

@@ -22,7 +22,17 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 import _cells as C            # noqa: E402
 
-BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # ★ 2026-10-05：可移植（放行布局下 = 仓库根，含 base/ deliver/ M3_draft/）
+def _find_root(start):
+    d = os.path.abspath(start)
+    for _ in range(6):
+        if os.path.isdir(os.path.join(d, 'base')):   # ★ 只认 base/：两种布局下唯一
+            return d
+        d = os.path.dirname(d)
+    return os.path.abspath(start)
+
+BASE = _find_root(os.path.dirname(os.path.abspath(__file__)))  # ★ 向上查找（放行=仓库根；作者树=analysis_M3）
+
+
 OUT = os.path.join(BASE, 'deliver')
 _OPEN = []   # ★ 2026-10-05：**无条件初始化**，避免只在分支内定义导致 NameError
 
@@ -37,8 +47,19 @@ def _try_read(path, what=''):
     except Exception as _e:
         _MISSING.append('%s（%s）' % (what or os.path.basename(str(path)), str(_e)[:60]))
         return ''
-DRAFT = os.path.join(BASE, 'M3_draft', 'P1_NewDraft_v1_20260927.md')
-SUPP = os.path.join(BASE, 'M3_draft', '00_SUPPLEMENTARY_v0.4.md')
+def _find_m3d(start):
+    d = os.path.abspath(start)
+    for _ in range(6):
+        c = os.path.join(d, 'M3_draft')
+        if os.path.isdir(c):
+            return c
+        d = os.path.dirname(d)
+    return os.path.join(os.path.abspath(start), 'M3_draft')
+
+_M3D = _find_m3d(BASE)   # ★ 2026-10-05：向上查找 M3_draft（两种布局都成立）
+
+DRAFT = os.path.join(_M3D, 'P1_NewDraft_v1_20260927.md')
+SUPP = os.path.join(_M3D, '00_SUPPLEMENTARY_v0.4.md')
 S1051 = lambda s: 42 <= s <= 51
 
 rows, G = C.load()
@@ -1103,9 +1124,10 @@ for _lbl in _LNFAIL:
 
 _xt = [(lbl, lit in _d) for lbl, lit in _XCHK]
 # ---- 内部报告（`03_榨干报告`）也纳入：它是**在用的**交付件，同样会漂 ----
-_REP = open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-                         '03_榨干报告_边界与结论_20261001.md'),
-            encoding='utf-8', errors='replace').read()
+_REP = _try_read(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                         '03_榨干报告_边界与结论_20261001.md'), '03_榨干报告')
+# ★★ 2026-10-05：该内部报告已**从放行件中移除**（作者指示）。缺失时下列报告段**跳过并报红**，
+#   不再当作失败；作者树上仍存在时照旧校验。
 _a1 = _dig('A1_格完整性.md', r'核心格 = (\d+) 个')
 _a1b = _dig('A1b_架构链映射.md', r'\*\*定到具体 backbone\*\* \| \*\*(\d+)（')
 _a3 = _dig('A3_早停倾向.md', r'名义 ≤100 轮的 run 共 \*\*(\d+)\*\* 个')
@@ -1244,7 +1266,12 @@ if _m22:
                   '**%s 组四腿齐备**' % _m22.group(1)))
 _nrun = len({r['run'] for r in _brows})
 _RCHK.append(('报告 §四 协议守卫底座 run 数 **%d**' % _nrun, '底座 **%d** 个 run' % _nrun))
-_rt = [(lbl, lit in _REP) for lbl, lit in _RCHK]
+if _REP:
+    _rt = [(lbl, lit in _REP) for lbl, lit in _RCHK]
+else:
+    print('⚠ 内部报告 03_榨干报告_边界与结论_20261001.md **不在放行件内**'
+          '（已按作者指示移除）⇒ 报告一致性守卫**跳过**（不报红）。')
+    _rt = []
 w('## ★ 内部报告一致性守卫（`03_榨干报告` ↔ 生成件）')
 w()
 w('| 生成件里的值 | 报告内是否一致 | 报告应含 |')
@@ -1253,7 +1280,11 @@ for (lbl, lit), (_, good) in zip(_RCHK, _rt):
     w('| %s | %s | `%s` |' % (lbl, '✅' if good else '❌ **漂移**', lit))
 w()
 _rbad = [l for (l, _), (_, g) in zip(_RCHK, _rt) if not g]
-if not _RCHK:
+if not _REP:
+    w('> ⚠ 内部报告不在放行件内（已按作者指示移除）⇒ 本守卫**未执行**，'
+      '不声称一致也不报红；上表为空。')
+    w()
+elif not _RCHK:
     w('> ❌ 生成件一件都没解析到 —— 守卫**空转**（空集合硬失败，经验 #56）。')
     w()
 elif _rbad:
