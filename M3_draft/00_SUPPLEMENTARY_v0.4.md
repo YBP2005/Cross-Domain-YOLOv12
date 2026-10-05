@@ -1182,8 +1182,12 @@ not the slices.
 
 **Falsification condition, and its current status.** The exercise is refuted in a family whose two label-budget
 slices carry endpoint differences of **opposite sign that are each separately resolvable** ($|d|$ at least its own
-MDE). Three of the four failures above meet that description, so the falsification condition is **already
-instantiated** and the honest statement of the result is "four of the six families that carry all five label budgets unanimous, with named
+MDE). **None** of the failures above meets that description: each sign-reversing pair has at least one slice whose
+endpoint difference falls below its own 80%-power minimum detectable difference under the $\gamma(n)$
+convention of Appendix P, and the shortfalls are large (`mafa→mask_clean` is off by a factor of about 75
+on its 30% slice). The falsification condition is therefore **not yet instantiated on this archive**; what the
+failures establish is the weaker statement that the sign is not unanimous within a family, which is why the
+result is stated as and the honest statement of the result is "four of the six families that carry all five label budgets unanimous, with named
 sign-reversing exceptions" — not "the sign is a property of the pair".
 
 **One limitation of the test itself.** The test was decided after the archive existed. Its split is prior (budget

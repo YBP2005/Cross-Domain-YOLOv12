@@ -20,9 +20,30 @@ import json
 import hashlib
 
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
-BASE = r"D:\deepseek\analysis\work\analysis_M3"
+def _find_root(start):
+    d = os.path.abspath(start)
+    for _ in range(6):
+        if os.path.isdir(os.path.join(d, 'base')) and os.path.isdir(os.path.join(d, 'deliver')):
+            return d
+        d = os.path.dirname(d)
+    return os.path.abspath(start)
+
+
+def _find_m3d(start):
+    d = os.path.abspath(start)
+    for _ in range(6):
+        c = os.path.join(d, 'M3_draft')
+        if os.path.isdir(c):
+            return c
+        d = os.path.dirname(d)
+    return os.path.join(os.path.abspath(start), 'M3_draft')
+BASE = _find_root(os.path.dirname(os.path.abspath(__file__)))
+
+# ★★ 2026-10-05：**向上查找项目根**（布局无关）。
+#   放行仓库：repo/code/x.py ⇒ BASE = repo（含 base/ deliver/ M3_draft/）
+#   作者树  ：analysis_M3/scripts/x.py ⇒ BASE = analysis_M3（M3_draft 在上两级）
 OUT = os.path.join(BASE, 'deliver')
-SUPP = os.path.join(os.path.dirname(os.path.dirname(BASE)), 'M3_draft', '00_SUPPLEMENTARY_v0.4.md')
+SUPP = os.path.join(_find_m3d(BASE), '00_SUPPLEMENTARY_v0.4.md')
 
 # (编号, 论文里的数字, 出处小节, 检索式, 底座可否独立复算的说明)
 ITEMS = [
