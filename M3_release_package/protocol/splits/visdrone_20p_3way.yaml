@@ -1,6 +1,0 @@
-path: /root/datasets_mask/visdrone
-train: images/train_visdrone_20p
-val: carve_vis20/images
-test: images/test
-nc: 10
-names: ['pedestrian','people','bicycle','car','van','truck','tricycle','awning-tricycle','bus','motor']

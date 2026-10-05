@@ -1,8 +1,0 @@
-# three-way protocol: train = same label subset as the published runs; val = carve-out from the pool
-# minus that subset (seed 42); test = the corpus's own held-out split. Built 2026-09-14T07:37:40Z.
-path: /root/datasets_mask/mendeley_yolo
-train: images/train_mende_20p
-val: carve_mende20/images
-test: images/val
-nc: 1
-names: ['face_mask']
