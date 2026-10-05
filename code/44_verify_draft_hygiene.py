@@ -123,7 +123,10 @@ def main():
     #   —— `deliver/P1_理论扩张执行记录_20261004.md` 藏着 4 个 BEL、6 个退格、2 个换页符、1 个 TAB，
     #   全是 heredoc 吃反斜杠留下的伤（`ar`→`|`+BS、`rac`→FF+'rac'）。**扫不到就等于没有守卫。**
     #   判据：`deliver/` 与 `work/analysis_M3/` 下**全部 .md/.csv/.tsv/.json/.py** 都不得含 C0 控制字符。
-    DELIV = os.path.join(ROOT, 'work', 'analysis_M3', 'deliver')
+    # ★ 2026-10-05：两种布局（作者树 work/analysis_M3/deliver ｜ 放行仓库 deliver/）
+    _cands = [os.path.join(ROOT, 'work', 'analysis_M3', 'deliver'),
+              os.path.join(ROOT, 'deliver')]
+    DELIV = next((d for d in _cands if os.path.isdir(d)), _cands[0])
     EXTS = ('.md', '.csv', '.tsv', '.json', '.py', '.txt')
     bad_files = []
     scanned = 0
@@ -147,6 +150,11 @@ def main():
                     if ord(c) < 32 and ord(c) not in (9, 10, 13)]
             if hits:
                 bad_files.append((fn, len(hits), hits[0]))
+    if scanned == 0:
+        # ★★ 2026-10-05：**空集合硬失败**（经验 #56）。
+        #   旧版在放行布局下目录不存在 ⇒ 扫 0 件却报"六项全绿"，
+        #   而真实事故恰恰出在没被扫到的交付件里。
+        fails.append('交付件控制字符扫描：扫到 **0 件**（目录 %s）—— 空集合硬失败' % DELIV)
     if bad_files:
         detail = '；'.join('%s(%d 处，首处 %r)' % (f, n, c) for f, n, c in bad_files[:4])
         fails.append('交付件里出现 C0 控制字符：%s' % detail)

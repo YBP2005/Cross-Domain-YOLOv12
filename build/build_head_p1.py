@@ -16,8 +16,8 @@ import datetime
 
 ROOT = r'E:\WorkBuddy\盲审P1'
 REPO = os.path.join(ROOT, '复现仓库')
-DRAFT = os.path.join(REPO, 'provenance', 'P1_NewDraft_v1_20260927.md')
-SUPP = os.path.join(REPO, 'provenance', '00_SUPPLEMENTARY_v0.4.md')
+DRAFT = os.path.join(REPO, 'M3_draft', 'P1_NewDraft_v1_20260927.md')   # ★ 2026-10-05：修正错路径
+SUPP = os.path.join(REPO, 'M3_draft', '00_SUPPLEMENTARY_v0.4.md')
 MEAS = r'D:\deepseek\analysis\work\pages_probe_new\pages_probe\measurement.json'
 OUT = os.path.join(REPO, 'build', '_pack_head.md')
 REFDIR = os.path.join(ROOT, '参考文献')
