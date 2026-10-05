@@ -788,6 +788,18 @@ Table S1 lists the thirteen domain pairs studied: seven within-domain pairs; thr
 
 **Reading.** Six of the seven within-domain cells are negative at 30 epochs and one — dota15, at ten seeds — is a **null** (7 of its 10 seeds favour the strategy arm); the within-domain cell read at 100 epochs is negative in all ten; and both cross-domain cells are positive, nine of ten and ten of ten. The dota15 row is reported as a null rather than folded into the census, because at three seeds its mean (−0.21 pp) was indistinguishable from the noise the extension then measured (−0.03 pp): the extension did not weaken the pattern so much as show which part of it was noise. This is the two-channel structure §8.3 reports, measured at a held-out endpoint on targets that do not include SFCHD. It does not enter the registered family of Appendix I and no family-level quantity uses it.
 
+**The same within-domain corpora under three conventions, side by side.** The same-domain set this paper reports is read three times in what follows, each time under a different convention, and the three readings are listed together here with their cell sets, sample sizes and columns so that they are read as conventions rather than as disagreements.
+
+| convention (source) | same-domain cell set | sample size | column / endpoint | reading |
+|---|---|---|---|---|
+| §4.6 of the main text (the archive's own endpoint rule) | same-domain controls: `dota15→dota15`, `aitod→aitod20`, `visdrone→visdrone`, `mask→mask`, `dota→dota` | **17 cells** | the archive's own endpoint rule | mean **+0.27 pp**; median **+0.65**; **29% negative**; **16 of 17** reaching \|t\| ≥ 2 |
+| M.5, this appendix (clean three-way protocol, the table above) | the seven 30-epoch within-domain rows | **7 cells** — five at **n = 3**, two (`dota15→dota15`, `visdrone→visdrone`) at **n = 10** | target corpus's own held-out test split; mAP50-95 (%) of `best.pt` | **six negative + one null** (the null is `dota15→dota15`, 7 of its 10 seeds favour the strategy arm) |
+| §8 of the main text (the $U$/$M$ account) | `aitod→aitod20` and `mask→mask20`, 30 epochs | **2 cells**, n = 10 each † | not stated in §8 | **−1.195 pp** (t = −7.85) and **−2.027 pp** (t = −5.44) |
+
+† Ten paired seeds per cell, recomputable from `base/run_table_canonical.csv` (family `r10`, `aitod20_3way` / `mask20_3way`, 30 epochs): the released table gives **n = 10** for both, with means **−1.195** and **−2.027 pp**, matching the §8 sentence, which prints the readings and their t values but not n.
+
+**The three rows are three conventions, not three answers to one question.** They differ in the cell set and in the column: the first averages 17 archive cells under the archive's own endpoint rule, the second reads seven 30-epoch cells on the target corpus's own held-out test split, and the third reads two same-domain cells at 30 epochs in the two-term account. No row is a restatement of another and none contradicts another; the comparison the main text draws between the first two is exactly a change of convention.
+
 **Provenance.** These runs are a separate batch from the published ones: the registered stack (`train_obj.py`, ultralytics 8.4.120) with the `shapeiou` loss, each run driven by its own `*_3way.yaml` and recorded per run in the released per-seed file together with its two arms and its data-order seed. The batch follows the carve builder's timestamp of 2026-09-14T07:37Z and precedes the held-out readout of 2026-09-20; individual launch times are not preserved in the release, so the ordering rests on those two timestamps and not on per-run times.
 
 # Reference-status ledger: metadata corrections and the five anchor classes (moved from the References section)
