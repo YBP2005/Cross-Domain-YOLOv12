@@ -158,11 +158,22 @@ def ok_outcome(r):
     return False
 
 
+# ★★ 2026-10-05：`loss` **显式优先**。
+#   起因（外部复审独立提出，本会话复核确认）：格键 = (对, 族, 预算, 轮数)，**不含 `loss`**，
+#   而 `loss`（框回归损失先验）在本文是**一个被测因子轴**。实测 **40 个槽**里同槽同臂有
+#   多种 `loss` 取值，**且 40/40 的两种读数不同**。
+#   旧行为靠 `len(run)` 排序**恰好**总选到 `shapeiou`（`sio_b_results.csv` 名短）——
+#   **是偶然，不是规则**。现改为显式：`shapeiou` 优先，再按原键。
+#   ★ 验证判据：加这条规则后，**338 个格（含两列）一格未变**（与变体过滤同一判据）。
+LOSS_PREF = {'shapeiou': 0}
+
+
 def _pick(rs, key):
     ok = [r for r in rs if f(r[key]) is not None and ok_outcome(r)]
     if not ok:
         return None
-    ok.sort(key=lambda r: (PREF.get(r['outcome'], 9), len(r['run'])))
+    ok.sort(key=lambda r: (LOSS_PREF.get(r.get('loss'), 9),
+                           PREF.get(r['outcome'], 9), len(r['run'])))
     return ok[0]
 
 

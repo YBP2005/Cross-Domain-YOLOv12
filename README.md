@@ -18,7 +18,7 @@
 
 | 路径 | 是什么 |
 |---|---|
-| **`base/run_table_canonical.csv`** | ★ **唯一权威底座**：**2,362 个 run × 43 列**（逐 run 的训练配置、结局、六个读数列、种子、机器、族）。**主稿 §4/§5 的每个数字都能从这里重算**，不需要跑任何训练 |
+| **`base/run_table_canonical.csv`** | ★ **唯一权威底座**：**2,362 个 run × 43 列**（逐 run 的训练配置、结局、六个读数列、种子、机器、族）。**主稿 §4 与 §5 的常规格都能从这里重算**，不需要跑任何训练。★ **例外：§5 的 2×2 敏感性试验（`g1_c1`–`g1_c4`）不在这个底座里**，它的逐 run 读数由 `provenance/deliver/` 的两份摘要件承载：`G1_B机_逐run摘要.csv`（c1/c2）与 `G1_A机_c3c4_逐run摘要.csv`（c3/c4），两者列名一致、**列均为 val**（`val_map`） |
 | `base/run_backbone_map.csv` | `run → backbone` 映射（用于 §4.4 的架构轴；**架构轴必须按 backbone 圈定，不能按 `family`**，见 `code/_cells.py` 的注释） |
 | `base/args_protocol_snapshot.csv` | 训练协议快照（含 `args.yaml` **字节数**）。`code/39_verify_protocol_fingerprint.py` 用它断言**底座全部 run 为 batch=32 / workers=16 / imgsz=640** |
 | `base/dataset_split_counts.csv` | 各语料的划分统计（补材 Appendix L） |
@@ -34,7 +34,7 @@
 | `MANIFEST_sha256.csv` | 逐文件字节数 + sha256 |
 
 **主稿与补材的 md5**（与盲审包内的自述块一致）：
-主稿 `AD3428D5D640A4055D2383005C931D7E`、补材 `77DDCE115D9FCE27586EB0FAE58115FF`。
+主稿 `2AE6A993E72B3A29CCF0833D606B9460`、补材 `EAACE4A8A3779957C10B75CBBFAE5AC2`。
 
 ---
 
