@@ -750,24 +750,24 @@ _RCHK = []
 _REFAUTH = [
     # ⚠ 第三列 = 期望串（必须是稿内**逐字子串**）；第四列 = 该行必须包含的首作者姓氏。
     #   `[30]`–`[34]` 是 2026-10-04 F 主张检索复跑后**新增**的五条（去魅路线的既有工作）。
-    ('[2]', 'K. S. Chegondi', 'Chegondi'),
-    ('[3]', 'S. A. Al-Emadi', 'Al-Emadi'),
-    ('[4]', 'P. Oza', 'Oza'),
-    ('[6]', 'K. Li', 'Li'),
-    ('[11]', 'T. Gebru', 'Gebru'),
-    ('[12]', 'M. Mitchell', 'Mitchell'),
-    ('[30]', 'Y. Li, H. Zhang, Y. Zhang', 'Li'),
-    ('[31]', 'K. He, R. Girshick, P. Doll\u00e1r', 'He'),
-    ('[32]', 'M. Raghu, C. Zhang, J. Kleinberg, S. Bengio', 'Raghu'),
-    ('[33]', 'F. Kanavati, M. Tsuneki', 'Kanavati'),
-    ('[34]', 'D. Pototzky, A. Sultan, L. Schmidt-Thieme', 'Pototzky'),
+    ('[5]', 'K. S. Chegondi', 'Chegondi'),
+    ('[4]', 'S. A. Al-Emadi', 'Al-Emadi'),
+    ('[1]', 'P. Oza', 'Oza'),
+    ('[3]', 'K. Li', 'Li'),
+    ('[6]', 'T. Gebru', 'Gebru'),
+    ('[7]', 'M. Mitchell', 'Mitchell'),
+    ('[23]', 'Y. Li, H. Zhang, Y. Zhang', 'Li'),
+    ('[19]', 'K. He, R. Girshick, P. Doll\u00e1r', 'He'),
+    ('[20]', 'M. Raghu, C. Zhang, J. Kleinberg, S. Bengio', 'Raghu'),
+    ('[21]', 'F. Kanavati, M. Tsuneki', 'Kanavati'),
+    ('[22]', 'D. Pototzky, A. Sultan, L. Schmidt-Thieme', 'Pototzky'),
     # `[35]`–`[39]`：2026-10-04 G/H 检索复跑后补入（同层先例：标注统计预测迁移；
     # 源模型精度预测迁移；隔离式骨干对照；架构与预训练权重分开考察）。
-    ('[35]', 'A. T. Tran, C. V. Nguyen, T. Hassner', 'Tran'),
-    ('[36]', 'S. Kornblith, J. Shlens, Q. V. Le', 'Kornblith'),
-    ('[37]', 'N. Ding, A. Eskandarian', 'Ding'),
-    ('[38]', 'S. Mahadevkar, S. Patil, K. Kotecha, A. Abraham', 'Mahadevkar'),
-    ('[39]', 'J. Ning, H. Guan, M. Spratling', 'Ning'),
+    ('[9]', 'A. T. Tran, C. V. Nguyen, T. Hassner', 'Tran'),
+    ('[10]', 'S. Kornblith, J. Shlens, Q. V. Le', 'Kornblith'),
+    ('[11]', 'N. Ding, A. Eskandarian', 'Ding'),
+    ('[12]', 'S. Mahadevkar, S. Patil, K. Kotecha, A. Abraham', 'Mahadevkar'),
+    ('[34]', 'J. Ning, H. Guan, M. Spratling', 'Ning'),
 ]
 for _tag, _expect, _who in _REFAUTH:
     # ⚠ 不能用 `r'^\%s .*$' % tag`：`\%` 会变成"字面百分号"，于是 `re.escape('[2]')` 的 `\[`
@@ -1470,8 +1470,11 @@ M.append('')
 open(os.path.join(OUT, '新稿_逐句脚注表.md'), 'w', encoding='utf-8').write('\n'.join(M) + '\n')
 print('逐句脚注表：%d 行' % nrow)
 
-print('\n守卫报红 %d 条' % len(FAILS))
+_n_struct = len([1 for _t, _l in _XCHK if _l == '__NEVER_MATCHES__']) + len(
+    [1 for _t, _l in _RCHK if _l == '__NEVER_MATCHES__'])
+print('\n守卫报红 %d 条（数值 %d + 解析失败/漂移 %d）'
+      % (len(FAILS) + _n_struct, len(FAILS), _n_struct))
 for d, got, want in FAILS:
     print('  ❌ %s: got=%s want=%s' % (d, got, want))
 print('输出 -> %s' % os.path.join(OUT, '新稿标签_可复算路径.md'))
-sys.exit(1 if FAILS else 0)
+sys.exit(1 if (FAILS or _n_struct) else 0)
