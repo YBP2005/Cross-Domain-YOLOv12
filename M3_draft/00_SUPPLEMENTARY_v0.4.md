@@ -417,7 +417,7 @@ Four properties we state rather than leave to be discovered. (i) **The family si
 | mendein | sns | 1 | -0.42 | -0.56 | no |
 | mendein | pws | 5 | +1.03 | +0.17 | no |
 
-Marginals over the fifteen cells, printed as a **range** because one of the fifteen $\Delta$mAP50-95 differences is $-$0.00 and its sign convention moves the count: **9–10 of 15** have $\Delta$mAP50 $<0$ and **9–11 of 15** have $\Delta$mAP50-95 $\geq 0$; if the two signs were independent the expected number of cells showing both would be **5.4 to 7.3**, against the **4** observed, so the count does not exceed chance under any convention in that range.
+Marginals over the fifteen cells, printed as a **range** because one of the fifteen $\Delta$mAP50-95 differences is exactly zero and its sign convention moves the count: **10 of 15** have $\Delta$mAP50 $<0$ and **9–10 of 15** have $\Delta$mAP50-95 $\geq 0$ (10 if the exact zero is counted as non-negative, 9 if it is not); the number of cells showing both signs is **5**, and under independence the expectation would be **5.3 to 6.7**, so the observed count does not exceed chance under either convention.
 
 *Reading.* The two metrics move in opposite directions in four cells (rows marked yes) — that is the count the main text reports. The marginals are printed beside it as a **range, not a point**, for two reasons, and both are stated so that the count can be re-derived: (i) one of the fifteen $\Delta$mAP50-95 differences is $-0.00$, so counting it as negative gives **9** of 15 non-negative in mAP50-95 and counting it non-negative gives **11**; (ii) the $\Delta$mAP50 marginal is **9** of 15 on the released runs, and the point value **10** appears only under a different aggregation of the cells carrying more than one run. Across that range independent signs would already give **5.4–7.3** such cells, so the observed four is a **description of this accounting, not evidence of a mechanism or of a family-level law**; the cell-level mechanism evidence is the per-class decomposition the main text points to, which is measured on **two** cells — the minority-class recall cost on SHWD→SFCHD and the coverage channel on the dota15 probe — and is reported as such, cell by cell. Seed counts are in the `runs` column: 11 of the 15 cells are single-run, four carry paired seeds, and the table is therefore a sign accounting rather than a test.
 
@@ -988,7 +988,7 @@ checkable record.
 
 **Note on the compression record.** Earlier versions of this file ended with a "compression record" that reproduced, verbatim, the material removed from the main text by the length-reduction passes. That record is **not part of this submission**: it is maintained as a separate internal document, because it is a working ledger rather than supplementary scientific material, and because its citation indices are those of the pre-consolidation reference list. Everything the record preserved that bears on the paper's claims is printed in the live text and appendices above; the released runs, tables and scripts named there remain the checkable record.
 
-**Data and code availability.** The released readouts, the three-way split construction and the analysis scripts that produce every number in this paper are archived at https://github.com/YBP2005/Cross-Domain-YOLOv12 (commit p1r3-submitted-20261005b), together with a manifest of file hashes and a table mapping each reported number to the file and rows it comes from. The trained checkpoints, and the per-seed file of the B-pipeline published-protocol readings, are available from the corresponding author on reasonable request.
+**Data and code availability.** The released readouts, the three-way split construction and the analysis scripts that produce every number in this paper are archived at https://github.com/YBP2005/Cross-Domain-YOLOv12 (commit p1r3f-submitted-20261005), together with a manifest of file hashes and a table mapping each reported number to the file and rows it comes from. The trained checkpoints, and the per-seed file of the B-pipeline published-protocol readings, are available from the corresponding author on reasonable request.
 
 # Appendix O. Related-work detail removed from the main text (2026-10-02)
 
@@ -1184,10 +1184,10 @@ not the slices.
 slices carry endpoint differences of **opposite sign that are each separately resolvable** ($|d|$ at least its own
 MDE). **None** of the failures above meets that description: each sign-reversing pair has at least one slice whose
 endpoint difference falls below its own 80%-power minimum detectable difference under the $\gamma(n)$
-convention of Appendix P, and the shortfalls are large (`mafa→mask_clean` is off by a factor of about 75
-on its 30% slice). The falsification condition is therefore **not yet instantiated on this archive**; what the
+convention of Appendix P, and the shortfalls are large (on `mafa→mask_clean` the 10% slice is off by a factor of about 75
+and its 30% slice by about 8). The falsification condition is therefore **not yet instantiated on this archive**; what the
 failures establish is the weaker statement that the sign is not unanimous within a family, which is why the
-result is stated as and the honest statement of the result is "four of the six families that carry all five label budgets unanimous, with named
+result is stated as "four of the six families that carry all five label budgets unanimous, with named
 sign-reversing exceptions" — not "the sign is a property of the pair".
 
 **One limitation of the test itself.** The test was decided after the archive existed. Its split is prior (budget
