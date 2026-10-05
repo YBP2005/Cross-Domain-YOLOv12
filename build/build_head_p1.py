@@ -39,6 +39,7 @@ def main():
 
     # ---- 页数/词数：读**实测**冻结件，并断言它量的就是这份稿子 ----
     pages = words = None
+    ctl_pages = None
     md5_in_meas = None
     if os.path.exists(MEAS):
         m = json.load(io.open(MEAS, encoding='utf-8'))
@@ -50,6 +51,12 @@ def main():
         v = m['variants'].get('f1__official')
         if v:
             pages, words = v['pages'], v['words']
+        # ★ 阳性对照页：**现测**，不手写（本会话踩过：包首曾印陈旧 31→33）
+        vc = m['variants'].get('_ctl_filler__official')
+        if vc:
+            ctl_pages = vc['pages']
+        else:
+            fails.append('页数冻结件缺 _ctl_filler__official 对照）')
     else:
         fails.append('找不到页数实测冻结件 %s' % MEAS)
 
@@ -79,7 +86,8 @@ def main():
     A('- 主稿（含 **1** 张图 = Fig. 1 协议示意图；**39 条**参考文献）按官方 Word 版式')
     A('  （A4 单栏 / **1.5 倍**行距 / Times New Roman **10 pt**，表格 10 pt、图注 8 pt /')
     A('  页边距 上 4.3 · 右 4.8 · 下 4.3 · 左 4.8 cm / 两端对齐 / 有页码）实测 **%d 页**。' % pages)
-    A('  上限 20–35 页。**两道阳性对照**：注入 600 词后官方口径页数由 31→33、'
+    A('  上限 20–35 页。**两道阳性对照**：注入 600 词后官方口径页数由 **%d→%d**、'
+      % (pages, ctl_pages) +
       '两套版式读数不同（⇒ 版式参数生效、测量器对内容有响应）。')
     A('- 主稿词数（同一把尺子，口径内）：**%d 词**。' % words)
     A('- 补充材料 %d 行、约 %d 词。**期刊明写 "Appendices are not included in the page limit"**'
