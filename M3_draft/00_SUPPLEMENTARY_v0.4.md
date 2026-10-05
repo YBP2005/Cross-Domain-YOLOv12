@@ -122,7 +122,7 @@ Dual-layer seed mechanism: the framework's `seed` argument is recorded in args.y
 
 # Appendix E. Reversal list and timeline
 
-**Table T7.** The reversal list — five conclusions reversed by prospectively frozen rules and one further result invalidated for same-value duplication. The narrative, the triggers and the defensive rules are in E.1 below.
+**Table T7.** The reversal list — five conclusions reversed by prospectively frozen rules and one further result invalidated for same-value duplication — with the layer that caught each. This is the only place the per-event readings are listed.
 
 | # | conclusion reversed or invalidated | the reading it replaced | disposition | caught by |
 |---|---|---|---|---|
@@ -136,7 +136,7 @@ Dual-layer seed mechanism: the framework's `seed` argument is recorded in args.y
 
 ## E.1 The reversal narrative, triggers and defensive rules (moved from §9.2)
 
-Table T7 lists the six audit events — five reversed conclusions plus one invalidated result — each with the reading it replaced, its disposition and the layer that caught it; Appendix E gives the same list with the catcher of every event. We do not repeat the readings here. A **second seed-replay instance** was caught before it could contaminate a paired comparison: three `mendeley` baseline runs nominally at seeds 42/43/44 carry bit-identical epoch sequences (and one further run is a re-labelled copy), i.e. the `--shuffle-seed` injection had not taken effect for them. The screening rule introduced after the first replay incident — compare per-run epoch sequences by hash before forming any pair — is now mandatory, and the affected runs are re-run under new names (`_s43n/_s44n/_s45n`) rather than overwritten.
+The table above lists the six audit events — five reversed conclusions plus one invalidated result — with the reading each replaced, its disposition and the layer that caught it; we do not repeat the readings here. A **second seed-replay instance** was caught before it could contaminate a paired comparison: three `mendeley` baseline runs nominally at seeds 42/43/44 carry bit-identical epoch sequences (and one further run is a re-labelled copy), i.e. the `--shuffle-seed` injection had not taken effect for them. The screening rule introduced after the first replay incident — compare per-run epoch sequences by hash before forming any pair — is now mandatory, and the affected runs are re-run under new names (`_s43n/_s44n/_s45n`) rather than overwritten.
 
 **What the audit layer is.** It is a **blinded external audit pass** over the draft: the full draft, the grading table and the reference list are submitted to an independently hosted reviewing system that has no project background and no access to the repository, and its unedited responses are released with this submission. It is *external* in that the reviewing system is not author-controlled, and it is *not independent* in the sense of an unaffiliated human auditor: the authors chose the material and wrote the prompt, so its findings are advisory. Two assumption-level failures (the retracted family-control claim and the Appendix J.2 erratum) and the dead-layer duplication entered the trail through this pass, and every finding it raised was adjudicated by the authors, with rejections recorded alongside acceptances. The process therefore mandates, as its fourth rule, a "key assumptions × plausible ranges" sensitivity table at pre-registration time (Appendix G). We release the full trail — per-run results CSV, checkpoint layer/parameter/loss triples and weight hashes, versioned grading documents, the blinded audit prompts and their unedited responses, and the s-OTDD measurement files — because the reversals are the record of what the tests caught. That record is evidence about our *process*, not about the validity of the survivors: the evidence for the surviving claims is §8, and its limits are stated with it (§8.2, §9.3, §9.4).
 
@@ -966,16 +966,7 @@ checkable record.
 
 # Process protocols shared with the companion paper (internal tools; declared, not attached)
 
-> **Purpose.** §9.2 reports that the dead-layer duplication was caught by the blinded external audit pass and that the
-> pass is advisory. That pass, and the working method behind the scripted campaign,
-> are **project-internal protocols shared with the companion paper** (the evaluation-validity paper):
-> both papers use the same protocols and **neither presents them as a contribution of its own**.
-> Following the same form the companion paper's supplementary material uses (its §S6), the declaration
-> is given as **file name + md5, with no text attached** — these are internal working documents, not
-> publications, they contain no unpublished results, and nothing in this paper's reproduction path
-> depends on them. They can be supplied with a revision on request. The third row is the
-> internal change-log referred to by the audit-anchor paragraph below; it is declared in the same
-> form, for the same reason.
+> **Purpose.** §9.2 reports that the dead-layer duplication was caught by the blinded external audit pass and that the pass is advisory. That pass, and the working method behind the scripted campaign, are **project-internal protocols shared with a companion paper**; **neither paper presents them as a contribution of its own**. They are declared as file name + md5, with no text attached: internal working documents, containing no unpublished results, on which nothing in this paper’s reproduction path depends. They can be supplied with a revision on request.
 
 | Internal document | md5 | Role in this paper | Claimed as original? |
 |---|---|---|---|
@@ -983,12 +974,12 @@ checkable record.
 | `DSH+本地+云端_工作方法指南.md` | `10d1b3a3e21f018f3b82e4a293242695` | scripted local/cloud execution, all-or-nothing patching, the audit-anchor discipline and the per-number local-pointer rule | **No** — shared; claimed by neither paper |
 | `内部_压缩记录_20260918.md` | `AC9A0C159874616FF9DA81C7EEFC04D9` | the compression record: the verbatim ledger of what the length-reduction passes removed from the main text, kept as a working record of the audit trail (§9.2, Appendix E). **34 of this paper's audit anchors check this log's own provenance bookkeeping** — its own internal consistency and the historical citation indices it preserves — and **no reported result, number or claim depends on it** | **No** — internal bookkeeping; not a source of any claim. Its md5 changes whenever its own header is amended, and the value above is the current one |
 
-**The audit-anchor system falls under the same convention.** This paper's **529 anchors over the submitted material**, and a further **36** that check the internal change-log declared above — the log is an internal document retained outside this submission and is **declared rather than attached** (file name and md5 in the table above; available on request), and **no reported result, number or claim depends on it**. The companion paper's anchors and these are *one shared instrument*. Neither paper presents the anchor system, the six-model review protocol, or the working method as its own methodological contribution; each cites them as process.
+**The audit-anchor system falls under the same convention.** This paper carries **529 anchors over the submitted material** plus **36** that check the internal change-log declared above; the log is retained outside this submission and is **declared rather than attached** (file name and md5 in the table above), and **no reported result, number or claim depends on it**. The companion paper’s anchors and these are *one shared instrument*. Neither paper presents the anchor system, the audit protocol, or the working method as its own methodological contribution; each cites them as process.
 
 
 ---
 
-**Note on the compression record.** Earlier versions of this file ended with a "compression record" that reproduced, verbatim, the material removed from the main text by the length-reduction passes. That record is **not part of this submission**: it is maintained as a separate internal document, because it is a working ledger rather than supplementary scientific material, and because its citation indices are those of the pre-consolidation reference list. Everything the record preserved that bears on the paper's claims is printed in the live text and appendices above; the released runs, tables and scripts named there remain the checkable record.
+**Note on the compression record.** The "compression record" that reproduced the material removed from the main text by the length-reduction passes is **not part of this submission**: it is a separate internal document — a working ledger rather than supplementary scientific material, with the pre-consolidation citation indices. Everything the record preserved that bears on the paper's claims is printed in the live text and appendices above; the released runs, tables and scripts named there remain the checkable record.
 
 **Data and code availability.** The released readouts, the three-way split construction and the analysis scripts that produce every number in this paper are archived at https://github.com/YBP2005/Cross-Domain-YOLOv12 (commit reproducibility-package-v1), together with a manifest of file hashes and a table mapping each reported number to the file and rows it comes from. The trained checkpoints, and the per-seed file of the B-pipeline published-protocol readings, are available from the corresponding author on reasonable request.
 
