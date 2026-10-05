@@ -261,7 +261,7 @@ def main():
     for need, what in ((r'^## 任务定义', '任务定义（A/B/Q/V/C/D/E）'),
                        (r'^## 四条前置说明', '四条前置说明'),
                        (r'^### 4 评分细则本体', '评分细则本体（8 维）'),
-                       (r'^【本轮送审材料】', '材料自述块')):
+                       (r'^【本轮送审材料】|^【本稿的结构自述', '材料自述块')):
         if not re.search(need, combined, re.M):
             fails.append('包内缺少「%s」段' % what)
     if fails:
