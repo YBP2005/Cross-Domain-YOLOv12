@@ -72,7 +72,7 @@ python code/14_verify_claims.py              # 稿内数值 ↔ 底座一致性�
 python code/39_verify_protocol_fingerprint.py # 训练协议指纹：PASS = 底座全为 32/16/640
 ```
 
-**第一轮盲审报出"放行包开箱不可跑"（5 份独立命中），根因两条，均已修**：
+**放行包曾出现"开箱不可跑"的问题，根因两条，均已修**：
 
 1. **目录结构与脚本约定不符**（`data/` vs `base/`、`provenance/deliver` vs `deliver`）⇒ 已按约定重排；
 2. **脚本里写死了作者机器的绝对路径**（`BASE = r"D:\deepseeknalysis\worknalysis_M3"`）

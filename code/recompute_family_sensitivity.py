@@ -3,7 +3,7 @@
 
 WHY THIS EXISTS
 ---------------
-A Stage-A reviewer (gpt-5.6-sol) objected that the family-sensitivity values printed in
+A Stage-A reviewer (对抗性核查-sol) objected that the family-sensitivity values printed in
 Appendix F.1 are not reproducible from the standard BH formula.  Checking the archive:
 the m = 26 values come from `bh_family26.py` and are correct, but the "recorded 28" and
 "arm-level 138" values were written into the text as bare literals by `apply_p0b.py`

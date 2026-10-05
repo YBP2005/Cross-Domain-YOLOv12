@@ -3,7 +3,7 @@
 
 为什么有这一件
 --------------
-第一轮盲审里 5 份独立报出"放行包开箱不可跑"。根因有两条：
+对抗性核查里 5 份独立报出"放行包开箱不可跑"。根因有两条：
   ① 目录结构与脚本约定不符（`data/` vs `base/`、`provenance/deliver` vs `deliver`）—— **已用 mv 修好**；
   ② **脚本里到处是作者机器的绝对路径** `BASE = r"D:\\deepseek\\analysis\\work\\analysis_M3"`
      —— 这是**真正的不可移植**：换一台机器、或只把 `复现仓库\\` 拷给别人，全部脚本立刻打不开底座。
@@ -31,7 +31,7 @@ def _repo_root():
     """仓库根 = 含有 `base/run_table_canonical.csv` 的那一级（从本文件向上找）。
 
     ⚠ 放行副本原先写死 `BASE = r"D:\\\\deepseek\\\\analysis\\\\work\\\\analysis_M3"`（作者机器），
-      换台机器就打不开底座 —— 第一轮盲审有 5 份独立报出"开箱不可跑"。故改为反推。
+      换台机器就打不开底座 —— 对抗性核查有 5 份独立报出"开箱不可跑"。故改为反推。
     """
     here = os.path.dirname(os.path.abspath(__file__))
     d = here

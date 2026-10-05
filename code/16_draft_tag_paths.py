@@ -687,7 +687,7 @@ if os.path.exists(_MDE_CSV):
     _must('§9 两个种子数的中位标准化效应量（4.37 vs 3.03）',
           True, r'is **4.37** among the three-seed cells against **3.03**', target=_XCHK)
     _must('§9 明写 n=10 是**事后**的账、不是事前规则',
-          # ⚠ 2026-10-04 第六轮：**盲审（GLM-5.3-Flash）查出 Appendix P.2 的算术错** ——
+          # ⚠ 2026-10-04 第六轮：**对抗性核查查出 Appendix P.2 的算术错** ——
           #   n=9（不是 n=10）才是中位噪声下可判 0.30 pp 的最小整数；P.1 的 gamma 表原也用了错口径。
           #   正文与补材均已更正 ⇒ 期望串随之更新（只留"事后账"这个判据，不绑死措辞）。
           True, 'retrospective account, not an ex-ante rule', target=_XCHK)
