@@ -1,0 +1,19 @@
+=== 步骤 0：自证（用同一套参数重算 dota15_tr）===
+  0/1411  0.0 min
+  320/1411  0.3 min
+  640/1411  0.8 min
+  960/1411  1.6 min
+  1280/1411  1.9 min
+  重算 shape=(1411, 512)  缓存 shape=(1411, 512)
+  特征最大绝对差 = 0.000e+00    标签一致 = True
+  ✅ 自证通过（逐位一致）⇒ 参数与既有缓存同源
+=== 步骤 1：提取 dota（/root/datasets_mask/dota_yolo/images/train）===
+  dota train 图数 = 1411（取前 1411）
+  0/1411  0.0 min
+  320/1411  0.3 min
+  640/1411  0.8 min
+  960/1411  1.7 min
+  1280/1411  2.0 min
+  dota 特征 (1411, 512)，有目标图 1409/1411 (99.9%)
+  已写 /workspace/otdd_results/feat_dota_tr.npy 与 lab_dota_tr.npy
+DONE
