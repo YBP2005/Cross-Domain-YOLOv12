@@ -134,7 +134,7 @@ def read_local_archive():
     # ★ 扇扫**所有**本地归档解包目录（A 与 B 各一个），而不是写死 B 那一个。
     #   动机：A 机关掉后，从云上取不到 c3/c4 ⇒ 只能从归档读；
     #   而两个归档都在本地 ⇒ 一份读不全就会少一半格。
-    base = os.path.abspath(os.path.join(HERE, '..', 'deliver'))
+    base = os.path.abspath(os.path.join(HERE, '..', 'provenance', 'deliver'))
     run_dirs = []
     for sub in sorted(glob.glob(os.path.join(base, 'G1_*归档*'))):
         if os.path.isdir(sub):
@@ -198,7 +198,7 @@ def main():
     ap.add_argument('--require-all', action='store_true')
     ap.add_argument('--cells', nargs='+', default=None,
                     help='只判这些格（如 --cells c1 c2）；默认全部')
-    ap.add_argument('--out', default=os.path.join(HERE, '..', 'deliver', 'G1判读_结果.md'))
+    ap.add_argument('--out', default=os.path.join(HERE, '..', 'provenance', 'deliver', 'G1判读_结果.md'))
     a = ap.parse_args()
     try:
         import _cloud_creds as C

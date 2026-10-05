@@ -121,40 +121,40 @@ def main():
     # ---------- 4b) ★★ 2026-10-04 扩展：**交付件全域控制字符扫描** ----------
     #   起因：控制字符扫描原先只扫主稿与补材，而真实事故恰好出在**没被扫到的交付件**里
     #   —— `deliver/P1_理论扩张执行记录_20261004.md` 藏着 4 个 BEL、6 个退格、2 个换页符、1 个 TAB，
-    #   全是 heredoc 吃反斜杠留下的伤（`ar`→`|`+BS、`rac`→FF+'rac'）。**扫不到就等于没有守卫。**
+    #   全是 heredoc 吃反斜杠留下的伤（`\bar`→`|`+BS、`\frac`→FF+'rac'）。**扫不到就等于没有守卫。**
     #   判据：`deliver/` 与 `work/analysis_M3/` 下**全部 .md/.csv/.tsv/.json/.py** 都不得含 C0 控制字符。
     # ★ 2026-10-05：两种布局（作者树 work/analysis_M3/deliver ｜ 放行仓库 deliver/）
-    _cands = [os.path.join(ROOT, 'work', 'analysis_M3', 'deliver'),
-              os.path.join(ROOT, 'deliver')]
-    DELIV = next((d for d in _cands if os.path.isdir(d)), _cands[0])
+    # ★ 2026-10-05（方案 B）：`deliver/` 已整体移出放行件（只留 8 件在 `provenance/deliver/`）。
+    #   旧版只扫一个写死的目录 ⇒ 目录不在就"扫 0 件却报全绿"。
+    #   现改为**递归扫描整个放行件/作者树**：守卫自己、主稿、底座、脚本全在范围内，
+    #   不再依赖任何会消失的目录名；且**扫 0 件仍硬失败**。
+    SKIP_DIRS = {'.git', '__pycache__', 'node_modules'}
     EXTS = ('.md', '.csv', '.tsv', '.json', '.py', '.txt')
     bad_files = []
     scanned = 0
-    if os.path.isdir(DELIV):
-        for fn in sorted(os.listdir(DELIV)):
-            fp = os.path.join(DELIV, fn)
-            if not os.path.isfile(fp) or not fn.lower().endswith(EXTS):
-                continue
-            scanned += 1
-            try:
-                raw = io.open(fp, encoding='utf-8', newline='').read()
-            except Exception:
-                continue
-            # 第一版把 `\r` 也算了进去 -> 51/51 全报红（这些文件是 CRLF，`\r` 合法）。
-            #   判据必须是"**除 TAB/LF/CR 之外**的 C0"。
-            # ★ 2026-10-04 第二个坑：判据必须写 `ord(c) not in (9,10,13)`。
-            #   原来写 `c not in (9,10,13)` —— `c` 是**字符串**，而 `'\n' in 10` 会去比 `10` 的
-            #   十进制表示 `"10"` ⇒ **恒为 True** ⇒ 每个文件都被判成"有问题"（51/51 假红）。
-            #   这是 Python 的 `str in int` 陷阱（`int.__contains__` 把自变转成 str）。
-            hits = [(i, c) for i, c in enumerate(raw)
-                    if ord(c) < 32 and ord(c) not in (9, 10, 13)]
-            if hits:
-                bad_files.append((fn, len(hits), hits[0]))
+    _files = []
+    for _dp, _dn, _fn in os.walk(ROOT):
+        _dn[:] = [d for d in _dn if d not in SKIP_DIRS]
+        for _f in _fn:
+            if _f.lower().endswith(EXTS):
+                _files.append(os.path.join(_dp, _f))
+    for fp in sorted(_files):
+        scanned += 1
+        try:
+            raw = io.open(fp, encoding='utf-8', newline='').read()
+        except Exception:
+            continue
+        # 判据：**除 TAB/LF/CR 之外**的 C0（`ord(c) not in (9,10,13)`；
+        #   写 `c not in (9,10,13)` 会踩 Python 的 `str in int` 陷阱）。
+        hits = [(i, c) for i, c in enumerate(raw)
+                if ord(c) < 32 and ord(c) not in (9, 10, 13)]
+        if hits:
+            bad_files.append((os.path.relpath(fp, ROOT), len(hits), hits[0]))
     if scanned == 0:
         # ★★ 2026-10-05：**空集合硬失败**（经验 #56）。
         #   旧版在放行布局下目录不存在 ⇒ 扫 0 件却报"六项全绿"，
         #   而真实事故恰恰出在没被扫到的交付件里。
-        fails.append('交付件控制字符扫描：扫到 **0 件**（目录 %s）—— 空集合硬失败' % DELIV)
+        fails.append('控制字符扫描：扫到 **0 件**（根 %s）—— 空集合硬失败' % ROOT)
     if bad_files:
         detail = '；'.join('%s(%d 处，首处 %r)' % (f, n, c) for f, n, c in bad_files[:4])
         fails.append('交付件里出现 C0 控制字符：%s' % detail)
@@ -200,8 +200,8 @@ def main():
     print('数学环境控制字符：%d 处%s' % (len(MATH_CTRL), '' if not MATH_CTRL else ' ★'))
 
 
-    # ---------- 5) ★★ 2026-10-04 新增：**"幽灵引用"扫描** ----------
-    #   起因（对抗性核查点名）：补材有一节声称 Fig. S1–S5 是
+    # ---------- 5) ★★ 2026-10-04 新增：**引用命中扫描** ----------
+    #   起因（对抗性核查 A3，8 份里多份点名）：补材有一节声称 Fig. S1–S5 是
     #   "cited from the main text"，而**主稿里这些出现 0 次** —— 两边都不算错，
     #   但**合起来是一句不成立的自述**。控制字符/CJK/引文编号三类守卫都抓不到它，
     #   因为它是**语义**矛盾，不是**字符串**问题。⇒ 判据：补材自称被主稿引用的每一个
@@ -211,7 +211,7 @@ def main():
         supp = io.open(supp_path, encoding='utf-8', newline='').read()
         body_main = text.split('## References')[0]
         ghost = []
-        for m in re.finditer(r'(Fig\.\s*S\d+|Table\s*S\d+|T\d+)[^.]{0,120}?cited (?:from|in) the main text',
+        for m in re.finditer(r'(Fig\.\s*S\d+|Table\s*S\d+|\bT\d+\b)[^.]{0,120}?cited (?:from|in) the main text',
                              supp):
             tok = m.group(1).replace(' ', '')
             if tok not in body_main:
@@ -227,8 +227,8 @@ def main():
             if 'Fig. S1' not in body_main and 'Fig. S1' not in ghost:
                 ghost.append('Fig. S1（概称 S1–S5）')
         if ghost:
-            fails.append('补材自称"被主稿引用"但主稿 0 次引用的件：%s（幽灵引用）' % '、'.join(sorted(set(ghost))))
-        print('幽灵引用：%d 处' % len(set(ghost)))
+            fails.append('补材自称"被主稿引用"但主稿 0 次引用的件：%s（引用命中）' % '、'.join(sorted(set(ghost))))
+        print('引用命中：%d 处' % len(set(ghost)))
     if fails:
         print('\n❌ 失败 %d 条：' % len(fails))
         for f in fails:

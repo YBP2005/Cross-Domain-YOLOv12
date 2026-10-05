@@ -16,7 +16,7 @@ import glob
 
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
-ARCH = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'deliver',
+ARCH = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'provenance', 'deliver',
                     'G1_B机run归档_20261003')
 PAT = re.compile(r'^(g1_c\d)_([a-z0-9]+)_(base100|strat100)_(10p|50p)_s(\d+)$')
 # data 文件名 -> 训练图像数（实测）
@@ -52,7 +52,7 @@ def main():
                          epochs=n, ntrain=NTRAIN.get(data, '?'), data=data,
                          val_map=last))
     outp = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..',
-                                        'deliver', 'G1_B机_逐run摘要.csv'))
+                                        'provenance', 'deliver', 'G1_B机_逐run摘要.csv'))
     with io.open(outp, 'w', encoding='utf-8', newline='\n') as fh:
         w = csv.DictWriter(fh, fieldnames=['run', 'cell', 'domain', 'arm', 'budget', 'seed',
                                            'epochs', 'ntrain', 'data', 'val_map'])

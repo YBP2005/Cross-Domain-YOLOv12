@@ -24,7 +24,7 @@ sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 import _cells as C            # noqa: E402
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DEL = os.path.join(BASE, 'deliver')
+DEL = os.path.join(BASE, 'provenance', 'deliver')
 SEEDPAT = re.compile(r'_s(\d+)(n?)$')
 SEEDS10 = list(range(42, 52))
 
@@ -469,7 +469,7 @@ w('4. 损失轴判定用 `scripts/36_A20_loss_contrast.py` 的同一口径（四
 w('5. ⚠ 新 run 名**不要**带 `_oomfix` / `_REPB` / `_PARTIAL_` 后缀（会让种子回落 42，见铁律 18）。')
 w()
 
-open(os.path.join(BASE, 'deliver', '补实验方案_损失与架构_20261001.md'),
+open(os.path.join(BASE, 'provenance', 'deliver', '补实验方案_损失与架构_20261001.md'),
      'w', encoding='utf-8').write('\n'.join(L) + '\n')
 print('n=5 合计:', len(FINAL_A))
 print('n=10 合计:', len(FINAL_B))

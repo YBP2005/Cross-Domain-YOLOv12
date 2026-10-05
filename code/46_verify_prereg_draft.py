@@ -53,9 +53,9 @@ def _try_read(path, what=''):
     except Exception as _e:
         _MISSING.append('%s（%s）' % (what or os.path.basename(str(path)), str(_e)[:60]))
         return ''
-DRAFT = os.path.join(ROOT, 'deliver',
+DRAFT = os.path.join(ROOT, 'provenance', 'deliver',
                      '预注册草案_预算×域差2x2分离设计_20261004.md')
-MDE_CSV = os.path.join(ROOT, 'deliver', 'theory_B_MDE_by_cell.csv')
+MDE_CSV = os.path.join(ROOT, 'provenance', 'deliver', 'theory_B_MDE_by_cell.csv')
 
 ALPHA, BETA = 0.05, 0.20
 BAR = 0.30

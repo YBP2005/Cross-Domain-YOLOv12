@@ -24,7 +24,7 @@
 | `code/`（41 个脚本） | 全部分析脚本。**核心是 `_cells.py`** —— 项目的**唯一格解析器**（格的键 = 配对 × 族 × 标注预算 × 轮数；多列口径；结局优先级）。**任何复算都应当 import 它，不要自己重解析** |
 | `figures/F1_design_v2.png` | 主稿 Fig. 1（协议示意图） |
 | `M3_draft/` | **主稿与补材**（与作者侧逐字节一致，见 `build/sync_docs.py`） |
-| `deliver/`（58 件） | **本轮全部交付件与分析记录**（含逐格功效表 `theory_B_MDE_by_cell.csv`） |
+| `provenance/deliver/`（8 件） | **守卫依赖的记录与逐格功效表**（`theory_B_MDE_by_cell.csv` 等）；其余作者侧台账**随隔离移出放行件** |
 | `analysis/`（29 件） | A 系列生成件（普查与扫描结果） |
 | `base/instance_scans/` | 标注密度扫描的**原始输出**（`_inst_A.txt` / `_inst_B.txt`，补材 A18 的底稿） |
 | `build/` | 本次组装盲审包与文献材料的脚本（可复跑，含断言）：`build_refs_p1.py`、`build_head_p1.py`、`build_package_p1.py` |
@@ -75,7 +75,7 @@ python code/39_verify_protocol_fingerprint.py # 训练协议指纹：PASS = 底�
 **放行包曾出现"开箱不可跑"的问题，根因两条，均已修**：
 
 1. **目录结构与脚本约定不符**（`data/` vs `base/`、`provenance/deliver` vs `deliver`）⇒ 已按约定重排；
-2. **脚本里写死了作者机器的绝对路径**（`BASE = r"D:\deepseeknalysis\worknalysis_M3"`）
+2. **脚本里写死了作者机器的绝对路径**（`BASE = r"D:\deepseek\analysis\work\analysis_M3"`）
    ⇒ 已全部改成**从脚本位置反推仓库根**（`build/make_portable.py` 与 `build/fix_repo_paths*.py` 可复跑）。
    改完后 `code/` 下**再无任何作者机绝对路径**。
 

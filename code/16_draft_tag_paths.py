@@ -33,7 +33,7 @@ def _find_root(start):
 BASE = _find_root(os.path.dirname(os.path.abspath(__file__)))  # ★ 向上查找（放行=仓库根；作者树=analysis_M3）
 
 
-OUT = os.path.join(BASE, 'deliver')
+OUT = os.path.join(BASE, 'provenance', 'deliver')
 _OPEN = []   # ★ 2026-10-05：**无条件初始化**，避免只在分支内定义导致 NameError
 
 
@@ -872,7 +872,7 @@ else:
     #   补材全文**没有"40"**。底座 threeway=388 run，与 40/41 **不是一个总体** ⇒ 无法定案。
     #   这里**不断言稿内数字**（不擅自改），只断言**分歧已被登记**，避免它被静默遗忘。
     _m41 = re.search(r'\*\*(\d+) evaluations over (\d+) runs\*\*', _SUPT)
-    _REC = _try_read(os.path.join(BASE, 'deliver',
+    _REC = _try_read(os.path.join(BASE, 'provenance', 'provenance', 'deliver',
                              '修正记录_底座扩容后全量复核_20261002.md'))
     # ⚠ 本项**不能**放进 `_XCHK`：`_XCHK` 的期望串是**拿稿内**（`_d`）去比，
     #   而这里要比的是**登记件**。第一版放进 `_XCHK` ⇒ 永远红（已踩）。
@@ -965,7 +965,7 @@ _must('参考文献 YOLO26 语料计数', bool(_bb.get('yolo26n')),
 #     · `shwd2sf→sfchd20` test 13 种子：底座 **+0.6277** ⇒ 3 位应为 **+0.628**，§3/§6 写 +0.628、
 #       而 §7 写 +0.627 —— **同一个量两个数**。
 #   来源 = `deliver/§7_clean三方协议_run清单_20261001.md` 的**计算值**列。
-_CLEAN = _try_read(os.path.join(BASE, 'deliver',
+_CLEAN = _try_read(os.path.join(BASE, 'provenance', 'provenance', 'deliver',
                  '§7_clean三方协议_run清单_20261001.md'))
 _clean = re.findall(r'\| \*\*\+([\d.]+)\*\* \|', _CLEAN)
 if len(_clean) >= 4:

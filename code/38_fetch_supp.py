@@ -28,7 +28,7 @@ POD = os.path.join(os.path.dirname(BASE), 'pod_run.py')
 
 
 def plan_names():
-    p = os.path.join(BASE, 'deliver', '补实验_run清单.csv')
+    p = os.path.join(BASE, 'provenance', 'deliver', '补实验_run清单.csv')
     return [r['name'] for r in csv.DictReader(open(p, encoding='utf-8'))]
 
 
