@@ -1,0 +1,8 @@
+# three-way protocol: train = same label subset as the published runs; val = carve-out from the pool
+# minus that subset (seed 42); test = the corpus's own held-out split. Built 2026-09-14T07:37:36Z.
+path: /root/datasets_mask/dota15_yolo
+train: images/train_dota15_20p
+val: carve_dota15_20p/images
+test: images/val
+nc: 16
+names: ['plane', 'ship', 'storage-tank', 'baseball-diamond', 'tennis-court', 'basketball-court', 'ground-track-field', 'harbor', 'bridge', 'large-vehicle', 'small-vehicle', 'helicopter', 'roundabout', 'soccer-ball-field', 'swimming-pool', 'container-crane']

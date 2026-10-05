@@ -1,0 +1,7 @@
+# three-way protocol, built 2026-09-14T15:46:55Z
+path: /root/datasets_mask/firesmoke_clean
+train: images/train_firesmoke_20p
+val: carve_firesmoke/images
+test: images/test
+nc: 2
+names: ['fire', 'smoke']
