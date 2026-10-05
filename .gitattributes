@@ -1,0 +1,4 @@
+# 行尾固定：shell 脚本必须 LF（否则在 Linux/macOS 上无法执行）
+*.sh text eol=lf
+# 其余按仓库原样，不做批量转换
+* -text
