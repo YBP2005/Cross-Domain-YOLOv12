@@ -1472,8 +1472,12 @@ print('逐句脚注表：%d 行' % nrow)
 
 _n_struct = len([1 for _t, _l in _XCHK if _l == '__NEVER_MATCHES__']) + len(
     [1 for _t, _l in _RCHK if _l == '__NEVER_MATCHES__'])
-print('\n守卫报红 %d 条（数值 %d + 解析失败/漂移 %d）'
-      % (len(FAILS) + _n_struct, len(FAILS), _n_struct))
+# ★ 2026-10-06（作者指示）：**表格里的漂移也计入报红与 exit code**。
+_n_parse = len([1 for _t, _l in _XCHK if _l == '__NEVER_MATCHES__']) + len(
+    [1 for _t, _l in _RCHK if _l == '__NEVER_MATCHES__'])
+_n_tbl = len(_xbad) + len(_rbad) + len(_rdbad)
+print('\n' + '守卫报红 %d 条（数值 %d + 解析失败 %d + 表格漂移 %d）' % (len(FAILS) + _n_parse + _n_tbl, len(FAILS), _n_parse, _n_tbl))
+sys.exit(1 if (FAILS or _n_parse or _n_tbl) else 0)
 for d, got, want in FAILS:
     print('  ❌ %s: got=%s want=%s' % (d, got, want))
 print('输出 -> %s' % os.path.join(OUT, '新稿标签_可复算路径.md'))
