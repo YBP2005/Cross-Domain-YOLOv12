@@ -4,10 +4,13 @@
 > （章节号／表号／原句）；这里的内容用于核对一个审稿人本来就会核对的公开事实，
 > **不能替代包内定位**。
 >
-> **公开仓库**：`https://github.com/YBP2005/Cross-Domain-YOLOv12`（commit `a282a67bbd79`）。
+> **公开仓库**：`https://github.com/YBP2005/Cross-Domain-YOLOv12`（提交 tag `p1r3-submitted-20261005`）。
 > **连不上 GitHub 的模型请直接读本目录**——内容与仓库同源。
-> **核哈希请对着 `MANIFEST_sha256.csv` 核**（逐文件字节数 + sha256；它登记本目录内**除它自身**以外的每个文件，
-> 因此目录里数到的文件数会比它的行数多 1，**这不是缺件**）。
+> **核哈希请对着 `MANIFEST_sha256.csv` 核**（逐文件字节数 + sha256）。★ **它有意排除 6 项**：它自身，以及 5 个**由守卫生成的产物**
+> （`code/deliver/_audit_sources.json`、`code/deliver/审计数字_来源与可复算路径.md`、
+> `provenance/deliver/theory_B_全档案功效审计_复算_20261004.md`、`provenance/deliver/新稿_逐句脚注表.md`、
+> `provenance/deliver/新稿标签_可复算路径.md`）—— 它们是**跑守卫时会重写的派生物**，
+> 不是随包冻结的原始件。除此之外，**其余每个文件都逐字节登记**。
 
 ---
 
@@ -31,7 +34,7 @@
 | `MANIFEST_sha256.csv` | 逐文件字节数 + sha256 |
 
 **主稿与补材的 md5**（与盲审包内的自述块一致）：
-主稿 `46C9CFC9D4CA64137CEC36FF2A7EDF76`、补材 `B20AB09D9781EC53E97B2825BDD30A3A`。
+主稿 `818E8EF2294F346ABF3C58F466FD2353`、补材 `D229B698E6C6E1BE6024B3F01B992769`。
 
 ---
 

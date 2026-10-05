@@ -340,7 +340,7 @@ def main():
     #   实测：169 项清单里恰好这 4 条 sha256 不符，而**字节数全都相同**。
     #   处置：**移出 MANIFEST**（README 里写明被有意排除），
     #   而不是放宽整张清单的判据 —— 其余文件的逐字节校验必须保持严格。
-    MANIFEST_EXCLUDE = set(['_audit_sources.json', '审计数字_来源与可复算路径.md', '新稿_逐句脚注表.md', '新稿标签_可复算路径.md'])
+    MANIFEST_EXCLUDE = set(['_audit_sources.json', '审计数字_来源与可复算路径.md', '新稿_逐句脚注表.md', '新稿标签_可复算路径.md', 'theory_B_全档案功效审计_复算_20261004.md'])
     for dirpath, dirs, files in os.walk(REPO):
         dirs[:] = [d for d in dirs if d != '.git']   # ★ 2026-10-05：仓库已成 git 仓库，清单不收录 .git/
         for fn in files:
