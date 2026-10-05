@@ -419,9 +419,9 @@ Four properties we state rather than leave to be discovered. (i) **The family si
 | mendein | sns | 1 | -0.42 | -0.56 | no |
 | mendein | pws | 5 | +1.03 | +0.17 | no |
 
-Marginals over the fifteen cells, printed as a **range** because one of the fifteen $\Delta$mAP50-95 differences is exactly zero and its sign convention moves the count: **10 of 15** have $\Delta$mAP50 $<0$ and **9–10 of 15** have $\Delta$mAP50-95 $\geq 0$ (10 if the exact zero is counted as non-negative, 9 if it is not); the number of cells showing both signs is **5**, and under independence the expectation would be **5.3 to 6.7**, so the observed count does not exceed chance under either convention.
+Marginals over the fifteen cells, under **one stated sign convention**: the exact zero of $\Delta$mAP50-95 is counted by its rounded sign, so **`+0.00` (`fsin`/`sns`) counts as non-negative and `-0.00` (`mask`/`pws`) counts as negative** — the convention the table's own `yes` column already follows. Under it **10 of 15** have $\Delta$mAP50 $<0$ and **9 of 15** have $\Delta$mAP50-95 $\geq 0$; the number of cells showing both signs is **4**, equal to the number of `yes` rows, and under independence the expectation would be **6.0**, so the observed count does not exceed chance.
 
-*Reading.* The two metrics move in opposite directions in four cells (rows marked yes) — that is the count the main text reports. The marginals are printed beside it as a **range, not a point**, for two reasons, and both are stated so that the count can be re-derived: (i) one of the fifteen $\Delta$mAP50-95 differences is $-0.00$, so counting it as negative gives **9** of 15 non-negative in mAP50-95 and counting it non-negative gives **11**; (ii) the $\Delta$mAP50 marginal is **9** of 15 on the released runs, and the point value **10** appears only under a different aggregation of the cells carrying more than one run. Across that range independent signs would already give **5.4–7.3** such cells, so the observed four is a **description of this accounting, not evidence of a mechanism or of a family-level law**; the cell-level mechanism evidence is the per-class decomposition the main text points to, which is measured on **two** cells — the minority-class recall cost on SHWD→SFCHD and the coverage channel on the dota15 probe — and is reported as such, cell by cell. Seed counts are in the `runs` column: 11 of the 15 cells are single-run, four carry paired seeds, and the table is therefore a sign accounting rather than a test.
+*Reading.* The two metrics move in opposite directions in four cells (rows marked yes) — that is the count the main text reports, and it is the count under the convention just stated. The count re-derives from the table: **10 of 15** cells have $\Delta$mAP50 $<0$ and **9 of 15** have $\Delta$mAP50-95 $\geq 0$, and those two conditions meet in exactly those **four** cells. Counting `-0.00` (`mask`/`pws`) as non-negative instead would give **10 of 15** and **five** such cells, with an independent expectation of **6.7**; the table's `yes` column and this paper use the rounded-sign reading, under which the two counts agree at four. Against the stated expectation of **6.0**, the observed four is a **description of this accounting, not evidence of a mechanism or of a family-level law**; the cell-level mechanism evidence is the per-class decomposition the main text points to, which is measured on **two** cells — the minority-class recall cost on SHWD→SFCHD and the coverage channel on the dota15 probe — and is reported as such, cell by cell. Seed counts are in the `runs` column: 11 of the 15 cells are single-run, four carry paired seeds, and the table is therefore a sign accounting rather than a test.
 
 # Appendix J. The joint bound of §4, its derivation and its empirical reading
 
@@ -823,7 +823,7 @@ Table S1 lists the thirteen domain pairs studied: seven within-domain pairs; thr
 frozen at **2026-09-13 01:37:27 UTC**, at which time the run directory did not exist, so the
 criterion could not have been chosen after seeing a result. The registration document is
 `预注册_新目标域复制实验_冻结_20260913.md` (11,611 bytes, md5 `9b09a573718546b62fea41b31935a05b`);
-the file itself records a **content hash of `6a7eee7b3e34b15ce5adcba14cf7ea36`** for the text above its signature line. That value **is reproducible, and we state the convention it is computed over**: the span is the text above the signature line and the convention is LF-normalised, joined with LF, with a single trailing LF, which yields **7,175 bytes** for the hashed span; the search was by exhaustive enumeration over start point, end point, trailing newline and line-ending convention, and only the two equivalent solutions (first 76 lines plus a trailing LF, equivalently the first 77 lines with no trailing LF) reproduce the recorded digest. **The full-file md5 `9b09a573718546b62fea41b31935a05b` and the byte count 11,611 do match** the values recorded in this submission, and the freeze timestamp (2026-09-13 01:37:27 UTC) and the absence of any run directory at that time are recorded independently; what cannot be independently checked is the inner hash, and we say so rather than asserting a match.
+the file itself records a **content hash of `6a7eee7b3e34b15ce5adcba14cf7ea36`** for the text above its signature line. That value **is reproducible, and we state the convention it is computed over**: the span is the text above the signature line and the convention is the first 77 lines, LF-normalised, with no trailing LF, which yields **7,175 bytes** and md5 `6a7eee7b3e34b15ce5adcba14cf7ea36` for the hashed span; the search was by exhaustive enumeration over start point, end point, trailing newline and line-ending convention, and only the two equivalent solutions (first 76 lines plus a trailing LF, equivalently the first 77 lines with no trailing LF) reproduce the recorded digest. **The full-file md5 `9b09a573718546b62fea41b31935a05b` and the byte count 11,611 do match** the values recorded in this submission, and the freeze timestamp (2026-09-13 01:37:27 UTC) and the absence of any run directory at that time are recorded independently.
 
 **What the registration fixes, quoted rather than paraphrased.** Three unsaturated target domains; a
 20% label budget; YOLOv12n with the shape-IoU loss; and a criterion of **≥2/3 pairs meeting all three of conventional significance (p < 0.01), at least eight of
@@ -862,6 +862,11 @@ targets**, not about magnitude on any held-out target.
 tiers and states the measured shift of each tier (**D = 1.66** for the matched-corpus pair,
 **D = 5.37** for the cross-corpus pair, s-OTDD). This appendix gives the measurement those two
 numbers come from, so that they are not carried on assertion alone.
+
+**Column.** The 2×2 is reported on the **val** column, not on the **test** column the
+registration froze; the per-run values are `provenance/deliver/G1_B机_逐run摘要.csv`, which
+covers **c1 and c2 only** under the column name `val_map`, while c3 and c4 exist only as
+summaries.
 
 **The instrument.** s-OTDD, reusing the released shift codebase (`shift_families.py`) rather than
 a re-implementation. Protocol points, all fixed before the measurement: ResNet-18 features at
@@ -1236,8 +1241,8 @@ even though the two columns' mean gap is not**: the difference between the colum
 $\bar\Delta_{\text{test}}-\bar\Delta_{\text{val-best}}$, is $-0.043$ pp at 30 epochs
 ($t=-0.46$, $p=0.65$) against $-0.482$ pp at 100 epochs ($t=-3.12$, $p=0.003$). The verdict
 flip and the mean gap are therefore **two different statements** and are not combined here.
-Second, of the seven 100-epoch cells, **five are verdicts that are unresolvable on the test
-column and resolvable on the val-best column**; the remaining two move the other way.
+Second, **all seven** of the 100-epoch verdict changes run in the same direction: **unresolvable on
+the test column and resolvable on the val-best column**; **none moves the other way**.
 
 **Reporting clusters, not independent experiments.** The seven 100-epoch cells fall in **four $(\text{pair},\text{family})$ clusters** — three of the seven share one pair and family, and slices
 inside a family share their data source, pretraining and seed set. These clusters are **reporting

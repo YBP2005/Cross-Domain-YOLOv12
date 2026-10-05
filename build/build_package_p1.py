@@ -211,6 +211,10 @@ E:\WorkBuddy\<你的模型名>\p1r3_review_<你的模型名>_20261005.md
 '''
 
 
+def rel_parts(p):
+    return p.replace(chr(92), '/').split('/')
+
+
 def sha256(path):
     h = hashlib.sha256()
     with open(path, 'rb') as fh:
@@ -340,7 +344,14 @@ def main():
     #   实测：169 项清单里恰好这 4 条 sha256 不符，而**字节数全都相同**。
     #   处置：**移出 MANIFEST**（README 里写明被有意排除），
     #   而不是放宽整张清单的判据 —— 其余文件的逐字节校验必须保持严格。
-    MANIFEST_EXCLUDE = set(['_audit_sources.json', '审计数字_来源与可复算路径.md', '新稿_逐句脚注表.md', '新稿标签_可复算路径.md', 'theory_B_全档案功效审计_复算_20261004.md'])
+    MANIFEST_EXCLUDE = set([
+    # ★ 2026-10-06：**生成物与备份一律不登记**。
+    #   起因：旧清单把 27 个 `__pycache__/*.pyc` 与 1 个 `.bak` 登记了进去，
+    #   于是清单内容取决于「跑没跑过守卫」——跑过就多 33 条，清过就少 33 条。
+    #   现已把 .pyc / .bak* / __pycache__ 纳入排除，重建后稳定。
+    '_audit_sources.json', '审计数字_来源与可复算路径.md',
+    '新稿_逐句脚注表.md', '新稿标签_可复算路径.md',
+    'theory_B_全档案功效审计_复算_20261004.md'])
     for dirpath, dirs, files in os.walk(REPO):
         dirs[:] = [d for d in dirs if d != '.git']   # ★ 2026-10-05：仓库已成 git 仓库，清单不收录 .git/
         for fn in files:
@@ -348,6 +359,12 @@ def main():
             if os.path.abspath(fp) == os.path.abspath(MANIFEST):
                 continue
             if os.path.basename(fp) in MANIFEST_EXCLUDE:
+                continue
+            # ★ 生成物与备份不登记（否则清单内容取决于跑没跑过守卫）
+            if '__pycache__' in rel_parts(dirpath):
+                continue
+            _bn = os.path.basename(fp)
+            if _bn.endswith('.pyc') or '.bak' in _bn:
                 continue
             rel = os.path.relpath(fp, REPO).replace('\\', '/')
             rows.append((rel, os.path.getsize(fp), sha256(fp)))
