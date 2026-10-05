@@ -14,7 +14,7 @@
 - 主稿词数（同一把尺子，口径内）：**14182 词**。
 - 补充材料 1391 行、约 38394 词。**期刊明写 "Appendices are not included in the page limit"**
   （Guide for Authors 第 567 行），故补材**不计入**上表页数；此数仅作记录。
-- 主稿 md5 `818E8EF2294F346ABF3C58F466FD2353`；补充材料 md5 `D229B698E6C6E1BE6024B3F01B992769`。
+- 主稿 md5 `C2DFEB30A21098AFE448011DE3BC005A`；补充材料 md5 `3548CFF81B617C7E92FDC5C1A8BACCBE`。
 - 页数与词数的**实测冻结件**：`复现仓库\provenance\pages_probe_new\measurement.json`（其 `inputs.main_md5` 与本包主稿 md5 一致才有效）。
 
 【本轮相对**上一版送审材料**的实质变化（请据此判断，不要沿用旧结论）】
