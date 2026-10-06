@@ -798,7 +798,13 @@ Table S1 lists the thirteen domain pairs studied: seven within-domain pairs; thr
 
 † Ten paired seeds per cell, recomputable from `base/run_table_canonical.csv` (family `r10`, `aitod20_3way` / `mask20_3way`, 30 epochs): the released table gives **n = 10** for both, with means **−1.195** and **−2.027 pp**, matching the §8 sentence, which prints the readings and their t values but not n.
 
-**The three rows are three conventions, not three answers to one question.** They differ in the cell set and in the column: the first averages 17 archive cells under the archive's own endpoint rule, the second reads seven 30-epoch cells on the target corpus's own held-out test split, and the third reads two same-domain cells at 30 epochs in the two-term account. No row is a restatement of another and none contradicts another; the comparison the main text draws between the first two is exactly a change of convention.
+**The three rows are three conventions, not three answers to one question.** They differ in the cell set and in the column: the first averages 17 archive cells under the archive's own endpoint rule, the second reads seven 30-epoch cells on the target corpus's own held-out test split, and the third reads two same-domain cells at 30 epochs in the two-term account. No row is a restatement of another and none contradicts another; the comparison the main text draws between the first two is exactly a change of convention. The label-axis differences §4.6 reports are rows of the
+differenced table: `pcb→neu_det` / `s2df`, 10%→50% of labels, reads **−10.714 pp at MDE 3.654 pp** at 30 epochs
+(ratio **2.932**) and **−2.391 pp at MDE 2.395 pp** at 100 epochs (ratio **0.998**); `visdrone→dota15` / `s2ae`,
+10%→50% of labels, reads **+1.978 pp at MDE 0.4189 pp** (ratio **4.722**) at 30 epochs and **+1.193 pp at MDE
+0.2658 pp** (ratio **4.488**) at 100 epochs. On the `pcb` family the 100-epoch endpoint difference therefore sits
+**at** its own MDE while the 30-epoch one clears it by **2.9×**, which is the per-cell form of §4.6's statement that
+several cells behind that count are below their own minimum detectable difference.
 
 **Provenance.** These runs are a separate batch from the published ones: the registered stack (`train_obj.py`, ultralytics 8.4.120) with the `shapeiou` loss, each run driven by its own `*_3way.yaml` and recorded per run in the released per-seed file together with its two arms and its data-order seed. The batch follows the carve builder's timestamp of 2026-09-14T07:37Z and precedes the held-out readout of 2026-09-20; individual launch times are not preserved in the release, so the ordering rests on those two timestamps and not on per-run times.
 
@@ -853,6 +859,17 @@ re-keyed to a checkpoint chosen afterwards.
 | T1-a | `dota15→aitod` | +0.147 | 1.816 | 0.1027 | 6/10 | **fails** |
 | T1-b | `aitod→visdrone` | +0.168 | 4.455 | 0.0016 | 10/10 | significance and direction met; **fails the +0.30 pp magnitude** |
 | T1-c | `visdrone→dota15` | +3.727 | 43.774 | 8.5×10⁻¹² | 10/10 | **meets all three parts** |
+
+**These two pairs are the cells §4.1 re-runs on the epoch axis, so their own-scale MDEs are recorded here.** On the
+released level table (`theory_B_MDE_by_cell.csv`, `test_map50_95`) the 100-epoch cells of the table above carry MDE
+**0.2678 pp** (`visdrone→dota15` / `t1c` / 20% labels / 100 ep) and **0.1186 pp** (`aitod→visdrone` / `t1b` / 20% /
+100 ep), and their 200-epoch counterparts **0.1927 pp** (`visdrone→dota15` / `mech` / 20% / 200 ep) and
+**0.1408 pp** (`aitod→visdrone` / `mech` / 20% / 200 ep) — so the `aitod→visdrone` 200-epoch level of **−0.055 pp**
+lies inside its own MDE while its 100-epoch level of **+0.168 pp** does not. The 100→200 **change** itself is a
+**cross-family** comparison (the 100-epoch cell sits in family `t1c` / `t1b`, the 200-epoch cell in `mech`), so
+neither released table carries it as a row; the one number computed for it is the `aitod→visdrone` contrast in
+`theory_B_MDE_diff_by_cell_说明.md` §8 (**n = 10**, **mean_diff = −0.2230 pp**, **mde_diff = 0.136955 pp**,
+**|mean|/MDE = 1.63×**), quoted there and **not** in either CSV.
 
 **Reading the outcome.** After the correction **two of the three pairs survive at q = 0.05**; on the
 complete three-part criterion **one of three** meets it. Across the pairs the effects move in the
@@ -1097,6 +1114,43 @@ the $n=3$ cells to $n=10$ at their own $\hat\sigma$ leaves **23%** unresolvable 
 at $n=10$; the gap between those two percentages is the part of the contrast that is a selection effect rather than
 an arithmetic one, and we report it as such rather than attributing the whole contrast to either cause.
 
+## P.1-bis The second released per-cell table: the differenced readings (2026-10-06)
+
+**Two released tables, two objects.** The level audit of §P.1 and the table below are computed over the same
+released runs (base `run_table_canonical.csv`) through the same cell parser (`scripts/_cells.py`), and they are
+**not the same quantity**:
+
+* `theory_B_MDE_by_cell.csv` — **147 rows**, the **level** quantities: one row per cell
+  `(pair, family, label budget, epoch budget)` on the `test_map50_95` column with at least three paired seeds,
+  and `sd` is the SD of that **one cell's own** per-seed paired differences $d_s$ (a single budget against its own
+  baseline).
+* `theory_B_MDE_diff_by_cell.csv` — **402 rows**, the **differenced** quantities: one row per **comparison of two
+  budgets** inside one `(pair, family)` group, with $D_s=d_s(\text{to})-d_s(\text{from})$,
+  $\texttt{mean\_diff}=\overline D$, $\texttt{sd\_diff}=\mathrm{SD}(D)$ and
+  $\texttt{mde\_diff}=\gamma(n_{\text{shared}})\cdot\texttt{sd\_diff}$, under the same $\gamma(n)$ and the same
+  `resolvable` rule $|\overline D|\ge\texttt{mde\_diff}$ as §P.1. It carries an `is_endpoint` column (the
+  earliest → latest comparison inside a group) and both reporting columns.
+
+**The counts, recomputed from the CSV rather than quoted.** On `column=test_map50_95` the differenced table holds
+**199** rows, of which `resolvable` is **True 52 / False 147**; **61** of the 199 are `is_endpoint=True`
+(**True 22 / False 39**) and the remaining **138** are interior budget pairs (**True 30 / False 108**). The other
+**203** rows are the `best_map50_95` column, which the 147-row level table never covers, so 199 + 203 = 402.
+
+**Median effect against its own MDE.** The table's own ratio column gives a median
+$|\texttt{mean\_diff}|/\texttt{mde\_diff}$ of **0.4911** on the test column and **0.4733** on the val-best column
+(`theory_B_MDE_diff_by_cell_说明.md` §5): **more than half of the budget-to-budget differences fall inside their own
+MDE**. That is the contrast-level counterpart of the **43 of 147** level count of §P.1, and it is **not** comparable
+to it by subtraction, because the two tables score different objects against different denominators.
+
+**Recomputable path.** From `python -c "import sys;sys.path.insert(0,r'D:\deepseek\analysis\work\analysis_M3\scripts');import _cells as C;rows,G=C.load()"`,
+`cell_of(pair, fam, lb, ep, key)` → per-seed $d_s$ → shared seeds → $D_s=d_s(\text{to})-d_s(\text{from})$
+→ `mean_diff` / `sd_diff` / $\gamma(n)\cdot\texttt{sd\_diff}$, with
+$\gamma(n)=(t_{1-\alpha/2,\,n-1}+t_{1-\beta,\,n-1})/\sqrt n$, $\alpha=0.05$, $\beta=0.20$ as in §P.1. The two
+tables share the key `(pair, family, label budget, epoch budget)` and merge row by row. Two boundary statements
+belong with the table and are recorded in `theory_B_MDE_diff_by_cell_说明.md` §8: a contrast whose two budgets sit in
+**different families** (the `aitod→visdrone` 100→200 change of §4.1) is outside its within-group construction, and the
+**structural** contrasts of §4.4 are outside it by design.
+
 ## P.2 Why ten seeds, and why that is not an ex-ante rule
 
 The registered magnitude bar is $+0.30$ pp ($\S3$; the bar is carried over from the frozen criterion of
@@ -1129,13 +1183,18 @@ case, and the two numbers it supports are different:
 
 **Only two of the 45 paired epoch-axis differences reach an MDE of 0.31 pp or below**: the cell above, and a
 same-domain cell (`dota15→dota15`, 100→200 epochs, $-$0.066 pp at MDE 0.229 pp). A bounded null at this standard is
-therefore a result this design produced at one cross-domain cell, not a claim available archive-wide.
+therefore a result this design produced at one cross-domain cell, not a claim available archive-wide. All three rows are in the differenced table at their own scale:
+`shwd2sf→sfchd` / `b2` / 20% labels / 30→200 ep carries the endpoint difference **−0.018 pp at MDE 0.3064 pp**
+(`ratio_abs_mean_over_mde` **0.0588**), the same-domain `dota15→dota15` / `g3` / 20% / 100→200 ep **−0.066 pp at
+MDE 0.2293 pp** (**0.2878**), and the first row of §4.2, `smoke→sfchd` / `b2` / 20% / 30→200 ep, **−2.161 pp at
+MDE 0.3880 pp** (**5.569**) — so the two epoch-axis endpoints at or below 0.31 pp are exactly the two rows §4.2
+already quotes, and the decreasing-gain row clears its own MDE by **5.6×**.
 
 ## P.4 What this appendix does not claim
 
 It does not calibrate the bars: the noise scale is a lower bound (§P.2) and the thresholds are therefore looser than
 nominal. It does not make the size rule prospective: the rule in §P.2 is retrospective. And it does not extend the
-audit to the differenced readings, which have their own statistics and are not in the released table.
+audit to the differenced readings, which have their own statistics and are now carried row by row in the second released per-cell table (§P.1-bis).
 
 ## P.5 Scope of the two instruments, and the audit's own limits
 
@@ -1151,9 +1210,16 @@ the reading of that cell's **magnitude** is withdrawn.
 Three further limits belong to the audit and are stated here rather than in the article:
 
 1. **It covers levels, not contrasts.** Every conclusion of §4 is stated on a **difference** between two budgets or
-   two backbones, and a difference has its own paired statistic and its own MDE, neither of which is in the released
-   per-cell table. §4.2 quotes one such number explicitly (SD of the per-seed endpoint differences 0.308 pp, hence
-   MDE 0.306 pp). The audit's verdicts are not transferred to the differenced readings.
+   two backbones, and a difference has its own paired statistic and its own MDE, neither of which is in the level table of §P.1, and both of which are carried row by row in the differenced
+   table of §P.1-bis (2026-10-06). §4.2 quotes one such number explicitly (SD of the per-seed endpoint differences 0.308 pp, hence
+   MDE 0.306 pp). The audit's verdicts are not transferred to the differenced readings. Both statistics are carried by the second released per-cell
+   table (§P.1-bis), whose boundary is also where §4.4's structural contrast sits: for §4.4's **second backbone**
+   the differenced table carries the epoch-axis contrast, `y11_shwd→sfchd` / `y11` / 20% / 30→100 ep reading
+   **−1.277 pp at MDE 1.255 pp** on the test column (ratio **1.017**) and **−1.280 pp at MDE 1.250 pp** on the
+   val-best column (ratio **1.024**), and the two-end MDE of that row (**0.2787 pp** on the test column) is the
+   yardstick inside which §4.4 places the 100-epoch level. The **cross-backbone** contrast of §4.4 — one corpus, one
+   budget, two released backbones — is a **structural** comparison and is deliberately outside both tables, as
+   `theory_B_MDE_diff_by_cell_说明.md` §8.2 records.
 2. **Its roster is a census.** The 147 rows are every cell on the `test_map50_95` column with at least three paired
    seeds: no analysable cell is missing and no row falls outside that definition (recomputed and checked by
    `scripts/43_A24_power_audit.py`). Because each row is an independent per-cell decision, the audit needs no
@@ -1195,7 +1261,10 @@ slices carry endpoint differences of **opposite sign that are each separately re
 MDE). **None** of the failures above meets that description: each sign-reversing pair has at least one slice whose
 endpoint difference falls below its own 80%-power minimum detectable difference under the $\gamma(n)$
 convention of Appendix P, and the shortfalls are large (on `mafa→mask_clean` the 10% slice is off by a factor of about 75
-and its 30% slice by about 8). The falsification condition is therefore **not yet instantiated on this archive**; what the
+and its 30% slice by about 8). The two shortfalls are rows of the differenced table:
+`mafa→mask_clean` / `s2mk` at 10% labels, 30→100 ep, reads **+0.057 pp at MDE 4.271 pp**
+(`ratio_abs_mean_over_mde` **0.01327** — the "factor of about 75" above) and its 30% slice reads
+**−0.547 pp at MDE 4.459 pp** (**0.12261** — the "about 8"). The falsification condition is therefore **not yet instantiated on this archive**; what the
 failures establish is the weaker statement that the sign is not unanimous within a family, which is why the
 result is stated as "four of the six families that carry all five label budgets unanimous, with named
 sign-reversing exceptions" — not "the sign is a property of the pair".
@@ -1220,7 +1289,13 @@ is wrong; they answer different questions, and the article's §3 convention assi
 §4.4 while §4.1–§4.2 use the test column. The same column dependence is what §6(b) reports for the primary pair,
 where one cell reads **+0.628 pp** on the test column and **−0.307 pp** on the val-best column with runs, seeds and
 fine-tuning untouched. The consequence stated in the article is that the saturated-target damage is **carried by one
-batch on one column**, and that the independent batch supports it only on the other column.
+batch on one column**, and that the independent batch supports it only on the other column. The two test-column readings of the table are level
+quantities and are scored as such in §P.1's table: `mask→mende` / `t2` / 20% / 100 ep reads **−1.156 pp at MDE
+1.199 pp** (`resolvable` False) and the independent second batch `mask→mende20` / `r10` / no budget suffix / 100 ep
+reads **−1.170 pp at MDE 1.054 pp** (`resolvable` True). The **declared val-best level has no row in either released
+table**, because it is a level and not a contrast; its own MDE is recorded in
+`theory_B_MDE_diff_by_cell_说明.md` §8.4 (**MDE 0.6708 pp**, |mean|/MDE **2.13**, against the same cell's test
+column at **0.96**).
 
 ## P.8 Resolvability as a function of the reporting column
 
@@ -1398,3 +1473,81 @@ the count of entries. (iv) A single cell can yield opposite arm-level readings u
 columns, so "which arm moved" is not a property of the cell alone. (v) $C$ and $A$ are measured
 quantities and do not identify the headroom or mismatch terms that Appendix O discusses; we do
 not read them as mechanism.
+
+# Appendix Q. A reusable checklist for transfer / budget comparisons (2026-10-06)
+
+This appendix transfers the twelve-item checklist of the comparison-report audit of 2026-10-06 **verbatim**, so that
+the reporting acts its findings support travel with the manuscript; each item is followed by its one-sentence
+justification in this manuscript. The list is new here and no reported number in this supplement changes because of
+it. The line anchors inside the justifications are as of the pinned hashes of 2026-10-06 and can be relocated by the
+quoted wording.
+
+## Q.1 A reusable checklist
+
+**How to use it.** Apply the list to a draft as a pass/fail list before reporting. It is deliberately short: each
+line is one reportable act, and a line that cannot be satisfied should be **stated as unsatisfied** rather than
+dropped.
+
+1. ☐ **Report the column the number is read on, not "the result".**
+   On `shwd2sf→sfchd20` the held-out test column reads **+0.628 pp** while the validation-selected best-checkpoint
+   column reads **−0.307 pp** — a sign flip produced by the reported column alone, with runs, seeds and fine-tuning
+   untouched (`M3_draft/P1_NewDraft_v1_20260927.md:134`; the column convention is declared at `:51`).
+
+2. ☐ **Report the difference's own MDE, not only the level's.**
+   On the second §4.1 pair the 200-epoch *level* −0.055 pp sits at **0.39×** its own MDE (0.141 pp) and is not
+   distinguishable from zero, whereas the budget-to-budget *change* −0.223 pp clears **its own** MDE by **1.6×** —
+   the level and the difference need different yardsticks (`P1_NewDraft_v1_20260927.md:195`).
+
+3. ☐ **State the independent unit — family or slice — not just the count.**
+   The out-of-sample sign exercise predicts **21 of 25** slices correctly, but the independent units are the **seven
+   pair–families**, so 21/25 is explicitly *not* a percentage of independent predictions
+   (`P1_NewDraft_v1_20260927.md:96`).
+
+4. ☐ **Pre-register the magnitude bar, not only the significance level.**
+   T1-b met the registered `p < 0.01` **and** ten of ten seeds positive yet failed the frozen **≥ +0.30 pp** bar, so
+   a conventional test alone would have accepted a +0.168 pp effect (`P1_NewDraft_v1_20260927.md:62`, `:120`;
+   registration `预注册_新目标域复制实验_冻结_20260913.md:52-53`).
+
+5. ☐ **Pair on seeds, not on arms.**
+   The registration fixes paired t-tests over shuffle-seeds **42–51**, both arms on the same seed
+   (`预注册_新目标域复制实验_冻结_20260913.md:45`, `:52`), which is what makes the per-pair t a paired test and what
+   licenses the "seeds positive" column (`P1_NewDraft_v1_20260927.md:112-116`); the paper also refuses to treat two
+   cells of one tier as independent units (`:124`).
+
+6. ☐ **State that the two budget axes are two functionals, not one knob.**
+   The epoch budget moves along a path at fixed data, while the label budget changes the data the path is run on —
+   "the two budgets are **different functionals** of the same campaign" — which is why the gated archive counts run
+   **17/19 negative** on one axis against **2/8** on the other (`P1_NewDraft_v1_20260927.md:168`, `:94`).
+
+7. ☐ **Report the verdict-flip rate, not one verdict.**
+   The alignment *ranking* flips sign with the evaluator variant (Spearman **+1.00** vs **−1.00** over three
+   strategies per point), so a single verdict is a draw from a family of readings; the paper reports the flip chain
+   rather than one ordering (`00_SUPPLEMENTARY_v0.4.md:354`; `P1_NewDraft_v1_20260927.md:134`, `:142`).
+
+8. ☐ **Print the test's floor beside every p.**
+   Five of the seven 30-epoch rows rest on **n = 3**, where the permutation floor is `2/2³ = 0.25`, so they are "a
+   **sign census with seeds**, not a significance claim" — and the floor is printed beside every p for exactly that
+   reason (`00_SUPPLEMENTARY_v0.4.md:777`, `:785`).
+
+9. ☐ **State the checkpoint-selection provenance, not a bare held-out number.**
+   The published-protocol magnitudes **+1.76 / +0.54 pp** are best-checkpoint levels *on the split that selected
+   them*, not held-out estimates; under the clean protocol they read **+1.434 / +0.507 pp** and shrank further as
+   seeds were added — the selection premium made visible (`P1_NewDraft_v1_20260927.md:152`;
+   `00_SUPPLEMENTARY_v0.4.md:150`, `:157`).
+
+10. ☐ **State the multiplicity family and how it was enumerated, not just the adjusted p.**
+    The BH family is the **26-configuration roster, enumerated after the outcomes**, and the registration's recorded
+    count of **28** is "used as a denominator nowhere" — so the correction is reported as **robustness, not a
+    family-wise guarantee**, and the paper flags that a third party cannot reproduce the family-level arithmetic
+    from the released files alone (`00_SUPPLEMENTARY_v0.4.md:214`, `:359`; `P1_NewDraft_v1_20260927.md:148`).
+
+11. ☐ **State the seed count and the resolution it buys, not just the sign count.**
+    With the observed paired-difference σ a three-seed test reaches 80% power only at **0.56–0.62 pp**, a ten-seed
+    test at **0.18–0.21 pp**, and **43 of 147** cells fall below their own MDE — so "more seeds" is a resolution
+    claim that must be quantified, not asserted (`00_SUPPLEMENTARY_v0.4.md:214`;
+    `P1_NewDraft_v1_20260927.md:179`).
+
+12. ☐ **Report the count that fails the criterion, not only the count that survives.**
+    The confirmatory result is reported as a failure: **two of three** pairs survive the family correction at
+    q = 0.05, but only **one of three** meets every part of the criterion, and the abstract carries that failure
+    rather than the surviving count (`P1_NewDraft_v1_20260927.md:118`, `:9`).
