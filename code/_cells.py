@@ -20,6 +20,51 @@ import collections
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CSV_PATH = os.path.join(BASE, 'base', 'run_table_canonical.csv')
 
+
+# ★★ 2026-10-07：**交付件输出目录的唯一解析器**（布局无关，供守卫共用）。
+#   为什么必须有：两种布局的"根"不同 ——
+#     作者树  ：analysis_M3/{base, deliver}/                        ⇒ 写 analysis_M3/deliver/
+#     放行仓库：repo/{base, M3_draft, code/, provenance/deliver/}   ⇒ 必须写
+#               repo/provenance/deliver/（放行仓**没有**顶层 deliver/）
+#   曾经踩的坑：守卫各自写 `os.path.join(BASE,'deliver')`，而放行仓里 `_find_root`
+#   找不到顶层 deliver/ ⇒ BASE 退化成 `code/` ⇒ 生成件散落进 `code/deliver/`
+#   （既污染放行仓，又让 MANIFEST 的排除表与实际路径对不上）。
+def repo_root(start=None):
+    """向上查找含 `base/` 的项目根（`base/` 是两种布局唯一的共同标志）。"""
+    d = os.path.abspath(start or BASE)
+    for _ in range(6):
+        if os.path.isdir(os.path.join(d, 'base')):
+            return d
+        d = os.path.dirname(d)
+    return os.path.abspath(start or BASE)
+
+
+def deliver_dir(start=None):
+    """返回**已存在**的交付件目录；两种布局各写各的，绝不散落到 `code/` 下。"""
+    r = repo_root(start)
+    for sub in (('deliver',), ('provenance', 'deliver')):
+        p = os.path.join(r, *sub)
+        if os.path.isdir(p):
+            return p
+    p = os.path.join(r, 'deliver')
+    os.makedirs(p, exist_ok=True)
+    return p
+
+
+def find_dir(name, start=None, levels=6):
+    """向上查找名为 `name` 的目录（两种布局通用：`M3_draft` 在两边都在项目根下）。
+
+    ★ 曾经踩的坑：写死 `dirname` 层数（`os.path.dirname(os.path.dirname(os.path.dirname(HERE)))`）
+    ⇒ 作者树算到 `analysis/`（正确），放行仓算到 `盲审P1/`（错，那儿没有 M3_draft）。
+    """
+    d = os.path.abspath(start or BASE)
+    for _ in range(levels):
+        c = os.path.join(d, name)
+        if os.path.isdir(c):
+            return c
+        d = os.path.dirname(d)
+    return os.path.join(os.path.abspath(start or BASE), name)
+
 COLS = ['test_map50_95', 'test_map50', 'best_map50_95', 'best_map50', 'last_map50_95', 'last_map50']
 PREF = {'complete': 0, 'early_stop_legit': 1, 'interrupted': 2, 'archive_snapshot': 3}
 

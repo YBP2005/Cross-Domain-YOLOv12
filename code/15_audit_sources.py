@@ -38,11 +38,13 @@ def _find_m3d(start):
         d = os.path.dirname(d)
     return os.path.join(os.path.abspath(start), 'M3_draft')
 BASE = _find_root(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import _cells as _C          # noqa: E402  ★ 交付件目录的唯一解析器
 
 # ★★ 2026-10-05：**向上查找项目根**（布局无关）。
 #   放行仓库：repo/code/x.py ⇒ BASE = repo（含 base/ deliver/ M3_draft/）
 #   作者树  ：analysis_M3/scripts/x.py ⇒ BASE = analysis_M3（M3_draft 在上两级）
-OUT = os.path.join(BASE, 'deliver')
+OUT = _C.deliver_dir()      # ★ 布局无关：作者树 deliver/、放行仓 provenance/deliver/
 SUPP = os.path.join(_find_m3d(BASE), '00_SUPPLEMENTARY_v0.4.md')
 
 # (编号, 论文里的数字, 出处小节, 检索式, 底座可否独立复算的说明)

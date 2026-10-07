@@ -50,7 +50,7 @@ import _cells as C  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-OUT = os.path.join(ROOT, 'provenance', 'deliver')
+OUT = C.deliver_dir()       # ★ 布局无关：作者树 deliver/、放行仓 provenance/deliver/
 
 # 稿内引用的四个聚合数（§9 的分辨率条目）。**逐条都要能被算出来**，不许写字面常量。
 #   ⚠ 这里的 147 / 43 等是**期望值**，它们是守卫的靶；算出来的值不相等就报红。

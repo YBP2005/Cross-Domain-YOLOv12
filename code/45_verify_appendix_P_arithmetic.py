@@ -41,34 +41,13 @@ sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 from scipy.stats import t as T  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-
-
-# ★★ 2026-10-05：**向上查找仓库根**（布局无关）。放行布局 `仓库/code/x.py`、
-#   作者布局 `analysis_M3/code/x.py`，两者"根"的定义不同 ⇒ 不能写死层数。
-def _find_root(start):
-    d = os.path.abspath(start)
-    for _ in range(6):
-        if os.path.isdir(os.path.join(d, 'base')) and (
-                os.path.isdir(os.path.join(d, 'M3_draft'))
-                or os.path.isdir(os.path.join(d, 'deliver'))):
-            return d
-        d = os.path.dirname(d)
-    return os.path.abspath(start)
-ROOT = _find_root(HERE)   # ★ 2026-10-05：向上查找仓库根（布局无关）
-
-
-# ★★ 2026-10-05：**缺失依赖不崩、只报红**（与 `_SUPT` 同一模式）。
-_MISSING = []
-def _try_read(path, what=''):
-    """读文件；失败则记入 `_MISSING` 并返回空串（**不抛异常**）。"""
-    try:
-        with open(path, encoding='utf-8', errors='replace') as _fh:
-            return _fh.read()
-    except Exception as _e:
-        _MISSING.append('%s（%s）' % (what or os.path.basename(str(path)), str(_e)[:60]))
-        return ''
-MAIN = os.path.join(ROOT, 'M3_draft', 'P1_NewDraft_v1_20260927.md')
-SUPP = os.path.join(ROOT, 'M3_draft', '00_SUPPLEMENTARY_v0.4.md')
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import _cells as _C          # noqa: E402  ★ 布局无关的路径解析
+# ★ 2026-10-07：向上查找 M3_draft（两种布局通用），不再写死层数
+_M3D = _C.find_dir('M3_draft', HERE)
+ROOT = os.path.dirname(_M3D)
+MAIN = os.path.join(_M3D, 'P1_NewDraft_v1_20260927.md')
+SUPP = os.path.join(_M3D, '00_SUPPLEMENTARY_v0.4.md')
 ALPHA = 0.05
 BETA = 0.20
 TOL = 5e-4
