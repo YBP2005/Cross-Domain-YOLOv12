@@ -1,5 +1,5 @@
 {
-  "measured_at": "2026-10-07T08:53:14",
+  "measured_at": "2026-10-07T09:00:44",
   "measured_by": "measure_pages.py (probe_figcost parser -> RTF -> Word Documents.Open -> ComputeStatistics(2))",
   "layouts": {
     "conservative": "A4, single column, double spaced, 12 pt Times New Roman, 2.54 cm margins",
@@ -8,7 +8,7 @@
   "layout": "A4, single column, double spaced, 12 pt Times New Roman, 2.54 cm margins",
   "probe_scope": "article markdown up to (and excluding) the \"# References\" heading, with all tables flattened to single-spaced rows, plus the 39-entry reference list",
   "inputs": {
-    "main_md5": "438C284178EA7612F88D0618F9672B60",
+    "main_md5": "ABBA6C0BFBCBA2724AE2BA54072B254B",
     "supplementary_md5": "8D1D051FC2331B16107B861DC363F753",
     "references_md5": "2C8D6893712CDE48A143E8D1BD142D5F",
     "reference_entries": 39
