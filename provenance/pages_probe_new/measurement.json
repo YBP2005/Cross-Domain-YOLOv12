@@ -1,5 +1,5 @@
 {
-  "measured_at": "2026-10-07T09:00:44",
+  "measured_at": "2026-10-07T22:01:11",
   "measured_by": "measure_pages.py (probe_figcost parser -> RTF -> Word Documents.Open -> ComputeStatistics(2))",
   "layouts": {
     "conservative": "A4, single column, double spaced, 12 pt Times New Roman, 2.54 cm margins",
