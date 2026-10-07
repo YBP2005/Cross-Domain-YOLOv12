@@ -1,0 +1,18 @@
+{
+ "run": "g1_c3_d15toaitod_strat100_10p_s46",
+ "split": "test",
+ "device": "1",
+ "data": "/root/datasets/AI-TOD_yolo/aitod_10p.yaml",
+ "weights": "/workspace/runs/g1_c3_d15toaitod_strat100_10p_s46/weights/best.pt",
+ "weights_md5": "e1cb88b65c5564335bc8e093ee6a8d1b",
+ "test_map50_95": 0.08514164629514012,
+ "test_map50": 0.20928448163877947,
+ "test_precision": 0.46705705246521273,
+ "test_recall": 0.21866179282293624,
+ "imgsz": 640,
+ "iou": 0.7,
+ "max_det": 300,
+ "wall_sec": 24.6,
+ "ts": "2026-10-06 12:39:13",
+ "script": "p1_eval_test_column.py"
+}

@@ -1,0 +1,18 @@
+{
+ "run": "g1_c2_d15tod15_strat100_50p_s45",
+ "split": "test",
+ "device": "0",
+ "data": "/root/datasets_mask/dota15_yolo/dota15_50p.yaml",
+ "weights": "/workspace/runs/g1_c2_d15tod15_strat100_50p_s45/weights/best.pt",
+ "weights_md5": "d417e2109965dbac204aecb4fc8c47b4",
+ "test_map50_95": 0.19921103146466754,
+ "test_map50": 0.32659524553378566,
+ "test_precision": 0.5989947625479088,
+ "test_recall": 0.3401546195056256,
+ "imgsz": 640,
+ "iou": 0.7,
+ "max_det": 300,
+ "wall_sec": 44.8,
+ "ts": "2026-10-06 13:30:09",
+ "script": "p1_eval_test_column.py"
+}
