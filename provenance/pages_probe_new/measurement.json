@@ -1,5 +1,5 @@
 {
-  "measured_at": "2026-10-06T02:24:35",
+  "measured_at": "2026-10-07T08:53:14",
   "measured_by": "measure_pages.py (probe_figcost parser -> RTF -> Word Documents.Open -> ComputeStatistics(2))",
   "layouts": {
     "conservative": "A4, single column, double spaced, 12 pt Times New Roman, 2.54 cm margins",
@@ -8,15 +8,15 @@
   "layout": "A4, single column, double spaced, 12 pt Times New Roman, 2.54 cm margins",
   "probe_scope": "article markdown up to (and excluding) the \"# References\" heading, with all tables flattened to single-spaced rows, plus the 39-entry reference list",
   "inputs": {
-    "main_md5": "5171FD122781004704C8D0EE4AEC802E",
-    "supplementary_md5": "37033461495AA1536340AC7A05CCE35A",
+    "main_md5": "438C284178EA7612F88D0618F9672B60",
+    "supplementary_md5": "8D1D051FC2331B16107B861DC363F753",
     "references_md5": "2C8D6893712CDE48A143E8D1BD142D5F",
     "reference_entries": 39
   },
   "variants": {
     "no_figures__conservative": {
       "pages": 40,
-      "words": 14584,
+      "words": 14548,
       "content": "no_figures",
       "layout": "conservative",
       "figures": [],
@@ -27,7 +27,7 @@
     },
     "no_figures__official": {
       "pages": 35,
-      "words": 14584,
+      "words": 14548,
       "content": "no_figures",
       "layout": "official",
       "figures": [],
@@ -37,8 +37,8 @@
       "expect": 0
     },
     "f1__conservative": {
-      "pages": 41,
-      "words": 14600,
+      "pages": 40,
+      "words": 14564,
       "content": "f1",
       "layout": "conservative",
       "figures": [
@@ -51,7 +51,7 @@
     },
     "f1__official": {
       "pages": 35,
-      "words": 14600,
+      "words": 14564,
       "content": "f1",
       "layout": "official",
       "figures": [
@@ -64,7 +64,7 @@
     },
     "_ctl_filler__conservative": {
       "pages": 43,
-      "words": 15200,
+      "words": 15164,
       "content": "_ctl_filler",
       "layout": "conservative",
       "figures": [
@@ -77,7 +77,7 @@
     },
     "_ctl_filler__official": {
       "pages": 37,
-      "words": 15200,
+      "words": 15164,
       "content": "_ctl_filler",
       "layout": "official",
       "figures": [
@@ -95,7 +95,7 @@
       "official": 35
     },
     "f1": {
-      "conservative": 41,
+      "conservative": 40,
       "official": 35
     }
   },
@@ -103,7 +103,7 @@
     "injected_words": 600,
     "baseline_variant": "f1__conservative",
     "compared_variant": "f1__conservative",
-    "pages_before": 41,
+    "pages_before": 40,
     "pages_after": 43,
     "responded": true,
     "direction": "pages must increase"
@@ -113,7 +113,7 @@
       "injected_words": 600,
       "baseline_variant": "f1__conservative",
       "compared_variant": "f1__conservative",
-      "pages_before": 41,
+      "pages_before": 40,
       "pages_after": 43,
       "responded": true,
       "direction": "pages must increase"
