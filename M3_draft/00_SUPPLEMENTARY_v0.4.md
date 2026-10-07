@@ -3,15 +3,13 @@
 This file carries the appendices of the manuscript. They are **supplementary material**: not typeset into
 the article, published online as supplied, and **not part of the manuscript's page budget**. The letters are
 unchanged from the manuscript's cross-references, so "Appendix J.4" in the main text resolves to the section
-of that name here. Ordering here is alphabetical (**A–P**, with P added 2026-10-04), and the reference-status ledger follows the
-appendices; the manuscript's pointers are unaffected. The internal compression record named in the
-reference-status ledger is **not** part of this file and is not supplied.
+of that name here. Ordering here is alphabetical (**A–P**, with P added 2026-10-04); the manuscript's pointers are unaffected. (The reference-status ledger of the earlier 74-entry numbering, and the internal compression record it named, are **not** part of this file and are not supplied.)
 
-> ⚠ **On the "(moved from §X)" markers (added 2026-10-02).** Thirty passages below carry a provenance marker of
+> ⚠ **On the "(moved from §X)" markers (added 2026-10-02).** Thirty-three passages below carry a provenance marker of
 > the form *"(moved from §8.6)"*. **Those section numbers belong to an earlier version of the manuscript**,
 > whose numbering differed from the present article's; they are retained as a record of **where the material
 > came from**, and they are **not** live cross-references. In the present article, §5–§9 carry no subsections
-> at all, so a pointer such as "§8.6" will not resolve there. The **appendix letters (A–N)** are the live
+> at all, so a pointer such as "§8.6" will not resolve there. The **appendix letters (A–P)** are the live
 > pointers: they are what the main text cites.
 
 
@@ -148,13 +146,6 @@ The table above lists the six audit events — five reversed conclusions plus on
 ## E.2 The selection premium: per-cell restatements and the cells the coincidence affects (moved from §8.6)
 
 **The premium was measured per cell; the measurement and its direction are reported in the companion paper on evaluation validity rather than here** — that paper owns the per-cell and per-arm values, the endpoint restatements, and the enumeration of which cells the `val`/`test` coincidence affects. What this paper retains is the contrast that conditions its own headline numbers: the published-protocol magnitudes **+1.76 pp** (smoke→SFCHD) and **+0.54 pp** (SHWD→SFCHD) are best-checkpoint levels on the split that selected them, not held-out test estimates. **The clean three-way protocol and its disclosures.** For the affected cells a three-way protocol (label subset / validation carve-out from the remaining training pool / untouched test split) removes the structure, and we report it rather than merely proposing it: on the clean protocol both headline cells hold — smoke→SFCHD **+1.434 pp at ten seeds** (baseline 42.062 → strategy 43.496; SD 0.383 pp; paired t = **11.84**; sign-flip permutation p = **0.0020**, the n = 10 floor, all ten seeds positive) and SHWD→SFCHD **+0.507 pp** (43.559 → 44.066; SD 0.488 pp; t = **3.29**; p = **0.0098**, nine of ten positive) — and these, not the published-protocol values of §8.3, are the paper's primary readings of the two headline cells. **The eleven- and thirteen-seed extension, on which the family-level status below rests:** smoke→SFCHD **+1.409 pp** (baseline 42.108 → strategy 43.517; SD 0.372 pp; paired t = **12.55**; permutation p = **0.000977**, the n = 11 floor, eleven of eleven positive) and SHWD→SFCHD **+0.628 pp** (43.484 → 44.112; SD 0.489 pp; t = **4.63**; p = **0.001221**, twelve of thirteen positive). **The extension moved the point estimate by −0.025 pp and +0.121 pp on the two cells** — it tightened the interval rather than raising the effect. **At ten seeds neither clean-tier test clears the paper's own roster-wise correction** (q = 0.052 and 0.127); **extended to eleven and thirteen seeds both clear it (q = 0.0159), and that extension postdates the ten-seed values** (**Appendix F.1**): what the clean protocol buys is the removal of the checkpoint-selection coincidence, not additional multiplicity protection. Three disclosures attach. First, the clean-protocol magnitudes are lower than the published-protocol ones they replace as evidence (+1.434 vs +1.76; +0.507 vs +0.54), which is the selection premium of this section working at cell level. Second, within the clean protocol the estimate **shrank as seeds were added**: +1.562 / +0.693 pp at six seeds, +1.420 / +0.492 at nine, +1.434 / +0.507 at ten, the direction selection inflation predicts, which is why the ten-seed value is the one we report. Third, the protocol is released as `*_3way.yaml` with its deterministic carve rule (seed 42 from pool-minus-subset) and a zero-intersection check on all three pairs at file-name level (Appendix D). The visdrone→dota15 probe, the third cell the coincidence affects, has its clean-protocol reading in **Appendix M.5**, and we do not claim the published protocol is equivalent to the clean one. Image-level overlap between the MAFA source and the mask target is negligible (pHash 0.06%). **Incidental audit note carried with this block** (the placeholder sentence the moved text relies on): the anchor run of the 2026-09-11 campaign reads **Δ = 0.000 pp**, and in that campaign three mendeley baselines are bit-identical across seeds (§8.6, §9.2).
-
-## E.3 Framing removed from §1 on compression
-
-**The observed-pattern list removed from the opening paragraph of §1 (motivation only; each item is stated where it is graded).** Verbatim: “Practitioners observe patterns none of these accounts predicts on its own: a larger learning rate helps early and hurts late; a loss function that wins on one domain pair loses on another; attention modules that help in-domain do nothing cross-domain; and two metrics of the same model can disagree about whether a strategy ‘worked’.” Where each pattern is graded in the main text: the learning-rate pattern by the two cells of C2 (§5.2, §8.3), whose generalisable form is tested in a companion paper; the loss-function pattern by the loss-prior null (§8.4); the attention-module pattern by the structure-module block (§8.4, Appendix K.2); and the metric-disagreement pattern by §8.5 and by the dual-metric paragraph of §1. **Also compressed in the same paragraph (wording only):** “optimal-transport bounds that charge an additive shift cost; flatness-based bounds that charge for fragile geometry; and optimisation theory that prices the training budget” became “transport bounds that charge for shift, flatness bounds that charge for geometry, and optimisation theory that prices the budget”, with the lead-in replaced by the closing clause “none of which predicts the patterns practitioners report”. Both accounts remain: the three-account framing, the acute-problem sentence and the object-detection setting are unchanged.
-
-## E.4 The premium enumeration in full (moved from §8.6, 2026-09-19)
-**The premium's per-cell and per-arm measurement, and the endpoints that no selection can touch, belong to the companion paper on evaluation validity rather than here** — that paper owns the premium's analysis; this paper retains only the two published-protocol magnitudes as the contrast that conditions its own headline numbers. Unfavourable, and decisive for how the numbers must be described: **the levels this paper reports are best-checkpoint levels on the split that selected them**, not held-out test estimates, so +1.76 pp and +0.54 pp are selection-selected magnitudes and the arm plateau is a different (here larger) quantity. Both readings hold together and we give both. The seed trajectory under the clean protocol, and the released analysis (`selection_premium.py`), are in **Appendix E.2**; the per-cell restatements and the enumeration of the cells the `val`/`test` coincidence affects belong to the companion paper rather than here (Appendix E.2). **Primary readings of the two headline cells, under the clean three-way protocol, in **mAP50-95** (built 2026-09-14, after selection and before any clean-protocol run — Appendix M.3):** smoke→SFCHD **+1.434 pp** at ten seeds (baseline 42.062 → strategy 43.496; SD 0.383 pp; paired t = **11.84**; paired sign-flip permutation p = **0.0020**, the n = 10 floor, ten of ten seeds positive) and SHWD→SFCHD **+0.507 pp** (43.559 → 44.066; SD 0.488 pp; t = **3.29**; p = **0.0098**, nine of ten positive), with the published-protocol values reported beside them as the selection-premium comparison. **The extension this status is computed from, printed here so the arithmetic can be checked against the reading it acts on:** smoke→SFCHD **+1.409 pp at eleven seeds** (42.108 → 43.517; SD 0.372; t = **12.55**; p = **0.000977**, eleven of eleven positive) and SHWD→SFCHD **+0.628 pp at thirteen seeds** (43.484 → 44.112; SD 0.489; t = **4.63**; p = **0.001221**, twelve of thirteen positive), the point estimate moving by −0.025 and +0.121 pp respectively. **These are cell-level tests, and we state their family-level status here rather than only in the discussion: under this paper's own roster-wise convention they do not clear the correction at ten seeds (q = 0.052 and 0.127) but do clear it at the eleven- and thirteen-seed extension (q = 0.0159; §9.3, Appendix F.1), the ten-seed miss being the coarse 2/2¹⁰ floor rather than weak evidence; that extension postdates the ten-seed values, so the family-level statement this paper makes remains the cell-level reading above, with the passing value reported under that provenance.**
 
 ## E.5 Assigner-level OOM fallbacks: the audit, and the runs removed and replaced (2026-09-26)
 
@@ -816,32 +807,7 @@ several cells behind that count are below their own minimum detectable differenc
 
 **Provenance.** These runs are a separate batch from the published ones: the registered stack (`train_obj.py`, ultralytics 8.4.120) with the `shapeiou` loss, each run driven by its own `*_3way.yaml` and recorded per run in the released per-seed file together with its two arms and its data-order seed. The batch follows the carve builder's timestamp of 2026-09-14T07:37Z and precedes the held-out readout of 2026-09-20; individual launch times are not preserved in the release, so the ordering rests on those two timestamps and not on per-run times.
 
-# Reference-status ledger: metadata corrections and the five anchor classes (moved from the References section)
-
-
-
-**The article's References-section ledger, moved here (2026-09-19) so that the article carries the plain list a reviewer expects.**
-
-> ⚠ **2026-10-02 状态说明（重要，2026-10-04 补充）**：本台账（以及本补材正文里所有形如 `[31]` 的方括号编号）属于**上一版稿子的 74 条编号表**，与**现稿** `P1_NewDraft_v1_20260927.md` 的参考文献表（**2026-10-03 起为 `[1]`–`[29]` 的编号制**，2026-10-04 补入 `[30]`–`[39]` 后为 **39 条**）**不是同一套编号**：例如本台账的 `[31]`（谱估计所用的 Lanczos 参考）在现稿里是 `[31]` He et al., ICCV 2019。
-> **⇒ 补材里的方括号编号一律读作"本台账的编号"，不得与正文编号互相引用。** 本台账保留为**历史记录与元数据核验证据**。
- The reference list, [1]–[74], is carried in **the article's own References section** as the numbered list, with each entry's status marker (`[verified]` / `[preprint]`) printed inline and the evidence behind each marker recorded in the ledger below (the few-shot-detection and fine-tuning anchors cited in §2 and §8.4 extend the original run); each entry carries a status where one has been recorded — `[verified]` (volume/issue/pages or DOI re-checked against OpenAlex) or `[preprint]` (arXiv only). **74 of the 74 entries carry such a marker — 31 `[verified]` and 43 `[preprint]` — after a second-source pass over the 21 that earlier versions listed as unchecked; each marker names its evidence (a DOI, a venue and year, or an arXiv identifier) rather than asserting coverage, and the per-entry evidence is recorded in the supplementary reference-status ledger.** Every entry that earlier versions recorded as untraced or retired has been dealt with in the consolidation: the retired placeholder slot is gone from the list, and the entry no source could resolve is replaced by a verifiable calibration anchor. No unresolved placeholder marker remains. The anchors are verified across five classes — OT/DA theory, flatness/PAC-Bayes, fine-tuning and optimisation, DA-detection and flatness-DG, measurement and reproducibility — whose individual names, and the metadata corrections made in this version ([22] and [2]), are recorded in the supplementary reference-status ledger.
-
-**Reference-metadata corrections made in this version (the details the main text now records by index only).** Two metadata corrections survive the consolidation and are recorded here: Bonneel et al. [22] is JMIV 51(1):22–45 (2015), not 43(3):315–328; and Redko et al. [2] is the ECML-PKDD 2017 analysis, the earlier venue string ("PACML 2017") having proved untraceable. Three further corrections that earlier versions of this ledger carried — the Redko et al. TPAMI entry, the Mulayoff & Michaeli ICML entry, and the Cross-Domain Adaptive Teacher entry — **no longer have an object**: those entries were merged into cluster citations or removed from the list in the consolidation recorded under the status convention below, so there is no longer an index for them to correct. The `[preprint]` convention means arXiv only, with no volume/pages to check.
-
-**Anchors verified across five classes, citation by citation.** Every index below is checked against the list as consolidated; the anchor classes are rebuilt from the entries the list now contains, and entries that earlier versions of this ledger named are either carried here under their present index or were removed in the consolidation recorded below. *OT/DA theory* — Ben-David et al. [1]; Redko et al. [2]; Alvarez-Melis & Fusi [9]; Germain et al. [15]; Zhao et al. [16]; Mansour et al. [20]; Bonneel et al. [22]. *Flatness/PAC-Bayes* — Hochreiter & Schmidhuber [21]; Foret et al. [3]; Jiang et al. [4]; Ansuini et al. [5]. *Fine-tuning and optimisation* — Bottou et al. [6]; Cohen et al. [7]; Shimodaira [8]; Kumar et al. [18]; Wortsman et al. [19]; Howard & Ruder [41]; He et al. [26]; Pang et al. [27]; Berthier [28]. *DA-detection and flatness domain generalisation* — Cha et al. [17]; Zhou et al. [23]. *Measurement and reproducibility* — Guo et al. [14]; Xiong et al. [29]; Hangyu [30]; Yao et al. [31]; Abeykoon et al. [32]. The detector, corpus and few-shot anchors — [10]–[13], [24], [25] and [33]–[40] — are corpus and method anchors rather than theory or measurement anchors and are not classed here; their per-entry status markers, where present, are in the list itself.
-
-**Reference identifiers and entries: corrections made in this version.** Every arXiv identifier in the list was re-checked entry by entry against OpenAlex, Crossref/DOI records and the arXiv abstract pages; seven were wrong at the time of that pass. Six of the seven entries concerned were merged into cluster citations or removed in the consolidation described below, so those identifier corrections no longer have an object and are not carried forward. The seventh is retained: the entry named "Large learning rates improve generalization, but hurt calibration" is not recoverable from OpenAlex or Semantic Scholar by title, and the identifier attached to it belongs to a different paper. It has been replaced by a verifiable calibration anchor — the present [14] — and the sentence in the manuscript that rested on the old entry was rewritten to state what the new reference actually shows. Two further entry-level corrections recorded by that pass, an author attribution and an author initial, concerned entries that the consolidation removed and likewise have no object. The verification and rewrite scripts are released with this manuscript. Which entry anchors what is recorded by the five anchor classes above.
-
-**Status convention, stated for the ledger as a whole.** `[verified]` = volume/issue/pages or DOI re-checked against OpenAlex; `[preprint]` = arXiv only. Every entry that earlier versions of this ledger recorded as untraced, retired or replaced has been dealt with in the consolidation: the retired placeholder slot is gone from the list, and the entry no source could resolve is replaced by the verifiable calibration anchor [14]. All 74 entries carry a status marker — 31 `[verified]` and 43 `[preprint]` — so none is left un-rechecked; no unresolved placeholder marker remains.
-
 # Appendix N. The two modules transferred from the companion paper: detail and provenance (2026-09-21)
-
-> **Why this appendix exists.** The pre-registered multi-target replication (§8.7) and the three-way
-> split and checkpoint-selection audit (§8.6) were developed as modules of the companion paper on
-> evaluation validity and have been **transferred to this paper, which reports them first**. The main
-> text carries their results; this appendix carries the module-level detail and the provenance that
-> makes every value in them checkable, so that nothing in this paper rests on material the reader
-> does not have.
 
 ## N.1 The registered replication: registration, criterion and archive
 
@@ -975,27 +941,9 @@ recomputed or replaced here**, because this pipeline's within-domain readings do
 the positive control licenses it. The two readings are reported as measuring different constructions
 and are not merged.
 
-**Every artifact retrieved for this submission, with its hash.**
+**Every artifact retrieved for this submission, with its hash.** The five files behind the recomputation are listed with their sizes and md5 digests in the released manifest of this package (`MANIFEST_sha256.csv`). | `r10_p_vistod15_base100_3way_s42n_args.yaml` | 1,801 | `2e77971c8f5244c497a5fe4e286c9cf9` | the recorded configuration of the third cell (`visdrone_pretrain.pt` + `dota15_20p_3way.yaml`); ★ **this one file is not part of the released set** — its recorded size and digest are given here so that the reading can be checked against a copy if one is available, but we do not ship it |
 
-| artifact | bytes | md5 | role |
-|---|---|---|---|
-| `sotdd_aerial.csv` | 787 | `cf54319487f3362e8c85382c31fa6b9d` | the recomputed s-OTDD readings of §N.3 |
-| `sOTDD_aerial.py` | 5,364 | `e4ef65638c5500c8eb705fe2cea8bc96` | the script that computes them |
-| `extract_dota_feats.py` | 5,133 | `3f2081c6841e93c0bc5d0d0586e18fd3` | feature extraction, with a bit-identical self-check |
-| `extract_dota.log` | 699 | `19fe468088da5c87354b7d831453d405` | the extraction log the self-check is read from |
-| `r10_p_vistod15_base100_3way_s42n_args.yaml` | 1,801 | `2e77971c8f5244c497a5fe4e286c9cf9` | the recorded configuration of the third cell (`visdrone_pretrain.pt` + `dota15_20p_3way.yaml`); ★ **this one file is not part of the released set** — its recorded size and digest are given here so that the reading can be checked against a copy if one is available, but we do not ship it |
-
-**Environment and settings, to the limit of what was recorded.** The recomputation ran on a separately
-and the frozen log of that run preserves the settings but **not the library version
-strings**: the interpreter and package versions were not written into the log, so this submission
-does not state them. What is recorded, and is what the numbers depend on, is that all s-OTDD runs
-used ResNet-18 `IMAGENET1K_V1`, 512-dimensional features, 224² inputs, **200 slices**, `seed = 42`,
-equal weights over the two label terms, and truncation at `n = min(n₁, n₂)`. **This is the
-published-table convention, adopted unchanged**, so that the instrument is comparable with the
-published table rather than a new one. The extraction step carries its own self-check: re-deriving
-the cached `dota15_tr` features under the same parameters gave a maximum absolute difference of
-`0.000e+00` with label agreement `True`, i.e. **bit-identical**, which is what licenses reading the
-new corpora through the same instrument.
+**Environment and settings, to the limit of what was recorded.** The interpreter and package versions were not written into the frozen log, so this submission does not state them. All s-OTDD runs used ResNet-18 `IMAGENET1K_V1`, 512-dimensional features, 224^2 inputs, **200 slices**, `seed = 42`, equal weights over the two label terms, and truncation at `n = min(n1, n2)`.
 
 **What the transfer does and does not carry.** The two modules are this paper's from this version
 onward and are reported here first; the companion paper retains its own independent readings for the
@@ -1005,25 +953,6 @@ and one seed set run twice. The companion paper's deprecation of its own §8 mea
 `可引用材料` framing for these modules is withdrawn; the underlying released runs remain the
 checkable record.
 
-
-# Process protocols shared with the companion paper (internal tools; declared, not attached)
-
-> **Purpose.** §9.2 reports that the dead-layer duplication was caught by the blinded external audit pass and that the pass is advisory. That pass, and the working method behind the scripted campaign, are **project-internal protocols shared with a companion paper**; **neither paper presents them as a contribution of its own**. They are declared as file name + md5, with no text attached: internal working documents, containing no unpublished results, on which nothing in this paper’s reproduction path depends. They can be supplied with a revision on request.
-
-| Internal document | md5 | Role in this paper | Claimed as original? |
-|---|---|---|---|
-| `多模型盲审清单_通用_20260915.md` | `e4c73a5ca5992b7af6a5a66c84ba4561` | the blinded external audit pass of §9.2 — the layer that caught the dead-layer duplication | **No** — shared; claimed by neither paper |
-| `DSH+本地+云端_工作方法指南.md` | `10d1b3a3e21f018f3b82e4a293242695` | scripted local/cloud execution, all-or-nothing patching, the audit-anchor discipline and the per-number local-pointer rule | **No** — shared; claimed by neither paper |
-| `内部_压缩记录_20260918.md` | `AC9A0C159874616FF9DA81C7EEFC04D9` | the compression record: the verbatim ledger of what the length-reduction passes removed from the main text, kept as a working record of the audit trail (§9.2, Appendix E). **34 of this paper's audit anchors check this log's own provenance bookkeeping** — its own internal consistency and the historical citation indices it preserves — and **no reported result, number or claim depends on it** | **No** — internal bookkeeping; not a source of any claim. Its md5 changes whenever its own header is amended, and the value above is the current one |
-
-**The audit-anchor system falls under the same convention.** This paper carries **529 anchors over the submitted material** plus **36** that check the internal change-log declared above; the log is retained outside this submission and is **declared rather than attached** (file name and md5 in the table above), and **no reported result, number or claim depends on it**. The companion paper’s anchors and these are *one shared instrument*. Neither paper presents the anchor system, the audit protocol, or the working method as its own methodological contribution; each cites them as process.
-
-
----
-
-**Note on the compression record.** The "compression record" that reproduced the material removed from the main text by the length-reduction passes is **not part of this submission**: it is a separate internal document — a working ledger rather than supplementary scientific material, with the pre-consolidation citation indices. Everything the record preserved that bears on the paper's claims is printed in the live text and appendices above; the released runs, tables and scripts named there remain the checkable record.
-
-**Data and code availability.** The released readouts, the three-way split construction and the analysis scripts that produce every number in this paper are archived at https://github.com/YBP2005/Cross-Domain-YOLOv12 (commit reproducibility-package-v1), together with a manifest of file hashes and a table mapping each reported number to the file and rows it comes from. The trained checkpoints, and the per-seed file of the B-pipeline published-protocol readings, are available from the corresponding author on reasonable request.
 
 # Appendix O. Related-work detail removed from the main text (2026-10-02)
 
@@ -1085,15 +1014,9 @@ Consequently the tables above are statements about **what was found in the chann
 
 # Appendix P. The resolution criterion, the size rule, and bounded nulls (2026-10-04)
 
-> **Why this appendix exists.** §9 states the study's resolution audit in one criterion and §4.2 separates an observed
-> range from an inference bound. Both are computations over the released per-cell table
-> (`theory_B_MDE_by_cell.csv`, 147 rows, regenerated by `scripts/43_A24_power_audit.py`), and both were
-> compressed in the article so that the article carries the judgement rather than the arithmetic. This appendix
-> carries the arithmetic, and it is **not** counted against the article's page limit.
-
 ## P.1 One criterion behind the audit and the MDE
 
-**On citation form in this appendix.** The references introduced by these *Prior work* notes are cited here **by author and identifier** (arXiv number or DOI) rather than by bracketed number, because this appendix carries its own historical numbering ledger that is not interchangeable with the article's reference list; see the reference-status note below. The article's list is unchanged.
+**On citation form in this appendix.** The references introduced by these *Prior work* notes are cited here **by author and identifier** (arXiv number or DOI) rather than by bracketed number. The article's list is unchanged.
 
 **Prior work.** The use of a minimum detectable effect as a *gate on model-evaluation claims* is not introduced here: Arviv et al. (arXiv:2607.08522, 2026) make the statistical power needed to rank, select and test a model an explicit prerequisite of an evaluation stopping rule, and Zhuang, Li and Fan (arXiv:2605.28873, 2026) derive a **paired** MDE budget and phrase their audit as the observed deltas falling below the implied MDE. What this appendix supplies is not the criterion but the **inventory**: the criterion applied cell by cell to a released archive, with the resulting counts.
 
@@ -1309,7 +1232,7 @@ column at **0.96**).
 
 ## P.8 Resolvability as a function of the reporting column
 
-**Prior work.** That checkpoint selection on a validation criterion can bias the reported test reading, and that the direction of that bias can differ between criteria, is already established: Varma and Simon (DOI:10.1186/1471-2105-7-91, 2006) for selection inside cross-validation, Forstmeier and Schielzeth (DOI:10.1007/s00265-010-1038-5, 2010) for the direction of the optimism, and Suo, Wang and Li (arXiv:2607.27655, 2026) and Apicella et al. (arXiv:2602.22107, 2026) for checkpoint selection and validation criteria specifically. This appendix therefore claims no discovery of the bias. Its increment is narrower and countable: the cell set is fixed by `(pair, family, label budget, epoch budget)` over cells whose dataset name carries an **explicit label budget** (the derived field must be non-null, which excludes the `r10`-family cells whose names have no budget suffix); the disagreement between two columns is resolved **against each cell's own MDE**, and the eleven disagreeing cells are then decomposed **exhaustively** into the point-estimate channel and the variance channel.
+**Prior work.** This appendix therefore claims no discovery of the bias. Its increment is narrower and countable: the cell set is fixed by `(pair, family, label budget, epoch budget)` over cells whose dataset name carries an **explicit label budget** (the derived field must be non-null, which excludes the `r10`-family cells whose names have no budget suffix); the disagreement between two columns is resolved **against each cell's own MDE**, and the eleven disagreeing cells are then decomposed **exhaustively** into the point-estimate channel and the variance channel.
 
 **What this appendix adds.** The main text states that switching between the two readout
 columns changes a cell's resolvable / unresolvable verdict. This appendix gives the count, the
@@ -1484,80 +1407,3 @@ columns, so "which arm moved" is not a property of the cell alone. (v) $C$ and $
 quantities and do not identify the headroom or mismatch terms that Appendix O discusses; we do
 not read them as mechanism.
 
-# Appendix Q. A reusable checklist for transfer / budget comparisons (2026-10-06)
-
-This appendix transfers the twelve-item checklist of the comparison-report audit of 2026-10-06 **verbatim**, so that
-the reporting acts its findings support travel with the manuscript; each item is followed by its one-sentence
-justification in this manuscript. The list is new here and no reported number in this supplement changes because of
-it. The line anchors inside the justifications are as of the pinned hashes of 2026-10-06 and can be relocated by the
-quoted wording.
-
-## Q.1 A reusable checklist
-
-**How to use it.** Apply the list to a draft as a pass/fail list before reporting. It is deliberately short: each
-line is one reportable act, and a line that cannot be satisfied should be **stated as unsatisfied** rather than
-dropped.
-
-1. ☐ **Report the column the number is read on, not "the result".**
-   On `shwd2sf→sfchd20` the held-out test column reads **+0.628 pp** while the validation-selected best-checkpoint
-   column reads **−0.307 pp** — a sign flip produced by the reported column alone, with runs, seeds and fine-tuning
-   untouched (`M3_draft/P1_NewDraft_v1_20260927.md:134`; the column convention is declared at `:51`).
-
-2. ☐ **Report the difference's own MDE, not only the level's.**
-   On the second §4.1 pair the 200-epoch *level* −0.055 pp sits at **0.39×** its own MDE (0.141 pp) and is not
-   distinguishable from zero, whereas the budget-to-budget *change* −0.223 pp clears **its own** MDE by **1.6×** —
-   the level and the difference need different yardsticks (`P1_NewDraft_v1_20260927.md:195`).
-
-3. ☐ **State the independent unit — family or slice — not just the count.**
-   The out-of-sample sign exercise predicts **21 of 25** slices correctly, but the independent units are the **seven
-   pair–families**, so 21/25 is explicitly *not* a percentage of independent predictions
-   (`P1_NewDraft_v1_20260927.md:96`).
-
-4. ☐ **Pre-register the magnitude bar, not only the significance level.**
-   T1-b met the registered `p < 0.01` **and** ten of ten seeds positive yet failed the frozen **≥ +0.30 pp** bar, so
-   a conventional test alone would have accepted a +0.168 pp effect (`P1_NewDraft_v1_20260927.md:62`, `:120`;
-   registration `预注册_新目标域复制实验_冻结_20260913.md:52-53`).
-
-5. ☐ **Pair on seeds, not on arms.**
-   The registration fixes paired t-tests over shuffle-seeds **42–51**, both arms on the same seed
-   (`预注册_新目标域复制实验_冻结_20260913.md:45`, `:52`), which is what makes the per-pair t a paired test and what
-   licenses the "seeds positive" column (`P1_NewDraft_v1_20260927.md:112-116`); the paper also refuses to treat two
-   cells of one tier as independent units (`:124`).
-
-6. ☐ **State that the two budget axes are two functionals, not one knob.**
-   The epoch budget moves along a path at fixed data, while the label budget changes the data the path is run on —
-   "the two budgets are **different functionals** of the same campaign" — which is why the gated archive counts run
-   **17/19 negative** on one axis against **2/8** on the other (`P1_NewDraft_v1_20260927.md:168`, `:94`).
-
-7. ☐ **Report the verdict-flip rate, not one verdict.**
-   The alignment *ranking* flips sign with the evaluator variant (Spearman **+1.00** vs **−1.00** over three
-   strategies per point), so a single verdict is a draw from a family of readings; the paper reports the flip chain
-   rather than one ordering (`00_SUPPLEMENTARY_v0.4.md:354`; `P1_NewDraft_v1_20260927.md:134`, `:142`).
-
-8. ☐ **Print the test's floor beside every p.**
-   Five of the seven 30-epoch rows rest on **n = 3**, where the permutation floor is `2/2³ = 0.25`, so they are "a
-   **sign census with seeds**, not a significance claim" — and the floor is printed beside every p for exactly that
-   reason (`00_SUPPLEMENTARY_v0.4.md:777`, `:785`).
-
-9. ☐ **State the checkpoint-selection provenance, not a bare held-out number.**
-   The published-protocol magnitudes **+1.76 / +0.54 pp** are best-checkpoint levels *on the split that selected
-   them*, not held-out estimates; under the clean protocol they read **+1.434 / +0.507 pp** and shrank further as
-   seeds were added — the selection premium made visible (`P1_NewDraft_v1_20260927.md:152`;
-   `00_SUPPLEMENTARY_v0.4.md:150`, `:157`).
-
-10. ☐ **State the multiplicity family and how it was enumerated, not just the adjusted p.**
-    The BH family is the **26-configuration roster, enumerated after the outcomes**, and the registration's recorded
-    count of **28** is "used as a denominator nowhere" — so the correction is reported as **robustness, not a
-    family-wise guarantee**, and the paper flags that a third party cannot reproduce the family-level arithmetic
-    from the released files alone (`00_SUPPLEMENTARY_v0.4.md:214`, `:359`; `P1_NewDraft_v1_20260927.md:148`).
-
-11. ☐ **State the seed count and the resolution it buys, not just the sign count.**
-    With the observed paired-difference σ a three-seed test reaches 80% power only at **0.56–0.62 pp**, a ten-seed
-    test at **0.18–0.21 pp**, and **43 of 147** cells fall below their own MDE — so "more seeds" is a resolution
-    claim that must be quantified, not asserted (`00_SUPPLEMENTARY_v0.4.md:214`;
-    `P1_NewDraft_v1_20260927.md:179`).
-
-12. ☐ **Report the count that fails the criterion, not only the count that survives.**
-    The confirmatory result is reported as a failure: **two of three** pairs survive the family correction at
-    q = 0.05, but only **one of three** meets every part of the criterion, and the abstract carries that failure
-    rather than the surviving count (`P1_NewDraft_v1_20260927.md:118`, `:9`).
