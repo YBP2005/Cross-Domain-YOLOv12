@@ -185,7 +185,8 @@ def main():
         for m in re.finditer(r'(Fig\.\s*S\d+|Table\s*S\d+|T\d+)[^.]{0,120}?cited (?:from|in) the main text',
                              supp):
             tok = m.group(1).replace(' ', '')
-            if tok not in body_main:
+            _body_ns = re.sub(r'\s+', '', body_main)
+            if tok not in _body_ns:
                 ghost.append(tok)
         # 反向也查一遍：补材里"supplementary numbering — Fig. S1 to Fig. S5"这类**概称**
         #   ⚠ 概称句必须**排除已改正的写法**：现在的补材写的是
