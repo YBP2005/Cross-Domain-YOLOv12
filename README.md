@@ -24,7 +24,7 @@
 | `base/dataset_split_counts.csv` | 各语料的划分统计（补材 Appendix L） |
 | `base/p1d1_s50_test_readings.csv` | §4.2 那个"改名存档件"种子的补测读数（record D1） |
 | `base/provenance.csv`、`base/数据字典.md`、`base/缺口清单.md` | 每个 run 的来源；43 列的口径定义；**已知缺口**（作者主动登记） |
-| `code/`（41 个脚本） | 全部分析脚本。**核心是 `_cells.py`** —— 项目的**唯一格解析器**（格的键 = 配对 × 族 × 标注预算 × 轮数；多列口径；结局优先级）。**任何复算都应当 import 它，不要自己重解析** |
+| `code/`（72 个脚本） | 全部分析脚本。**核心是 `_cells.py`** —— 项目的**唯一格解析器**（格的键 = 配对 × 族 × 标注预算 × 轮数；多列口径；结局优先级）。**任何复算都应当 import 它，不要自己重解析** |
 | `figures/F1_design_v2.png` | 主稿 Fig. 1（协议示意图） |
 | `M3_draft/` | **主稿与补材**（与作者侧逐字节一致，见 `build/sync_docs.py`） |
 | `provenance/deliver/`（25 项 / 264 件） | **守卫依赖的记录与逐格功效表**（`theory_B_MDE_by_cell.csv` 等）、**本轮三点阶梯的逐 run 证据**（`01_G1_test列_逐run.csv` + 4 个 run 归档，含 120 份 `test_eval.json`）与**冻结前置记录**（`02_EM_P1补实验_前置与冻结_20261006.md`）；其余作者侧台账**随隔离移出放行件** |
@@ -60,7 +60,7 @@
 3. **不要把两类混在一个循环里跑**。`build/verify_repo_isolation.py` 是唯一例外 ——
    它在**临时隔离副本**里逐个跑，因此不会污染你手上这份。
 
-**另一条已隔离的件**：`code/archive_only/01_build_base.py` **会从 `raw/` 重建底座**，
+**另一条已隔离的件**：`code/01_build_base.py` **会从 `raw/` 重建底座**，
 而放行副本**不带完整原始归档** ⇒ 跑它会把 `base/` 覆盖成不完整的版本（实测 1,117 run vs 正确 2,336），
 **并连带让 `14/16/40/41/43` 集体失败**。它已带**覆盖守卫**：不给 `--allow-overwrite` 一律拒绝执行。
 
@@ -87,7 +87,7 @@ python code/39_verify_protocol_fingerprint.py # 训练协议指纹：PASS = 底�
 
 ## 二、★ 每个招牌数字怎么复算
 
-**全部**不需要跑训练；**全部**从 `data/run_table_canonical.csv` 出发。
+**全部**不需要跑训练；**全部**从 `base/run_table_canonical.csv` 出发。
 
 | 主稿里的数 | 怎么复算 |
 |---|---|
