@@ -704,7 +704,7 @@ Table S1 lists the thirteen domain pairs studied: seven within-domain pairs; thr
 | firesmoke→firesmoke | 39.581 ± 0.389 | 35.197 ± 1.139 | −4.384 | 0/3 | −6.23 | 0.25 | 0.25 |
 | mask→mask | 65.348 ± 0.602 | 64.415 ± 0.909 | −0.933 | 0/3 | −1.49 | 0.25 | 0.25 |
 | mendeley→mendeley | 73.075 ± 0.278 | 70.171 ± 2.276 | −2.903 | 0/3 | −2.52 | 0.25 | 0.25 |
-| visdrone→visdrone **(10 seeds)** | 11.681 ± 0.108 | 10.872 ± 0.354 | **−0.809** | **0/10** | −7.66 | **0.00195** | 0.00195 |
+| visdrone→visdrone **(10 seeds)** | 11.681 ± 0.108 | 10.872 ± 0.354 | **−0.809** | **0/10** | −7.85 | **0.00195** | 0.00195 |
 
 **The 100-epoch cells: two arms × ten seeds.** The first two rows are cross-domain; the third is within-domain. **A permutation $p$ cannot fall below its floor** ($2/2^{n}$: 0.00195 at $n=10$), so where a contrast is more extreme than the floor the table prints the floor; the paired-$t$ $p$ for that contrast would be $3.2\times10^{-11}$, and it is **not** a permutation result.
 
@@ -726,7 +726,7 @@ Table S1 lists the thirteen domain pairs studied: seven within-domain pairs; thr
 |---|---|---|---|---|
 | §4.6 of the main text (the archive's own endpoint rule) | same-domain controls: `dota15→dota15`, `aitod→aitod20`, `visdrone→visdrone`, `mask→mask`, `dota→dota` | **17 cells** | the archive's own endpoint rule | mean **+0.27 pp**; median **+0.65**; **29% negative**; **16 of 17** reaching \|t\| ≥ 2 |
 | M.5, this appendix (clean three-way protocol, the table above) | the seven 30-epoch within-domain rows | **7 cells** — five at **n = 3**, two (`dota15→dota15`, `visdrone→visdrone`) at **n = 10** | target corpus's own held-out test split; mAP50-95 (%) of `best.pt` | **six negative + one null** (the null is `dota15→dota15`, 7 of its 10 seeds favour the strategy arm) |
-| §8 of the main text (the $U$/$M$ account) | `aitod→aitod20` and `mask→mask20`, 30 epochs | **2 cells**, n = 10 each † | not stated in §8 | **−1.195 pp** (t = −7.85) and **−2.027 pp** (t = −5.44) |
+| §8 of the main text (the $U$/$M$ account) | `aitod→aitod20` and `mask→mask20`, 30 epochs | **2 cells**, n = 10 each † | the validation-selected best-checkpoint column (family `r10`, dataset `*_3way`) | **−1.195 pp** (t = −7.85) and **−2.027 pp** (t = −5.44) |
 
 † Ten paired seeds per cell, recomputable from `base/run_table_canonical.csv` (family `r10`, `aitod20_3way` / `mask20_3way`, 30 epochs): the released table gives **n = 10** for both, with means **−1.195** and **−2.027 pp**, matching the §8 sentence, which prints the readings and their t values but not n.
 
