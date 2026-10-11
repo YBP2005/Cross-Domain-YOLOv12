@@ -24,7 +24,7 @@ SUPP = os.path.join(REPO, 'M3_draft', '00_SUPPLEMENTARY_v0.4.md')
 DATE = datetime.date.today().strftime('%Y%m%d')
 OUTPKG = os.path.join(ROOT, 'P1盲审包_全量_%s.md' % DATE)
 MANIFEST = os.path.join(REPO, 'MANIFEST_sha256.csv')
-EXPECT_REFS = 39
+EXPECT_REFS = 38
 
 # ---- 任务定义（P1 版；按此逐项作答）----
 TASKS = r'''## 任务定义（逐项作答；每一项都要能在包内定位）
