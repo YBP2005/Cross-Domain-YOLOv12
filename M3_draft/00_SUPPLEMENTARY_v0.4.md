@@ -149,26 +149,11 @@ The table above lists the six audit events — five reversed conclusions plus on
 
 ## E.5 Assigner-level OOM fallbacks: the audit, and the runs removed and replaced (2026-09-26)
 
-**Why this appendix exists.** Ultralytics catches a CUDA out-of-memory error inside the task-aligned assigner and **silently falls back to CPU for that batch**; the run continues, the epoch completes, and the reading is written. It is therefore invisible in the summary statistics and had to be found by scanning the logs. This appendix records the audit and every run that was removed.
+**Why this matters.** Ultralytics catches a CUDA out-of-memory error inside the task-aligned assigner and **silently falls back to CPU for that batch**; the run continues and the reading is written, so it is invisible in the summary statistics and had to be found by scanning the logs. The scan matched every training log of every campaign batch on the experiment host (**507 run directories** and their lane-level and per-run logs) against the exact signature `CUDA OutOfMemoryError in TaskAlignedAssigner`; a bare `OutOfMemoryError` pattern was rejected because the guard script's own comments contain it.
 
-**The scan.** Every training log of every campaign batch on the experiment host was matched against the exact fallback signature `CUDA OutOfMemoryError in TaskAlignedAssigner` (a bare `OutOfMemoryError` pattern was rejected as a false-positive source: the guard script's own comments contain it). The scan covers 507 run directories and their lane-level and per-run logs.
+**Three findings.** (i) **The trigger is the corpus, not the run**: fallbacks occur only on the dense aerial corpora (DOTA15, AI-TOD, VisDrone, where a batch can carry several thousand instances — the worst observed 3,927) and never on the helmet, smoke, mendeley, MAFA or `sns` corpora; on the two SFCHD cells that carry this paper's graded results the count is **zero**. (ii) **On any one run the effect is not measurable**: a cell-wise paired comparison, affected against unaffected runs of the same cell, gives a median mAP50-95 difference of **−0.0006 pp** (mean −0.0010 pp) over 20 cells, against the data-order σ̂ of **0.166-0.190 pp** — a third of the noise floor or less, as the mechanism implies (an isolated single batch, the next batch back on GPU, and the reported checkpoint a maximum over epochs). (iii) **It is a concurrency artefact, removed at the source**: a multi-process-per-device schedule pushed a 24.5 GB card to 23.9 GB and produced **37-59 fallbacks in a single run**, while one process per device produced **zero in all 33 runs** it launched at the same settings — a property of that batch, not of the discipline (see **E.6** for the four fallbacks the one-process-per-device rule did not prevent, which are retained).
 
-**Three findings.** (i) **The trigger is the corpus, not the run.** Fallbacks occur only on the dense aerial corpora — DOTA15, AI-TOD and VisDrone, where a single training batch can carry several thousand instances (the worst observed batch had 3,927) — and never on the helmet, smoke, mendeley, MAFA or `sns` corpora, whose busiest images carry about a dozen boxes. On the two SFCHD cells that carry this paper's graded results the fallback count is **zero**. (ii) **On any one run the effect is not measurable.** A cell-wise paired comparison, affected against unaffected runs of the same cell, gives a median mAP50-95 difference of **−0.0006 pp** (mean −0.0010 pp) over 20 cells, against the data-order σ̂ of **0.166–0.190 pp** — one third of the noise floor or less. The mechanism explains the size: the fallback is an isolated single batch, the next batch returns to GPU, and the checkpoint this paper reports is selected as a maximum over epochs. (iii) **It is a concurrency artefact, and it was removed at the source.** A schedule that ran more than one training process per device pushed a 24.5 GB card to 23.9 GB and produced **37–59 fallbacks in a single run**; a single-process-per-device schedule produced **zero fallbacks in all 33 runs** it launched, at the same settings. **That count is a property of that batch and not of the schedule in general**: the 30% batch reported in §5 (2026-10-06) ran under the same one-process-per-device rule and produced **four** fallbacks across **three** of its 40 runs. The distinction the archive supports is therefore the one between a **single isolated batch falling back inside the assigner** — which recurs under exclusivity and leaves the run intact — and **concurrency**, which produces them in the tens. The single-process rule removes the second; it does not remove the first. The per-run VRAM gate that the earlier queue relied on (≥ 18 GB free) is insufficient, because 18 GB is enough for one process at a 21.3 GB peak but not for two: the property that matters is *exclusivity of the device*, which a free-memory threshold cannot express.
-
-**Runs removed and replaced.** All of them were re-run under the single-process schedule; every replacement returned a clean log (zero fallbacks) and is the value now reported.
-
-| removed run | reason | replacement |
-|---|---|---|
-| `vis_d15_base100_s54n` | fallback in the **validation** pass | re-run, clean, in the CSV |
-| `vis_d15_lr005_100ep_s54n` | fallback in the **validation** pass | re-run, clean, in the CSV |
-| `d15_ai_lr005_100ep_s50n` | fallback during training | re-run under the dispatcher |
-| `r15b_y11_aitod_base100_s45n` | fallback during training, killed at epoch 0 | re-run, clean, in the CSV |
-| `r15b_y11_aitod_base100_s46n` | partial attempt from the concurrent window | re-run, clean, in the CSV |
-| `d15_ai_base100_s50n` | 59 fallbacks (concurrent window) | re-run, clean, in the CSV |
-| `d15_ai_base100_s51n` | killed at epoch 18 by the schedule change | re-run, clean, in the CSV |
-| the 18 `_oomfix` replicas | archived-campaign runs whose logs show a fallback | re-run under the dispatcher; all 18 clean |
-
-**What this does not claim.** The archive is not entirely free of the fallback: runs of the earlier campaigns whose logs show one are listed above and have clean replicas, but this paper does **not** re-analyse every archived reading, because the paired comparison of (ii) shows the effect to be below the noise floor in every cell where it was measured, and the corpora that carry the graded results are unaffected. Replicas were written under new names (`*_oomfix`) so that **no published reading was overwritten**; both the original and the replica are on disk, and the replica is the one this paper reports. The schedule and the log scanner are released with the manuscript.
+**What this does not claim.** The archive is not entirely free of the fallback: runs of earlier campaigns whose logs show one were replaced by clean replicas written under new names (`*_oomfix`, so that **no published reading was overwritten**; the replica is what this paper reports), and this paper does not re-analyse every archived reading, because the paired comparison of (ii) puts the effect below the noise floor in every cell where it was measured and the corpora carrying the graded results are unaffected. The schedule and the log scanner are released with the manuscript.
 
 ### E.6 The 30% batch: four assigner fallbacks under exclusivity, and why they stay in (2026-10-06)
 
@@ -575,28 +560,7 @@ The strong cell's paired three-seed gain recomputes to **+1.783 pp** (paired t =
 
 ## K.3 Shift-ordering provenance, caveats and per-cell detail (moved from §5.2)
 
-**Verbatim detail moved from §5.2 (2026-09-19).** Two caveats: the three pairs are *not* label-space-equivalent (smoke→firesmoke and smoke→SFCHD change the class vocabulary, SHWD→SFCHD does not), so D and task covary across the ordering; and the reported D values come from the released s-OTDD script at sample counts matched within each pair (Appendix K.3). **That composition confound now has a measured shape: a box-geometry $W_1$ decomposition over the same nine pairs — log-width, log-height, centre-x and centre-y — shows the shift is predominantly *scale* rather than position, the scale share being 0.757–0.952 (0.860–0.886 across the three cross-dataset pairs), so these corpora differ mainly in object size. This is a decomposition of box statistics, **not** of the s-OTDD distance: it agrees in direction with the s-OTDD ordering of §5.2 rather than decomposing it, and §5.2's ordering is therefore an ordering of that scalar, not of a physical shift. **The shift range is bounded against a measured no-shift reference:** in the same instrumentation the six within-domain pairs read D = 2.89–6.43, so the lowest cross-domain reading (7.19) exceeds the highest within-domain one by **12%**, and a second released estimator separates them by 32% (Appendix M.1). **Corpus heterogeneity behind the same read (moved from §5.2, 2026-09-19): across the ten corpora the median box area spans **1,919×** (1.88×10⁻⁴ to 3.61×10⁻¹ of image area) and the small-object share spans **0.00–0.99**; that is why composition matters beyond D, and it is a property of the corpora themselves rather than of the s-OTDD scalar (per-corpus splits and roles in Appendix L).** Ordering only; no functional claim; not in the abstract.
-
-
-**(a) the within-domain r_s scope and the restated overshoot conclusion (was §5.2).** (Spearman r_s = 0.88 across pairs) and saturating overshoot as the budget extends. The within-domain channel is therefore an overshoot phenomenon whose magnitude grows with the iterative budget.
-
-**(b) the single-run arm wording (was §5.2 within-domain).** every one of these arms is single-run
-
-**(a) the strong-cell budget wording (was §5.2 cross-domain).**  at 100 epochs)
-
-**(b) the disclosure wording (was §5.2 cross-domain).** disclosed as a limitation of the registered design together with the wide three-seed
-
-**(c) the ten-seed tier wording (was §5.2 cross-domain).** analysis rules timestamped before the extension data existed) puts both cells above both thresholds at ten seeds.
-
-**(d) the seven-seed restriction wording (was §5.2 cross-domain).** the seven seeds that were not part of the screening reading
-
-**(a) the s-OTDD D-value provenance and released-shift-table erratum note (was §5.2 shift ordering).** and the reported D values were computed by the released s-OTDD script with the sample counts matched within each pair (12.7629 for SHWD→SFCHD at n = 5,000, 12.9893 for smoke→SFCHD at the n-matched 4,000), now recorded in the released shift table where they were previously absent.
-
-**(b) the segment-2 comparison, tightened (was §5.2 shift ordering).** with the two segment-2 pairs sharing the same D level yet differing by a factor of
-
-**(c) the composition-beyond-D claim, tightened (was §5.2 shift ordering).** so source-domain composition (class count, label shift) matters beyond the scalar D
-
-**(d) the covarying-caveat wording (was §5.2 shift ordering).** so D and the task change covary across the ordering
+Two caveats on the ordering: the three pairs are *not* label-space-equivalent (smoke→firesmoke and smoke→SFCHD change the class vocabulary, SHWD→SFCHD does not), so D and the task covary across the ordering; and the reported D values come from the released s-OTDD script at sample counts matched within each pair. **That composition confound has a measured shape**: a box-geometry $W_1$ decomposition over the same nine pairs — log-width, log-height, centre-x and centre-y — shows the shift is predominantly *scale* rather than position, the scale share being 0.757-0.952 (0.860-0.886 across the three cross-dataset pairs), so these corpora differ mainly in object size. This is a decomposition of box statistics, **not** of the s-OTDD distance.
 
 ## K.4 The norm-diffusion detail moved from §8.5 (2026-09-19)
 
@@ -680,41 +644,7 @@ $\mu_S,\mu_T$; $\theta$ (any parameter value); $\theta_{\mathrm{src}}$ (source-t
 
 ## M.2 The joint bound in full: decomposition, corollary, proposition and their conditions (moved from §4)
 
-Three statements: an exact decomposition with its **elementary** gap corollary (§4.1); a **sharp**
-sensitivity bound on the optimal-displacement cost (§4.2) that does **not** improve that corollary; and a
-**negative result** — the curvature term this decomposition invites is redundant under the paper's own
-strong-convexity assumption, and where curvature is genuinely needed the standard top-eigenvalue modulus is
-invalid, the correct object being the path quantity $\kappa^-_\Delta$ (**Appendix J.4**). The bound is **not
-a validated theory**: no graded claim in this paper rests on it. Derivations, the term-by-term reading of
-Eq. (3) and the hypotheses H1–H10 are in **Appendix J**.
-
-### 4.1 The decomposition, and the elementary gap corollary
-
-The gap telescopes exactly for *any* parameter value θ:
-
-$$\mathrm{Gap}_T(\theta) = \underbrace{[R_T(\theta)-R_S(\theta)]}_{①} + \underbrace{[R_S(\theta)-R_S(\theta^*_S)]}_{②} + \underbrace{[R_S(\theta^*_S)-R_T(\theta^*_S)]}_{③} + \underbrace{[R_T(\theta^*_S)-R_T(\theta^*_T)]}_{④}. \tag{3}$$
-
-> **Corollary 1 (gap bound; elementary).** Under H1 and non-negativity $\ell\ge0$ (both by construction for
-> detection),
-> $$\mathrm{Gap}_T(\theta)\;\le\;R_S(\theta)+LW_1 . \tag{4}$$
-
-### 4.2 The sharp optimal-displacement sensitivity
-
-Term ④ is non-negative by target optimality, but bounding it needs two further conditions on the source
-minimiser — **localization** and **source stationarity** — neither of which holds at a computed checkpoint
-(**Appendix J.5(a)**).
-
-> **Proposition 1 (optimal-displacement sensitivity; sharp).** Under H1, H2, H5 in its two-point form and
-> the two conditions above,
-> $$④\;\le\;\min\Bigl\{2LW_1,\;\frac{L'^2}{2\mu_T}W_1^2\Bigr\}, \tag{5}$$
-> the **quadratic** branch binding below $W_1=4L\mu_T/L'^2$ and the **linear** one above it. Its constant
-> $1/(2\mu_T)$ is attained with equality: the branch is **sharp**.
-
-The **linear** branch needs H1 and a common parameter space and nothing else; the **quadratic** branch is
-**conditional** on those two conditions, which the measured endpoints do not meet — the ball form of H5 is
-refuted in 220 of 220 endpoint pairs, and where class counts differ the head is re-initialised and neither
-branch exists. Derivation and remaining caveats: Appendix J.3 and Appendix G.
-
+Three statements — an exact decomposition with its **elementary** gap corollary, a **sharp** sensitivity bound on the optimal-displacement cost that does **not** improve that corollary, and a **negative result**: the curvature term the decomposition invites is redundant under the paper's own strong-convexity assumption, and where curvature is genuinely needed the standard top-eigenvalue modulus is invalid, the correct object being the path quantity $\kappa^-_\Delta$. **The bound is not a validated theory**: no graded claim in this paper rests on it. The derivations, the term-by-term reading of Eq. (3) and the hypotheses H1-H10 are in **Appendix J** (the statements and their scope in J.1, proof-level detail in J.3, the retraction in J.4).
 
 ## M.3 The protocol in full: settings, seed layers, registration status and the clean-protocol specification (moved from §8.1)
 
