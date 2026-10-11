@@ -718,7 +718,7 @@ Table S1 lists the thirteen domain pairs studied: seven within-domain pairs; thr
 
 **Why this subsection exists.** §M.3 specifies the clean three-way protocol for the two SFCHD cells. The same carve-out builder was also run over the seven within-domain corpora and over two cross-domain pairs that do **not** involve SFCHD, so that §8.3's sign structure can be read on targets outside the registered family. This subsection carries those per-seed values, and the two released files named in §8.3 (`clean_threeway_perseed.csv`, `clean_threeway_summary.csv`) recompute every number printed here.
 
-**What is held fixed, and what the endpoint is.** For every cell the training split is the same 20%-label subset as the published runs; the validation split is a carve-out taken deterministically (seed 42) from the remaining training pool; and the reported value is the target corpus's **own held-out test split**, so no checkpoint selection can touch the reported split. The endpoint is mAP50-95 (%) of `best.pt`, the checkpoint selected on the carve-out; `last.pt` is carried in the release as a robustness column and agrees in sign throughout, including the negative cell below. Split sizes were re-measured for this submission, and every pairwise **name-level intersection is zero** (train / validation carve-out / test): 2243/1000/2804 (aitod20), 282/300/458 (dota15_20p), 282/300/458 (dota_20p), 11232/2000/6411 (firesmoke20), 1224/900/919 (mask20), 1150/1000/800 (mende20), 1294/500/1610 (visdrone_20p). Both arms are this paper's own — baseline lr 0.001 against strategy lr 0.005 — so each row is a same-pipeline, same-budget, same-seed pair.
+**What is held fixed, and what the endpoint is.** For every cell the training split is the same 20%-label subset as the published runs; the validation split is a carve-out taken deterministically (seed 42) from the remaining training pool; and the reported value is the target corpus's **own held-out test split**, so no checkpoint selection can touch the reported split. The endpoint is mAP50-95 (%) of `best.pt`, the checkpoint selected on the carve-out — selected, that is, **on the mAP@0.5:0.95 column alone** (Ultralytics 8.4.120 scores the fitness `w = [0, 0, 0, 1]`, so mAP50 does not enter the choice); `last.pt` is carried in the release as a robustness column and agrees in sign throughout, including the negative cell below. Split sizes were re-measured for this submission, and every pairwise **name-level intersection is zero** (train / validation carve-out / test): 2243/1000/2804 (aitod20), 282/300/458 (dota15_20p), 282/300/458 (dota_20p), 11232/2000/6411 (firesmoke20), 1224/900/919 (mask20), 1150/1000/800 (mende20), 1294/500/1610 (visdrone_20p). Both arms are this paper's own — baseline lr 0.001 against strategy lr 0.005 — so each row is a same-pipeline, same-budget, same-seed pair.
 
 **The 30-epoch within-domain cells: two arms × three seeds, and ten seeds for two of them.** Δ = strategy − baseline, in pp; p is the paired sign-flip permutation, which is the primary test, printed with its n-dependent floor. The two cells carried to ten seeds are the ones the extension was spent on: dota15 because it carried the smallest effect at three seeds, and visdrone because it is multi-class (ten classes) — so that the extension is not an extension over single-class corpora.
 
@@ -1281,7 +1281,7 @@ readings are not separable here and should not be presented as if they were.
 
 **3. A residual set of runs records a seed that its run name contradicts.** Those runs are named
 with one seed but carry another in their configuration; they are excluded from every seed-gated
-count in this paper, and no reported number rests on them. The residual is small and we do not
+count in this paper, and no reported number rests on them — **except that one of them is itself a released cell of the archive, which is why the exclusion is stated here rather than left implicit**. The residual is small and we do not
 resolve it here.
 
 **4. What fraction of the label axis is actually labelled.** The label budget is the measured
@@ -1308,7 +1308,7 @@ rather than one verified from the run names. Four of the five slots are residual
 is a released cell, so the effect on reported values is small; the boundary is recorded because
 the paired-by-seed convention is stated as a property of the whole archive.
 
-**What follows from the three.** The released per-run table supports recomputation of every
+**What follows from the first three.** (The fourth is a coverage statement about the label axis rather than a constraint on interpretation, and is treated where that axis is.) The released per-run table supports recomputation of every
 reported number, and it does so under a key that is narrower than the design: loss prior is
 fixed by selection rather than by the key, the protocol flag is confounded with a family, and a
 small residual set carries a seed field that its name contradicts. A reader who needs a cell
