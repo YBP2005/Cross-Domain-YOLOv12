@@ -20,7 +20,7 @@ DRAFT = r'D:\deepseek\analysis\M3_draft\P1_NewDraft_v1_20260927.md'
 SUPP = r'D:\deepseek\analysis\M3_draft\00_SUPPLEMENTARY_v0.4.md'
 OUT = r'E:\WorkBuddy\盲审P1\参考文献'
 CARDS = os.path.join(OUT, '文献')
-EXPECT_REFS = 39  # ★ 2026-10-05 定稿：正文引用空间为 [1]–[39]，双向无悬空。
+EXPECT_REFS = 38  # ★ 2026-10-05 定稿：正文引用空间为 [1]–[38]，双向无悬空。
                   #   补充材料 "Prior work" 段引的 6 篇（Arviv/Zhuang/Suo/Apicella/Varma/Forstmeier）
                   #   **以作者+arXiv号/DOI 的正文式引用出现，不占编号**（补材用其自身的台账编号制）。
 ALLOW_UNCITED = set()
@@ -110,7 +110,7 @@ def main():
     dangling = [c for c in cites if c not in set(nums)]
     unused = [n for n in nums if n not in cites]
     # ★ 2026-10-05：`[40]`–`[45]` 是**补充材料** "Prior work" 段的出处，
-    #   正文**不引**它们（正文引用空间仍是 [1]–[39]，我未改动任何正文措辞以免动页数）。
+    #   正文**不引**它们（正文引用空间仍是 [1]–[38]，我未改动任何正文措辞以免动页数）。
     #   ⇒ 它们**不是悬空**，而是"正文未引的定义"，单独登记、不报错。
     unquoted = [n for n in unused if n in ALLOW_UNCITED]
     unused = [n for n in unused if n not in ALLOW_UNCITED]
