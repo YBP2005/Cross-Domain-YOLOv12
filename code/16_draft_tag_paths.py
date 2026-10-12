@@ -59,7 +59,17 @@ def _find_m3d(start):
 _M3D = _find_m3d(BASE)   # ★ 2026-10-05：向上查找 M3_draft（两种布局都成立）
 
 DRAFT = os.path.join(_M3D, 'P1_NewDraft_v1_20260927.md')
-SUPP = os.path.join(_M3D, '00_SUPPLEMENTARY_v0.4.md')
+def _find_supp():
+    # 放行副本的 code/ 里没有 M3_draft/，补材在仓库根下；作者树在 M3_draft/ 下。两处都试。
+    for c in (os.path.join(_M3D, '00_SUPPLEMENTARY_v0.4.md'),
+              os.path.join(os.path.dirname(_M3D), '00_SUPPLEMENTARY_v0.4.md'),
+              os.path.join(BASE, 'M3_draft', '00_SUPPLEMENTARY_v0.4.md'),
+              os.path.join(BASE, '00_SUPPLEMENTARY_v0.4.md')):
+        if os.path.exists(c):
+            return c
+    return os.path.join(_M3D, '00_SUPPLEMENTARY_v0.4.md')
+
+SUPP = _find_supp()
 S1051 = lambda s: 42 <= s <= 51
 
 rows, G = C.load()
@@ -1474,4 +1484,8 @@ print('\n守卫报红 %d 条' % len(FAILS))
 for d, got, want in FAILS:
     print('  ❌ %s: got=%s want=%s' % (d, got, want))
 print('输出 -> %s' % os.path.join(OUT, '新稿标签_可复算路径.md'))
-sys.exit(1 if FAILS else 0)
+if _MISSING and not FAILS:
+    print('  ⚠ 缺件 %d 项 ⇒ 依赖它们的检查未执行，按报红处理' % len(_MISSING))
+    for m in _MISSING[:6]:
+        print('    -', m)
+sys.exit(1 if (FAILS or _MISSING) else 0)

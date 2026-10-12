@@ -577,7 +577,10 @@ Term ④ is the optimal-displacement cost $R_T(\theta^*_S)-R_T(\theta^*_T)$; wri
 | dota15 within-domain, 30 epochs (the non-positive counterpart cited at the same-budget control) | the two endpoints | **0.1534 → 0.1526** (−0.08 pp) | §8.3 |
 
 The strong cell's paired three-seed gain recomputes to **+1.783 pp** (paired t = **9.44**), which is the
-+1.78 pp screening reading quoted in §8.3; the corroborating cell's recomputes to **+0.51 pp**
++1.78 pp screening reading quoted in §8.3. **Three numbers for this one cell appear in this file and they are
+different objects, not a drifting value**: the published-protocol magnitude printed elsewhere as **+1.76 pp**
+is the ten-seed best-checkpoint level on the split that selected the checkpoint, **+1.783 pp** is the same
+cell's paired three-seed recomputation, and **+1.78 pp** is the screening reading quoted in §8.3; the corroborating cell's recomputes to **+0.51 pp**
 (paired t = **3.31**, p ≈ 0.081), which is what §8.2 already prints.
 
 
