@@ -1247,7 +1247,7 @@ nothing here is a monotone statement about the budget. (ii) The cluster count is
 **four**, and it bounds how much weight the count can carry; it is a count of reporting strata,
 not of independent experiments. (iii) The base table records a
 *seed kind* per run, and in **9 of the 165 cells that carry both arms** the two arms' seed kinds are **not the
-same set**; here "the same seed" is therefore a pairing asserted from the run records rather than
+same set (165 is the two-arm count over cells with a parseable label budget, three fewer than the 168 two-arm cells P.9 reports before that filter)**; here "the same seed" is therefore a pairing asserted from the run records rather than
 one verified independently, which is why the verdict change is reported as an observed property
 of the two columns and is not attributed to a mechanism.
 
