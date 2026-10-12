@@ -5,14 +5,16 @@ the article, published online as supplied, and **not part of the manuscript's pa
 unchanged from the manuscript's cross-references, so "Appendix J.4" in the main text resolves to the section
 of that name here. Ordering here is alphabetical (**A–Q**, with P added 2026-10-04 and Q added 2026-10-11); the manuscript's pointers are unaffected. (The reference-status ledger of the earlier 74-entry numbering, and the internal compression record it named, are **not** part of this file and are not supplied.)
 
-> ⚠ **On the "(moved from §X)" markers (added 2026-10-02).** Thirty-three passages below carry a provenance marker of
+> ⚠ **On the "(moved from §X)" markers (added 2026-10-02).** Thirty-one passages below carry a provenance marker of
 > the form *"(moved from §8.6)"*. **Those section numbers belong to an earlier version of the manuscript**,
 > whose numbering differed from the present article's; they are retained as a record of **where the material
 > came from**, and they are **not** live cross-references. In the present article, §5–§9 carry no subsections
 > at all, so a pointer such as "§8.6" will not resolve there. **The same holds for every "§x.y" form anywhere in
 > this file**, in a marker or in running prose: it is either a reference to a subsection *of this supplement*
 > (where the letter is an appendix letter, e.g. "P.1") or a historical pointer of the kind just described, and
-> **never a live pointer into the article's §5–§9**. The **appendix letters (A–Q)** are the live pointers into
+> **never a live pointer into the article's §5, §6, §7, §8 or §9** — those five sections carry no subsections in the present
+> article, which is why such a pointer cannot resolve. Pointers of the form **§4.x do resolve**: the article’s §4 has
+> subsections 4.1–4.6, and a "§4.2" in this file means that subsection. The **appendix letters (A–Q)** are the live pointers into
 > this file: they are what the main text cites.
 
 
@@ -149,6 +151,10 @@ The table above lists the six audit events — five reversed conclusions plus on
 ## E.2 The selection premium: per-cell restatements and the cells the coincidence affects (moved from §8.6)
 
 **The premium was measured per cell; the measurement and its direction are reported in the companion paper on evaluation validity rather than here** — that paper owns the per-cell and per-arm values, the endpoint restatements, and the enumeration of which cells the `val`/`test` coincidence affects. What this paper retains is the contrast that conditions its own headline numbers: the published-protocol magnitudes **+1.76 pp** (smoke→SFCHD) and **+0.54 pp** (SHWD→SFCHD) are best-checkpoint levels on the split that selected them, not held-out test estimates. **The clean three-way protocol and its disclosures.** For the affected cells a three-way protocol (label subset / validation carve-out from the remaining training pool / untouched test split) removes the structure, and we report it rather than merely proposing it: on the clean protocol both headline cells hold — smoke→SFCHD **+1.434 pp at ten seeds** (baseline 42.062 → strategy 43.496; SD 0.383 pp; paired t = **11.84**; sign-flip permutation p = **0.0020**, the n = 10 floor, all ten seeds positive) and SHWD→SFCHD **+0.507 pp** (43.559 → 44.066; SD 0.488 pp; t = **3.29**; p = **0.0098**, nine of ten positive) — and these, not the published-protocol values of §4.3, are the paper's primary readings of the two headline cells. **The eleven- and thirteen-seed extension, on which the family-level status below rests:** smoke→SFCHD **+1.409 pp** (baseline 42.108 → strategy 43.517; SD 0.372 pp; paired t = **12.55**; permutation p = **0.000977**, the n = 11 floor, eleven of eleven positive) and SHWD→SFCHD **+0.628 pp** (43.484 → 44.112; SD 0.489 pp; t = **4.63**; p = **0.001221**, twelve of thirteen positive). **The extension moved the point estimate by −0.025 pp and +0.121 pp on the two cells** — it tightened the interval rather than raising the effect. **At ten seeds neither clean-tier test clears the paper's own roster-wise correction** (q = 0.052 and 0.127); **extended to eleven and thirteen seeds both clear it (q = 0.0159), and that extension postdates the ten-seed values** (**Appendix F.1**): what the clean protocol buys is the removal of the checkpoint-selection coincidence, not additional multiplicity protection. Three disclosures attach. First, the clean-protocol magnitudes are lower than the published-protocol ones they replace as evidence (+1.434 vs +1.76; +0.507 vs +0.54), which is the selection premium of this section working at cell level. Second, within the clean protocol the estimate **fell from six seeds to nine and then rose slightly at ten**: +1.562 / +0.693 pp at six seeds, +1.420 / +0.492 at nine, +1.434 / +0.507 at ten (so it is **not monotone in the seed count**), the direction selection inflation predicts, which is why the ten-seed value is the one we report. Third, the protocol is released as `*_3way.yaml` with its deterministic carve rule (seed 42 from pool-minus-subset) and a zero-intersection check on all three pairs at file-name level (Appendix D). The visdrone→dota15 probe, the third cell the coincidence affects, has its clean-protocol reading in **Appendix M.5**, and we do not claim the published protocol is equivalent to the clean one. Image-level overlap between the MAFA source and the mask target is negligible (pHash 0.06%). **Incidental audit note carried with this block** (the placeholder sentence the moved text relies on): the anchor run of the 2026-09-11 campaign reads **Δ = 0.000 pp**, and in that campaign three mendeley baselines are bit-identical across seeds (§8, §9).
+
+> **Numbering note.** Appendix E carries E.1, E.2, E.5 and E.6. The numbers E.3 and E.4 belonged to
+> material of the earlier revision that is not part of this submission; the surviving subsections keep
+> their original numbers so that the article’s and this file’s cross-references stay stable.
 
 ## E.5 Assigner-level OOM fallbacks: the audit, and the runs removed and replaced (2026-09-26)
 
@@ -818,49 +824,6 @@ selected it. The three-way work of §N.2 is a different batch and does not repai
 retroactively. The honest reading of the registered set is evidence about **direction on three
 targets**, not about magnitude on any held-out target.
 
-## N.4 The domain-shift measurement behind the 2×2 design of §5
-
-**What it is for.** §5 reports a within-pair budget manipulation on two domain-difference
-tiers and states the measured shift of each tier (**D = 1.66** for the matched-corpus pair,
-**D = 5.37** for the cross-corpus pair, s-OTDD). This appendix gives the measurement those two
-numbers come from, so that they are not carried on assertion alone.
-
-**Column.** The 2×2 is reported on the **val** column, not on the **test** column the
-registration froze; the per-run values are `provenance/deliver/G1_B机_逐run摘要.csv`, which
-covers **c1 and c2 only** under the column name `val_map`, while c3 and c4 exist only as
-summaries.
-
-**The instrument.** s-OTDD, reusing the released shift codebase (`shift_families.py`) rather than
-a re-implementation. Protocol points, all fixed before the measurement: ResNet-18 features at
-512 dimensions; images resized to 224 with ImageNet normalisation; **cap 4,000** samples per side;
-deterministically sorted, first $N$ taken; sliced Wasserstein-2 with `n_slices = 200`, `seed = 42`;
-and s-OTDD taken as $\sqrt{W_2^2 + \text{label term}}$. $N = 282$ paired for the two tiers of the
-2×2; the same-corpus reference row uses $N = 2{,}243$.
-
-**The measured values, decomposed.** So that a reader can check the composition rather than only
-the total:
-
-| pair | tier | $N$ | feature $W_1$ | feature $W_2$ | label term | **D (s-OTDD)** |
-|---|---|---:|---:|---:|---:|---:|
-| `dota15_tr → dota15_te` | **A0, near-zero** | 282 | 0.0854 | 0.1149 | 2.7405 | **1.6594** |
-| `dota15_tr → aitod_tr` | **A1, high** | 282 | 0.2380 | 0.2867 | 28.7135 | **5.3662** |
-| *reference* `aitod_tr → aitod_te` | — | 2,243 | 0.0570 | 0.0740 | 1.6069 | **1.2698** |
-
-The two tiers are separated by ≈ 3.2×, and both same-corpus values (1.66 and 1.27) sit well
-below the cross-corpus 5.37, so the separation is not an artefact of the tier construction.
-
-**The positive control, and why it matters here.** The same pipeline re-derived two **already
-published** shift values and reproduced each to **Δ = 0.0000** (`shwd → sfchd_pool` = 11.2658;
-`pcb → neu` = 23.2931). A pipeline that cannot reproduce values it did not originate is not
-evidence about new ones, so this control is the licence for reading the table above.
-
-**Where the numbers live.** The full measurement record — instrument, the same decomposition,
-the control values and their reproduction — is `deliver/G1_D实测报告_20261004.md` in this
-release; the measurement script is `code/g1_measure_D.py`. Two instruments for shift are used in
-this paper (**N.3** states the separation): the one here, and the one behind §4.6's correlation
-table (M.1). **They are not interchangeable and are never mixed within one comparison.**
-
-
 ## N.2 The three-way split and the checkpoint-selection audit: the per-run detail
 
 **The split.** Each run's target corpus is divided into three disjoint parts — **33.31 / 29.74 /
@@ -911,6 +874,49 @@ replication** — the fingerprint comparison shows one recipe, one training set,
 and one seed set run twice. The companion paper's deprecation of its own §8 means its
 `可引用材料` framing for these modules is withdrawn; the underlying released runs remain the
 checkable record.
+
+
+## N.4 The domain-shift measurement behind the 2×2 design of §5
+
+**What it is for.** §5 reports a within-pair budget manipulation on two domain-difference
+tiers and states the measured shift of each tier (**D = 1.66** for the matched-corpus pair,
+**D = 5.37** for the cross-corpus pair, s-OTDD). This appendix gives the measurement those two
+numbers come from, so that they are not carried on assertion alone.
+
+**Column.** The 2×2 is reported on the **val** column, not on the **test** column the
+registration froze; the per-run values are `provenance/deliver/G1_B机_逐run摘要.csv`, which
+covers **c1 and c2 only** under the column name `val_map`, while c3 and c4 exist only as
+summaries.
+
+**The instrument.** s-OTDD, reusing the released shift codebase (`shift_families.py`) rather than
+a re-implementation. Protocol points, all fixed before the measurement: ResNet-18 features at
+512 dimensions; images resized to 224 with ImageNet normalisation; **cap 4,000** samples per side;
+deterministically sorted, first $N$ taken; sliced Wasserstein-2 with `n_slices = 200`, `seed = 42`;
+and s-OTDD taken as $\sqrt{W_2^2 + \text{label term}}$. $N = 282$ paired for the two tiers of the
+2×2; the same-corpus reference row uses $N = 2{,}243$.
+
+**The measured values, decomposed.** So that a reader can check the composition rather than only
+the total:
+
+| pair | tier | $N$ | feature $W_1$ | feature $W_2$ | label term | **D (s-OTDD)** |
+|---|---|---:|---:|---:|---:|---:|
+| `dota15_tr → dota15_te` | **A0, near-zero** | 282 | 0.0854 | 0.1149 | 2.7405 | **1.6594** |
+| `dota15_tr → aitod_tr` | **A1, high** | 282 | 0.2380 | 0.2867 | 28.7135 | **5.3662** |
+| *reference* `aitod_tr → aitod_te` | — | 2,243 | 0.0570 | 0.0740 | 1.6069 | **1.2698** |
+
+The two tiers are separated by ≈ 3.2×, and both same-corpus values (1.66 and 1.27) sit well
+below the cross-corpus 5.37, so the separation is not an artefact of the tier construction.
+
+**The positive control, and why it matters here.** The same pipeline re-derived two **already
+published** shift values and reproduced each to **Δ = 0.0000** (`shwd → sfchd_pool` = 11.2658;
+`pcb → neu` = 23.2931). A pipeline that cannot reproduce values it did not originate is not
+evidence about new ones, so this control is the licence for reading the table above.
+
+**Where the numbers live.** The full measurement record — instrument, the same decomposition,
+the control values and their reproduction — is `deliver/G1_D实测报告_20261004.md` in this
+release; the measurement script is `code/g1_measure_D.py`. Two instruments for shift are used in
+this paper (**N.3** states the separation): the one here, and the one behind §4.6's correlation
+table (M.1). **They are not interchangeable and are never mixed within one comparison.**
 
 
 # Appendix O. Related-work detail removed from the main text (2026-10-02)
