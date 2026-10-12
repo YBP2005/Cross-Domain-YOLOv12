@@ -11,10 +11,10 @@
   （A4 单栏 / **1.5 倍**行距 / Times New Roman **10 pt**，表格 10 pt、图注 8 pt /
   页边距 上 4.3 · 右 4.8 · 下 4.3 · 左 4.8 cm / 两端对齐 / 有页码）实测 **35 页**。
   上限 20–35 页。**两道阳性对照**：注入 600 词后官方口径页数由 **35→37**、两套版式读数不同（⇒ 版式参数生效、测量器对内容有响应）。
-- 主稿词数（同一把尺子，口径内）：**14494 词**。
-- 补充材料 1426 行、约 40068 词。**期刊明写 "Appendices are not included in the page limit"**
+- 主稿词数（同一把尺子，口径内）：**14510 词**。
+- 补充材料 1426 行、约 40140 词。**期刊明写 "Appendices are not included in the page limit"**
   （Guide for Authors 第 567 行），故补材**不计入**上表页数；此数仅作记录。
-- 主稿 md5 `7D2BE0FF06918332DF0FFCE0110F26F8`；补充材料 md5 `93E87AFF92713FD3A0DA4AAC68B616BF`。
+- 主稿 md5 `088FE21C3E70049296B0A092363E232D`；补充材料 md5 `EDC621FFF5108D7DDD335DF68283CA91`。
 - 页数与词数的**实测冻结件**：`复现仓库\provenance\pages_probe_new\measurement.json`（其 `inputs.main_md5` 与本包主稿 md5 一致才有效）。
 
 【本稿的结构自述（静态；不含任何版本间的比较）】
