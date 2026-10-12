@@ -1291,7 +1291,7 @@ resolve it here.
 
 **4. What fraction of the label axis is actually labelled.** The label budget is the measured
 independent variable of §4 and §4.6, so how much of the archive carries a *checkable* budget
-label is a bound on that axis. Of the **2,362** runs in the released table (the same base as §3), **453 (19.2%) carry no
+label is a bound on that axis. Of the **2,362** rows in the released table (2,336 distinct runs; the same base as §3), **453 (19.2%) carry no
 parseable label budget**. **442 of those are recoverable to 20%** from configuration evidence —
 a saved dataset YAML whose `train` path contains `20_percent`, or the generated split
 specification together with its execution log. (The recovery itself is carried out on the analysis
