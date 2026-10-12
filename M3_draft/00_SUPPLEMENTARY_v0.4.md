@@ -3,7 +3,7 @@
 This file carries the appendices of the manuscript. They are **supplementary material**: not typeset into
 the article, published online as supplied, and **not part of the manuscript's page budget**. The letters are
 unchanged from the manuscript's cross-references, so "Appendix J.4" in the main text resolves to the section
-of that name here. Ordering here is alphabetical (**A–R**, with P added 2026-10-04, Q added 2026-10-11 and R added 2026-10-12); the manuscript's pointers are unaffected. (The reference-status ledger of the earlier 74-entry numbering, and the internal compression record it named, are **not** part of this file and are not supplied.)
+of that name here. Ordering here is alphabetical (**A–S**, with P added 2026-10-04, Q added 2026-10-11, R and S added 2026-10-12); the manuscript's pointers are unaffected. (The reference-status ledger of the earlier 74-entry numbering, and the internal compression record it named, are **not** part of this file and are not supplied.)
 
 > ⚠ **On the "(moved from §X)" markers (added 2026-10-02).** Thirty-one passages below carry a provenance marker of
 > the form *"(moved from §8.6)"*. **Those section numbers belong to an earlier version of the manuscript**,
@@ -14,7 +14,7 @@ of that name here. Ordering here is alphabetical (**A–R**, with P added 2026-1
 > (where the letter is an appendix letter, e.g. "P.1") or a historical pointer of the kind just described, and
 > **never a live pointer into the article's §5, §6, §7, §8 or §9** — those five sections carry no subsections in the present
 > article, which is why such a pointer cannot resolve. Pointers of the form **§4.x do resolve**: the article’s §4 has
-> subsections 4.1–4.6, and a "§4.2" in this file means that subsection. The **appendix letters (A–R)** are the live pointers into
+> subsections 4.1–4.6, and a "§4.2" in this file means that subsection. The **appendix letters (A–S)** are the live pointers into
 > this file: they are what the main text cites.
 
 
@@ -1401,3 +1401,23 @@ not read them as mechanism.
 # Appendix R. Fig. 1 in full: column conventions, audit placement and exceptions (moved from the caption, 2026-10-12)
 
 **The caption is a schematic; this is what it abbreviates.** Column convention: the intervention and measurement results (§4.1, §4.2, §4.5, §4.6) are reported on the **held-out test split** (the corpus's own `test:` entry) — **except the two §4.2 rows and §4.1's T1-c, whose released `test:` key also selected the checkpoint, so theirs is not an independent held-out split** (Appendix M.3) — whereas the two control subsections (§4.3, §4.4) use the **validation-selected best checkpoint's validation reading**; §4.4's isolated backbone swap is where the two conventions put the **cross-backbone difference** on opposite sides of zero on the primary target’s corpus, although each backbone’s own gain is positive under both conventions. A third reading appears once, in §4.6: the same-domain contrast there is stated under the archive’s own endpoint rule rather than under either column. A fourth exception is the 2×2 sensitivity test of §5, which is reported on the **val** column — the same column as §4.3 and §4.4 (Supplementary N.4). **Of the two, the test column is this paper's primary column and the val-best column is its reported sensitivity**; the subsections that read the val-best column are the paper's **sensitivity group**, and their numbers are labelled as sensitivity wherever they are quoted. The same cell can differ between the two, and by more than a rounding step — on `shwd2sf→sfchd20` (100 epochs, thirteen paired seeds) the test column reads **+0.628 pp** while the best-checkpoint validation column reads **−0.307 pp**, a sign flip produced by the choice of column alone (§6(b)); every number in this paper states which of the two it uses, and the released per-run tables carry both columns. Sign convention: gains are always differenced as a **later or higher budget minus an earlier or lower budget**, so a **negative** difference is the direction the budget account predicts.
+# Appendix S. Every headline number with its column and its MDE ratio (2026-10-12)
+
+**Why this table exists.** A reader otherwise assembles it from P.1's level audit, P.1-bis's differenced audit, P.7's per-batch columns and Q.1's scope note. One table shows what each headline reading is a reading *of*, which column it is read on, and how far it sits from that cell's own resolution. `MDE = gamma(n) * sd` at alpha = 0.05, beta = 0.20 (paired *t*), computed per cell; `ratio = |reading| / MDE`. **Only rows whose reading and MDE are both recomputed from `base/run_table_canonical.csv` are listed**; the remaining headline readings stay in P.1/P.1-bis until their cell's MDE is computed the same way.
+
+| headline reading | cell (pair / family / label budget / epochs) | column | reading (pp) | MDE (pp) | ratio |
+|---|---|---|---:|---:|---:|
+| §4.1 visdrone→dota15 100 ep | visdrone→dota15 / `t1c` / 20% / 100 | held-out test | +3.727 | 0.268 | **13.9x** |
+| §4.1 visdrone→dota15 200 ep | visdrone→dota15 / `mech` / 20% / 200 | held-out test | +2.584 | 0.193 | **13.4x** |
+| §4.1 same cell, val-best | visdrone→dota15 / `t1c` / 20% / 100 | val-best | +3.733 | 0.275 | 13.6x |
+| §4.1 same cell, val-best | visdrone→dota15 / `mech` / 20% / 200 | val-best | +2.588 | 0.183 | 14.2x |
+| §4.1 aitod→visdrone 100 ep | aitod→visdrone / `t1b` / 20% / 100 | held-out test | +0.168 | 0.119 | **1.4x** |
+| §4.1 same cell, val-best | aitod→visdrone / `t1b` / 20% / 100 | val-best | +1.152 | 0.184 | 6.2x |
+| §4.2 smoke→SFCHD ladder, 30 ep | smoke→sfchd / `b2` / 20% / 30 | held-out test | +3.656 | 0.435 | 8.4x |
+| §4.2 same ladder, 50 ep | smoke→sfchd / `b2` / 20% / 50 | held-out test | +2.674 | 0.267 | 10.0x |
+| §4.2 same ladder, 100 ep | smoke→sfchd / `b2` / 20% / 100 | held-out test | +1.666 | 0.200 | 8.3x |
+| §4.2 same ladder, 200 ep | smoke→sfchd / `b2` / 20% / 200 | held-out test | +1.495 | 0.252 | 5.9x |
+| §4.5 pcb→neu_det, 10%→50% labels, 100 ep | pcb→neu_det / `s2df` / 10% / 100 | held-out test | +2.381 | 1.738 | 1.4x |
+| §4.5 visdrone→dota15, 10%→50% labels, 30 ep | visdrone→dota15 / `s2ae` / 10% / 30 | held-out test | +1.995 | 0.266 | 7.5x |
+
+**What the table makes plain, on the rows it carries.** Every reading here sits at **1.4x or more** of its cell's own MDE, and the two §4.1 levels sit at 13-14x; the lowest ratio is §4.1's smaller reading and §4.5's `pcb→neu_det` label-axis cell, which §9 already reports as descriptions rather than as resolvable per-cell claims. The level-versus-difference distinction is visible in the columns, since §4.1's endpoint difference is not a level and its own MDE is computed on the per-seed differences.
