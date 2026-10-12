@@ -1417,7 +1417,9 @@ not read them as mechanism.
 | §4.2 same ladder, 50 ep | smoke→sfchd / `b2` / 20% / 50 | held-out test | +2.674 | 0.267 | 10.0x |
 | §4.2 same ladder, 100 ep | smoke→sfchd / `b2` / 20% / 100 | held-out test | +1.666 | 0.200 | 8.3x |
 | §4.2 same ladder, 200 ep | smoke→sfchd / `b2` / 20% / 200 | held-out test | +1.495 | 0.252 | 5.9x |
-| §4.5 pcb→neu_det, 10%→50% labels, 100 ep | pcb→neu_det / `s2df` / 10% / 100 | held-out test | +2.381 | 1.738 | 1.4x |
-| §4.5 visdrone→dota15, 10%→50% labels, 30 ep | visdrone→dota15 / `s2ae` / 10% / 30 | held-out test | +1.995 | 0.266 | 7.5x |
+| §4.5 pcb→neu_det, 10% level, 100 ep | pcb→neu_det / `s2df` / 10% / 100 | held-out test | +2.381 | 1.738 | 1.4x |
+| §4.5 visdrone→dota15, 10% level, 30 ep | visdrone→dota15 / `s2ae` / 10% / 30 | held-out test | +1.995 | 0.266 | 7.5x |
+| §4.5 same pair, **10%→50% labels** (the differenced reading) | visdrone→dota15 / `s2ae` | held-out test | +1.978 | 0.419 | 4.7x |
+| §4.5 pcb→neu_det, **10%→50% labels** (the differenced reading) | pcb→neu_det / `s2df` | held-out test | −2.391 | 2.396 | **1.0x** |
 
-**What the table makes plain, on the rows it carries.** Every reading here sits at **1.4x or more** of its cell's own MDE, and the two §4.1 levels sit at 13-14x; the lowest ratio is §4.1's smaller reading and §4.5's `pcb→neu_det` label-axis cell, which §9 already reports as descriptions rather than as resolvable per-cell claims. The level-versus-difference distinction is visible in the columns, since §4.1's endpoint difference is not a level and its own MDE is computed on the per-seed differences.
+**What the table makes plain, on the rows it carries.** Every **level** reading here sits at **1.4x or more** of its cell’s own MDE, and the two §4.1 levels sit at 13-14x. The **differenced** label-axis readings are the exception: `pcb→neu_det`’s 10%→50% change sits at **1.0x**, i.e. exactly at its own MDE, which is why §9 reports the label-axis cells as descriptions rather than as resolvable per-cell claims, while `visdrone→dota15`’s sits at 4.7x. The level-versus-difference distinction is visible in the columns, since §4.1's endpoint difference is not a level and its own MDE is computed on the per-seed differences.
