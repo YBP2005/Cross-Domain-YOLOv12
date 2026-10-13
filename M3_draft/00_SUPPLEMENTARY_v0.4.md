@@ -1429,7 +1429,7 @@ not read them as mechanism.
 **What this appendix adds.** Three readings that the article refers to but that were not in the released
 set before: the **reporting cap** re-measured on four cell families and both columns, and the same cells
 **stratified by object area** and **by class**. All of it is evaluation only - no checkpoint was retrained -
-and all of it is on the held-out `test` column at `max_det = 300` unless stated otherwise.
+and all of it is on the held-out `test` column at `max_det = 300` unless stated otherwise. **The per-run results are released**, so that no number here rests on our own table: `provenance/appendix_T/T1_maxdet_levels.csv` (the cap ladder, one row per run, split and cap), `T2_area_AP.csv` (the area-stratified AP, one row per run and area bin) and `T3_perclass_AP.csv` (the per-class AP, one row per run and class), with the conventions and the three limitations that must be read with them stated in that directory’s `README.md`.
 
 ## T.1 The reporting cap (`max_det`) does not move the paired gains
 
