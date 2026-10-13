@@ -251,6 +251,19 @@ def check_draft():
     return d, fails
 
 
+def _appendix_last():
+    """从补材实测附录字母，避免包头部的范围滞后（2026-10-13）。"""
+    import io as _io, os as _os, re as _re
+    p = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))),
+                      'M3_draft', '00_SUPPLEMENTARY_v0.4.md')
+    try:
+        t = _io.open(p, encoding='utf-8').read()
+        lets = _re.findall(r'(?m)^# Appendix ([A-Z](?:-bis)?)\.', t)
+        lets = [x for x in lets if x != 'A-bis']
+        return lets[-1] if lets else 'S'
+    except Exception:
+        return 'S'
+
 def main():
     d, fails = check_draft()
     s = io.open(SUPP, encoding='utf-8', newline='').read()
@@ -291,7 +304,7 @@ def main():
         '# P1 盲审包（全量）—— %s' % datetime.date.today().isoformat(),
         '',
         '> 本包是**自足**的盲审材料。包内依次是：**材料自述块**、**四条前置说明**、**任务书与评分细则**、',
-        '> **`06_英文稿_EN`**（主稿全文）、**`08_英文补充材料_Supplementary`**（附录 A、A-bis、B–S 全文）。',
+        '> **`06_英文稿_EN`**（主稿全文）、**`08_英文补充材料_Supplementary`**（附录 A、A-bis、B–%s 全文）' % _appendix_last() + '。',
         '> 两份材料的 md5 一并冻结：主稿 `%s`，补材 `%s`。' % (md5d, md5s),
         '> 同目录另有两份**旁证**材料（`复现仓库\\`、`参考文献\\`），**不是评审对象**，用法见任务书 §0a。',
         '',
@@ -318,7 +331,7 @@ def main():
         '',
         '# 08_英文补充材料_Supplementary',
         '',
-        '> 补充材料全文（附录 A、A-bis、B–S）。md5 `%s`。' % md5s,
+        '> 补充材料全文（附录 A、A-bis、B–%s）' % _appendix_last() + '。md5 `%s`。' % md5s,
         '> ⚠ **重要**：补材内部出现的方括号编号（`[1]`–`[74]`）属于**上一版稿子的台账编号**，',
         '> **与主稿的 `[1]`–`[39]` 不是同一套**，不得互相引用；补材文首已有状态说明。',
         '',
