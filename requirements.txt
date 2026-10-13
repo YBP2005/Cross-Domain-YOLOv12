@@ -1,0 +1,17 @@
+# P1 复现件的运行依赖（2026-10-13）
+#
+# 为什么需要这一份：第七轮评审在放行副本里跑 `code/43_A24_power_audit.py` 时以
+# `ModuleNotFoundError: No module named 'scipy'` 失败，而该脚本**按设计**在缺 scipy 时硬失败
+# （不允许静默退化成常量）。缺少依赖清单会让读者把环境问题误读成脚本问题。
+#
+# 核验目标（稿内声明的那一版）：
+ultralytics==8.4.120
+torch==2.4.0
+#
+# 守卫与普查脚本所需：
+numpy
+scipy
+#
+# 评测器的可选依赖（分层 AP 的独立实现需要它；缺它时 Appendix T.2 的 AP 由本包自实现，
+# 与 Ultralytics 口径不同、不可互证）：
+# pycocotools
