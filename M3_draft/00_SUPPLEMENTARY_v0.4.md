@@ -3,7 +3,7 @@
 This file carries the appendices of the manuscript. They are **supplementary material**: not typeset into
 the article, published online as supplied, and **not part of the manuscript's page budget**. The letters are
 unchanged from the manuscript's cross-references, so "Appendix J.4" in the main text resolves to the section
-of that name here. Ordering here is alphabetical (**A–S**, with P added 2026-10-04, Q added 2026-10-11, R and S added 2026-10-12); the manuscript's pointers are unaffected. (The reference-status ledger of the earlier 74-entry numbering, and the internal compression record it named, are **not** part of this file and are not supplied.)
+of that name here. Ordering here is alphabetical (**A–T**, with P added 2026-10-04, Q added 2026-10-11, R/S added 2026-10-12 and T added 2026-10-13); the manuscript's pointers are unaffected. (The reference-status ledger of the earlier 74-entry numbering, and the internal compression record it named, are **not** part of this file and are not supplied.)
 
 > ⚠ **On the "(moved from §X)" markers (added 2026-10-02).** Thirty-one passages below carry a provenance marker of
 > the form *"(moved from §8.6)"*. **Those section numbers belong to an earlier version of the manuscript**,
@@ -14,7 +14,7 @@ of that name here. Ordering here is alphabetical (**A–S**, with P added 2026-1
 > (where the letter is an appendix letter, e.g. "P.1") or a historical pointer of the kind just described, and
 > **never a live pointer into the article's §5, §6, §7, §8 or §9** — those five sections carry no subsections in the present
 > article, which is why such a pointer cannot resolve. Pointers of the form **§4.x do resolve**: the article’s §4 has
-> subsections 4.1–4.6, and a "§4.2" in this file means that subsection. The **appendix letters (A–S)** are the live pointers into
+> subsections 4.1–4.6, and a "§4.2" in this file means that subsection. The **appendix letters (A–T)** are the live pointers into
 > this file: they are what the main text cites.
 
 
@@ -1423,3 +1423,72 @@ not read them as mechanism.
 | §4.5 pcb→neu_det, **10%→50% labels** (the differenced reading) | pcb→neu_det / `s2df` | held-out test | −2.391 | 2.396 | **1.0x** |
 
 **What the table makes plain, on the rows it carries.** Every **level** reading here sits at **1.4x or more** of its cell’s own MDE, and the two §4.1 levels sit at 13-14x. The **differenced** label-axis readings are the exception: `pcb→neu_det`’s 10%→50% change sits at **1.0x**, i.e. exactly at its own MDE, which is why §9 reports the label-axis cells as descriptions rather than as resolvable per-cell claims, while `visdrone→dota15`’s sits at 4.7x. The level-versus-difference distinction is visible in the columns, since §4.1's endpoint difference is not a level and its own MDE is computed on the per-seed differences.
+
+# Appendix T. The reporting cap and the two stratifications, measured on released checkpoints (2026-10-12)
+
+**What this appendix adds.** Three readings that the article refers to but that were not in the released
+set before: the **reporting cap** re-measured on four cell families and both columns, and the same cells
+**stratified by object area** and **by class**. All of it is evaluation only - no checkpoint was retrained -
+and all of it is on the held-out `test` column at `max_det = 300` unless stated otherwise.
+
+## T.1 The reporting cap (`max_det`) does not move the paired gains
+
+The article's claims are paired strategy-minus-baseline gains, so that is the quantity to check. Each cell
+family was re-read at `max_det` = 100, 300 and 1000 from the same checkpoints (10 paired seeds per family
+and arm, 146 of 160 scheduled evaluations completed, no failures).
+
+| family / column | evidence | gain at 300 | gain at 1000 | sign or significance changed? |
+|---|---|---:|---:|---|
+| `t1c` / test | independent held-out | **+3.726 pp (p = 1.7e-11)** | +3.659 pp | no |
+| `t1c` / val | carve-out, not held out | +7.063 pp | +6.948 pp | no |
+| `mech` / val (= test) | same directory as test | +2.701 pp | +2.682 pp | no |
+| `d15d15` / val | same-domain control | -1.441 pp | -1.516 pp | no |
+| `d15d15` / test | same-domain control | -0.006 pp (p = 0.973) | -0.008 pp | no |
+| `d15ai` / val | cross-domain control | -0.713 pp (p = 0.0090) | -0.693 pp | no |
+| `d15ai` / test | cross-domain control | +0.264 pp (p = 0.034) | +0.298 pp | no |
+| `aitodvis` / test | n = 3 only | +0.147 pp (p = 0.19) | +0.150 pp | no |
+
+**The cap changes the levels and not the pairing.** The level drift from 300 to 1000 is up to **0.51 pp**,
+which exceeds `t1c`'s 0.268 pp MDE, while the paired-gain drift is **0.067-0.115 pp**. So a reader comparing
+*levels* across cells is reading a quantity the cap moves, and a reader comparing *paired gains* is not.
+**The fragile end is 100, not 300**: at `max_det` = 100 the `d15ai` test-column gain loses significance
+(+0.154 pp, p = 0.19), which is the only place in the table where the conclusion depends on the cap.
+
+## T.2 Stratified by object area: the gain grows with object size
+
+COCO area bins (small < 32^2 px, medium 32^2-96^2, large > 96^2), paired over 10 seeds, `max_det = 300`,
+`conf = 0.001`, test column. AP is the COCO definition (101-point interpolation, IoU 0.50:0.05:0.95),
+computed directly because `pycocotools` is not present in the evaluation environment - a limitation, since
+this is therefore not an independent implementation of the metric.
+
+| family | all | **small** | medium | large |
+|---|---:|---:|---:|---:|
+| `t1c` (visdrone->dota15, 100 ep) | +2.39 pp | **+0.89 pp** | +3.66 pp | +5.89 pp |
+| `mech` (visdrone->dota15, 200 ep) | +2.11 pp | **+1.05 pp** | +3.45 pp | +3.83 pp |
+| `d15d15` (same-domain control, 30 ep) | -0.54 pp | -0.66 pp | -0.56 pp | +0.07 pp |
+
+**Two cells independently give the same shape**: the intervention's gain rises monotonically with object
+size (small -> medium -> large), and the small-object level itself is low (0.044 AP on `t1c`). The
+same-domain control sits near zero in every bin, so the shape is a property of the intervention rather than
+of the metric. The consequence for the article is that the single-cell mAP50-95 gain of about +2.4 pp is
+**carried mainly by medium and large objects**, and any statement of it as a percentage should say so.
+
+## T.3 Stratified by class: the gain is concentrated where the instances are few
+
+Per-class AP is taken from the evaluator's own per-class output (not recomputed), `max_det = 300`, 10 seeds.
+
+| | `t1c` | `mech` |
+|---|---|---|
+| classes with a positive gain | **15 of 16** | **15 of 16** |
+| largest | `soccer-ball-field` **+9.79 pp** | `swimming-pool` **+6.85 pp** |
+| `small-vehicle` (the dominant class by instance count) | **+0.99 pp** | **+1.10 pp** |
+| `container-crane` | 0.00 pp (base also 0.000) | 0.00 pp |
+
+**The direction is stable across classes but the magnitude is not.** The classes that carry most of the
+gain are those with few instances (playing fields, swimming pools, harbours), while `small-vehicle` - the
+class that dominates these dense corpora - gains about 1 pp. This agrees with T.2 from an independent
+stratification: both say the aggregate gain does not come from the small objects or from the dominant class.
+Two caveats: `container-crane` has zero AP in both arms, so it carries no information and should not be
+counted silently in a "15 of 16" statement; and the 16 per-class t statistics receive no family correction,
+so this is a description of the archive rather than 16 tests.
+
