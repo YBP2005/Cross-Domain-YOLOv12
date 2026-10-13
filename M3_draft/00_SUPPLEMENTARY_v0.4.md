@@ -3,7 +3,7 @@
 This file carries the appendices of the manuscript. They are **supplementary material**: not typeset into
 the article, published online as supplied, and **not part of the manuscript's page budget**. The letters are
 unchanged from the manuscript's cross-references, so "Appendix J.4" in the main text resolves to the section
-of that name here. Ordering here is alphabetical (**A–T**, with P added 2026-10-04, Q added 2026-10-11, R/S added 2026-10-12 and T added 2026-10-13); the manuscript's pointers are unaffected. (The reference-status ledger of the earlier 74-entry numbering, and the internal compression record it named, are **not** part of this file and are not supplied.)
+of that name here. Ordering here is alphabetical (**A–U**, with P added 2026-10-04, Q added 2026-10-11, R/S added 2026-10-12 and T/U added 2026-10-13); the manuscript's pointers are unaffected. (The reference-status ledger of the earlier 74-entry numbering, and the internal compression record it named, are **not** part of this file and are not supplied.)
 
 > ⚠ **On the "(moved from §X)" markers (added 2026-10-02).** Thirty-one passages below carry a provenance marker of
 > the form *"(moved from §8.6)"*. **Those section numbers belong to an earlier version of the manuscript**,
@@ -14,7 +14,7 @@ of that name here. Ordering here is alphabetical (**A–T**, with P added 2026-1
 > (where the letter is an appendix letter, e.g. "P.1") or a historical pointer of the kind just described, and
 > **never a live pointer into the article's §5, §6, §7, §8 or §9** — those five sections carry no subsections in the present
 > article, which is why such a pointer cannot resolve. Pointers of the form **§4.x do resolve**: the article’s §4 has
-> subsections 4.1–4.6, and a "§4.2" in this file means that subsection. The **appendix letters (A–T)** are the live pointers into
+> subsections 4.1–4.6, and a "§4.2" in this file means that subsection. The **appendix letters (A–U)** are the live pointers into
 > this file: they are what the main text cites.
 
 
@@ -1496,4 +1496,46 @@ stratification: both say the aggregate gain does not come from the small objects
 **The family correction leaves every class significant, so what varies is the size and not the direction**: Benjamini–Hochberg over the **15 testable classes** per cell (the sixteenth, `container-crane`, has zero AP in both arms in both cells and is uninformative) keeps **all fifteen below q = 0.05 in both cells** — even the smallest, `small-vehicle` at **+0.99 pp**, reaches t = 9.6 — because the per-seed spread of a per-class gain is small. The class-level result is therefore that the **direction is reliable everywhere and the magnitude is not**.
 counted silently in a "15 of 16" statement; and the 16 per-class t statistics receive no family correction,
 so this is a description of the archive rather than 16 tests.
+
+# Appendix U. The pointwise $r_D$ measured at the released endpoints (2026-10-13)
+
+**What was measured.** The article's §6 states a regime judgement from the ratio
+$r_D=\|
+abla R_D(	heta)\|/(\|H_D(	heta)\|\,ho\|	heta\|)$ and previously said it was not measured, because the
+numerator is a gradient norm at fine-tuned endpoints. It is now measured: the released endpoint script records
+that norm together with the Lanczos spectral estimate, so the ratio follows per checkpoint. **Evaluation only — no
+checkpoint was retrained.** Settings: `--batch 4 --nbatches 4 --lanczos 20`, `split val`, `rho = 0.001`.
+
+**Coverage.** 99 checkpoints, i.e. the same cells the **path** form uses, so the two forms are compared on one
+sample. Per-run (the independent unit) at `rho = 0.001`:
+
+| quantity | min | p25 | median | p75 | max |
+|---|---:|---:|---:|---:|---:|
+| `r_D` | **0.0081** | **0.0224** | **0.0283** | **0.0452** | **0.1029** |
+| `r_D` at `rho = 0.003` | 0.0027 | 0.0075 | 0.0094 | 0.0151 | 0.0343 |
+| `r_D` at `rho = 0.01` | 0.00081 | 0.0022 | 0.0028 | 0.0045 | 0.0103 |
+
+**The result, and the honest bound on it.** Under the article's own conventions ($r_D\le 1/16$ curvature-dominated,
+$r_D\ge1$ slope-dominated) **86.9% of runs are below $1/16$ and none reaches $1$**, while the **path** form on the
+same cells has median **10.8**. So the two forms disagree in direction by about three orders of magnitude, and the
+disagreement is not a defect of either: the pointwise ratio asks about the endpoint's own Hessian, the path ratio
+about a secant modulus over the displacement, and **a regime judgement is therefore relative to the form asked**
+($\S$6). **The curvature reading is an ~87% statement, not a universal one**: 13.1% of runs exceed $1/16$ (largest
+0.1029, still an order of magnitude below $1$). By target corpus the medians run from 0.016 (visdrone) to 0.039
+(mende).
+
+**Two things a reader must know about the sample.**
+
+1. **The released driver drops 92 of the 180 endpoint rows.** `p1_rD_run.py` resolves each row's data yaml by
+   searching only `/root/datasets_mask` and `/root/datasets`, but the sfchd rows' yamls live in `/root/` and
+   `/root/xcal/`, so an entire target domain (55 of the 99 runs) is skipped; the ceiling under the published
+   command is 88 rows / 44 runs. Those rows were recovered with a driver identical in every measurement
+   argument that only extends the search roots and checks that each yaml's image directories exist. The driver's
+   resolver is fixed in the released copy.
+2. **180 rows are not 180 independent readings.** The endpoint table's rows differ in `(draw, stride)`, but the
+   driver passes neither, so rows of one run are recomputations of one observation — 26 of the 27 multi-row runs
+   are bitwise identical. **The independent unit is the run, n = 99**, which is the basis of the table above.
+
+**Released**: `provenance/appendix_U/rD_pointwise.csv` (per row) and `rD_pointwise_perrun.csv` (per run), with the
+columns the computation needs.
 
