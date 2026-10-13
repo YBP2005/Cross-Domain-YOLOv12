@@ -1437,18 +1437,23 @@ The article's claims are paired strategy-minus-baseline gains, so that is the qu
 family was re-read at `max_det` = 100, 300 and 1000 from the same checkpoints (10 paired seeds per family
 and arm, 146 of 160 scheduled evaluations completed, no failures).
 
-| family / column | evidence | gain at 300 | gain at 1000 | sign or significance changed? |
-|---|---|---:|---:|---|
-| `t1c` / test | independent held-out | **+3.726 pp (p = 1.7e-11)** | +3.659 pp | no |
-| `t1c` / val | carve-out, not held out | +7.063 pp | +6.948 pp | no |
-| `mech` / val (= test) | same directory as test | +2.701 pp | +2.682 pp | no |
-| `d15d15` / val | same-domain control | -1.441 pp | -1.516 pp | no |
-| `d15d15` / test | same-domain control | -0.006 pp (p = 0.973) | -0.008 pp | no |
-| `d15ai` / val | cross-domain control | -0.713 pp (p = 0.0090) | -0.693 pp | no |
-| `d15ai` / test | cross-domain control | +0.264 pp (p = 0.034) | +0.298 pp | no |
-| `aitodvis` / test | n = 3 only | +0.147 pp (p = 0.19) | +0.150 pp | no |
+**Two conventions must be read with this table, because they are what make two of its numbers differ from the same cells printed elsewhere in this paper.**
 
-**The cap changes the levels and not the pairing.** The level drift from 300 to 1000 is up to **0.51 pp**,
+1. **The "val" rows are not this paper's val-best readings.** They are the `val:` directory re-read with this appendix's own evaluation setting (`conf = 0.001`, COCO-style 101-point AP, `max_det` as stated). The `t1c` cell's val-best reading as reported in §4.1 and Appendix S is **+3.733 pp**; the +7.063 pp below is the same directory read in the other convention. The two are different objects and neither supersedes the other.
+2. **The paired gains are the quantity to compare, and they are cap-stable.** The *levels* are not comparable across columns or conventions, which is exactly the point of the section.
+
+| family / column (cell key: `<pair>/<family>/<labels>/<epochs>`) | evidence | gain at 300 | gain at 1000 | gain at 100 | sign or significance changed? |
+|---|---|---:|---:|---|
+| `t1c` / test — `visdrone->dota15` / `t1c` / 20% / 100 | independent held-out | **+3.726 pp (p = 1.7e-11)** | +3.659 pp | +3.614 pp | no |
+| `t1c` / val — same cell, val-directory re-read | not this paper's val-best (see convention 1) | +7.063 pp | +6.948 pp | +7.028 pp | no |
+| `mech` / val(=test) — `visdrone->dota15` / `mech` / 20% / 200 | same directory as its own test | +2.701 pp | +2.682 pp | +2.688 pp | no |
+| `d15d15` / val — `dota15->dota15` / `r10` / 20% / 30 | same-domain control | -1.441 pp | -1.516 pp | -1.430 pp | no |
+| `d15d15` / test | same-domain control | -0.006 pp (p = 0.973) | -0.008 pp | -0.006 pp | no |
+| `d15ai` / val — `dota15->aitod` / `d15ai` / 20% / 100 | cross-domain control, n = 10 | -0.713 pp (p = 0.0090) | -0.693 pp | -1.014 pp | no |
+| `d15ai` / test | cross-domain control, n = 10 | +0.264 pp (p = 0.034) | +0.298 pp | **+0.154 pp (p = 0.19)** | **yes at 100 only** |
+| `aitodvis` / test — `aitod->visdrone` / `aitodvis` / 20% / 100 | n = 3 only | +0.147 pp (p = 0.19) | +0.150 pp | +0.177 pp (p = 0.19) | no |
+
+**Why 14 of 160 evaluations are absent**: the `d15ai` family's released checkpoints begin at seed 45 and one run (`d15_ai_base100_s46n`) has no `args.yaml`, so 12 runs could not be read and two more could not resolve their data path; the table reports the cells that could be read. **The paired-gain drift over the whole table is 0.002-0.115 pp** (the figure 0.067-0.115 pp holds for the `t1c` rows alone). **The cap changes the levels and not the pairing.** The level drift from 300 to 1000 is up to **0.51 pp** (levels are in the released `T1_maxdet_levels.csv`, not in this table),
 which exceeds `t1c`'s 0.268 pp MDE, while the paired-gain drift is **0.067-0.115 pp**. So a reader comparing
 *levels* across cells is reading a quantity the cap moves, and a reader comparing *paired gains* is not.
 **The fragile end is 100, not 300**: at `max_det` = 100 the `d15ai` test-column gain loses significance
@@ -1467,7 +1472,7 @@ this is therefore not an independent implementation of the metric.
 | `mech` (visdrone->dota15, 200 ep) | +2.11 pp | **+1.05 pp** | +3.45 pp | +3.83 pp |
 | `d15d15` (same-domain control, 30 ep) | -0.54 pp | -0.66 pp | -0.56 pp | +0.07 pp |
 
-**Two cells independently give the same shape**: the intervention's gain rises monotonically with object
+**The `all` column here is not the article's headline reading for the same cells** (T2 uses `conf = 0.001` and this appendix's own AP implementation, so `t1c`'s `all` is +2.39 pp against the headline +3.727 pp). The two are different objects: the headline number is the evaluator's mAP50-95 at its own confidence threshold, and this column is the same split under the stratified read. **Two cells independently give the same shape**: the intervention's gain rises monotonically with object
 size (small -> medium -> large), and the small-object level itself is low (0.044 AP on `t1c`). The
 same-domain control sits near zero in every bin, so the shape is a property of the intervention rather than
 of the metric. The consequence for the article is that the single-cell mAP50-95 gain of about +2.4 pp is
