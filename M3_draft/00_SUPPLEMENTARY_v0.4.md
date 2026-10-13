@@ -1493,7 +1493,7 @@ Per-class AP is taken from the evaluator's own per-class output (not recomputed)
 gain are those with few instances (playing fields, swimming pools, harbours), while `small-vehicle` - the
 class that dominates these dense corpora - gains about 1 pp. This agrees with T.2 from an independent
 stratification: both say the aggregate gain does not come from the small objects or from the dominant class.
-Two caveats: `container-crane` has zero AP in both arms, so it carries no information and should not be
+**The family correction leaves every class significant, so what varies is the size and not the direction**: Benjamini–Hochberg over the **15 testable classes** per cell (the sixteenth, `container-crane`, has zero AP in both arms in both cells and is uninformative) keeps **all fifteen below q = 0.05 in both cells** — even the smallest, `small-vehicle` at **+0.99 pp**, reaches t = 9.6 — because the per-seed spread of a per-class gain is small. The class-level result is therefore that the **direction is reliable everywhere and the magnitude is not**.
 counted silently in a "15 of 16" statement; and the 16 per-class t statistics receive no family correction,
 so this is a description of the archive rather than 16 tests.
 
