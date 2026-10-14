@@ -5,6 +5,10 @@
 > **不能替代包内定位**。
 >
 > **公开仓库**：`https://github.com/YBP2005/Cross-Domain-YOLOv12`（提交 tag `reproducibility-package-v1`）。
+>
+> **本次送审对应的提交**：`06a4c7368c0743cbec441f23824a5f50b9ecf6b2`。主稿正文**有意不内嵌这个 SHA**（写进正文就得命名"包含这句话的那个提交"，
+> 不可能自洽；每次修补都会改变文本、作废上一个 pin），因此 SHA 记在本文件里，并随每次发布刷新。
+> 上列 tag 指向的是**本次送审的发布状态**；解析 tag 或本行的 SHA 均可取得同一棵树。
 > **连不上 GitHub 的模型请直接读本目录**——内容与仓库同源。
 > **核哈希请对着 `MANIFEST_sha256.csv` 核**（逐文件字节数 + sha256）。★ **它有意排除 6 项**：它自身，以及 5 个**由守卫生成的产物**
 > （`provenance/deliver/_audit_sources.json`、`provenance/deliver/审计数字_来源与可复算路径.md`、
