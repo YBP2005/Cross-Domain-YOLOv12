@@ -1557,3 +1557,26 @@ scoring implementation. Two bounds: `mech`'s `test` column is its own selection 
 as R states), so that cell is not independent evidence in either stack; and the GT was converted from the YOLO
 labels rather than cross-checked against third-party COCO annotations.
 
+## U.2 The stratified readings under the official implementation
+
+T.2's area and class strata are this package's own recomputation, and T.2 says so. The same predictions were therefore
+scored by the **official `pycocotools.COCOeval`** (predictions already in COCO form from the runs themselves), giving
+the strata in the official convention (`max_det = 100`, which `COCOeval`'s area split uses; T.2 is at 300).
+
+| cell | arm | all | small | medium | large |
+|---|---|---:|---:|---:|---:|
+| `t1c` | base | 0.1105 | 0.0344 | 0.1139 | 0.1687 |
+| | strategy | 0.1453 | 0.0405 | 0.1382 | 0.2487 |
+| | **gain** | **+3.48** | **+0.61** | **+2.43** | **+8.00** |
+| `mech` | base | 0.1329 | 0.0458 | 0.1279 | 0.2195 |
+| | strategy | 0.1548 | 0.0479 | 0.1479 | 0.2611 |
+| | **gain** | **+2.20** | **+0.21** | **+2.00** | **+4.17** |
+
+**Direction is implementation-independent; magnitude is not.** Both implementations put the gain on the larger
+objects and leave the dominant small class near 1 pp, so the article's warning that a bare percentage overstates what
+a small-object detector gains holds in both. But `large` for `t1c` is **+8.00 pp** here against **+5.89 pp** in T.2 —
+a **2.11 pp** difference, about eight times that cell's MDE — so T.2's figures are statements **in this package's
+recomputation**, not constants across implementations. The per-class block is released in
+`provenance/appendix_U/coco_stratified_official.csv`, and the two conventions (`max_det` 100 against 300) are **not
+separated** from the implementation difference in this comparison.
+
