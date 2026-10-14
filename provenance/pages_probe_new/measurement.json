@@ -1,5 +1,5 @@
 {
-  "measured_at": "2026-10-14T13:02:33",
+  "measured_at": "2026-10-14T18:59:00",
   "measured_by": "measure_pages.py (probe_figcost parser -> RTF -> Word Documents.Open -> ComputeStatistics(2))",
   "layouts": {
     "conservative": "A4, single column, double spaced, 12 pt Times New Roman, 2.54 cm margins",
@@ -8,15 +8,15 @@
   "layout": "A4, single column, double spaced, 12 pt Times New Roman, 2.54 cm margins",
   "probe_scope": "article markdown up to (and excluding) the \"# References\" heading, with all tables flattened to single-spaced rows, plus the 38-entry reference list",
   "inputs": {
-    "main_md5": "30B4061FA72834C3DC39132BEF2A90A1",
-    "supplementary_md5": "914A2746E4263F76527EFDE0B1CBB4BE",
+    "main_md5": "B833E4110A4028679B0F7E75620ED2C3",
+    "supplementary_md5": "625A0BE9B5376FF9E6AA01EDFB7E5B71",
     "references_md5": "D8D3DF658CE4F754D9AB3C9210A86B93",
     "reference_entries": 38
   },
   "variants": {
     "no_figures__conservative": {
       "pages": 40,
-      "words": 14631,
+      "words": 14651,
       "content": "no_figures",
       "layout": "conservative",
       "figures": [],
@@ -27,7 +27,7 @@
     },
     "no_figures__official": {
       "pages": 35,
-      "words": 14631,
+      "words": 14651,
       "content": "no_figures",
       "layout": "official",
       "figures": [],
@@ -38,7 +38,7 @@
     },
     "f1__conservative": {
       "pages": 41,
-      "words": 14647,
+      "words": 14667,
       "content": "f1",
       "layout": "conservative",
       "figures": [
@@ -51,7 +51,7 @@
     },
     "f1__official": {
       "pages": 35,
-      "words": 14647,
+      "words": 14667,
       "content": "f1",
       "layout": "official",
       "figures": [
@@ -64,7 +64,7 @@
     },
     "_ctl_filler__conservative": {
       "pages": 43,
-      "words": 15247,
+      "words": 15267,
       "content": "_ctl_filler",
       "layout": "conservative",
       "figures": [
@@ -77,7 +77,7 @@
     },
     "_ctl_filler__official": {
       "pages": 37,
-      "words": 15247,
+      "words": 15267,
       "content": "_ctl_filler",
       "layout": "official",
       "figures": [
