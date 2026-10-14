@@ -1538,4 +1538,24 @@ about a secant modulus over the displacement, and **a regime judgement is theref
 
 **Released**: `provenance/appendix_U/rD_pointwise.csv` (per row) and `rD_pointwise_perrun.csv` (per run), with the
 columns the computation needs.
+## U.1 The independent evaluation stack (official `pycocotools`)
+
+The article's readings all come from one implementation (Ultralytics 8.4.120 `val`), and T.2's stratified AP is our
+own recomputation, which T.2 itself flags as not an independent implementation. Both cells' headline runs were
+therefore re-scored from their **predictions** by the **official `pycocotools.COCOeval`** (predictions emitted as
+COCO JSON at `max_det = 300`, `conf = 0.001`, `iou = 0.7`; scoring done by the official library, not by us):
+
+| cell | arm | official `pycocotools` AP | Ultralytics, same runs |
+|---|---|---:|---:|
+| `t1c` (100 ep) | base | **0.1105** | 0.1156 |
+| | strategy | **0.1453** | — |
+| `mech` (200 ep) | base | **0.1329** | — |
+| | strategy | **0.1548** | — |
+
+**Paired gains**: `t1c` **+3.48 pp** (t = +44.1) under the official stack against **+3.73 pp** under Ultralytics on
+the same runs, and `mech` **+2.19 pp**. So the **level** moves by 0.51 pp (1.9x the `t1c` MDE of 0.268 pp) while the
+**paired gain** moves by 0.25 pp, inside its own MDE: the §4 conclusions are a property of the contrast, not of the
+scoring implementation. Two bounds: `mech`'s `test` column is its own selection column (not an independent split,
+as R states), so that cell is not independent evidence in either stack; and the GT was converted from the YOLO
+labels rather than cross-checked against third-party COCO annotations.
 
