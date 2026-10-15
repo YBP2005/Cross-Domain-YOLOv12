@@ -1,0 +1,13 @@
+pair,protocol,A_sns,A_css,A_pws,rank_order,spearman_vs_best
+mafa->mende@b100,best_checkpoint_A_v3,0.004000,0.005300,0.023300,pws>css>sns,
+mafa->mende@b100,multi_checkpoint_A_pooled,-0.070500,-0.079300,-0.014900,pws>sns>css,0.5
+mafa->mende@b30,best_checkpoint_A_v3,-0.016700,-0.012300,0.001800,pws>css>sns,
+mafa->mende@b30,multi_checkpoint_A_pooled,0.109000,0.186600,0.305500,pws>css>sns,1.0
+shwd2sf@b100,best_checkpoint_A_v3,-0.112200,-0.000100,0.029000,pws>css>sns,
+shwd2sf@b100,multi_checkpoint_A_pooled,0.411100,0.389000,0.431100,pws>sns>css,0.5
+shwd2sf@b30,best_checkpoint_A_v3,-0.082000,0.009200,-0.003400,css>pws>sns,
+shwd2sf@b30,multi_checkpoint_A_pooled,0.403800,0.467700,0.510500,pws>css>sns,0.5
+smoke->fs@b100,best_checkpoint_A_v3,0.022900,-0.027400,0.012200,sns>pws>css,
+smoke->fs@b100,multi_checkpoint_A_pooled,-0.066100,-0.014200,0.037300,pws>css>sns,-0.5
+smoke->fs@b30,best_checkpoint_A_v3,0.042800,-0.041700,0.027700,sns>pws>css,
+smoke->fs@b30,multi_checkpoint_A_pooled,-0.165900,-0.029400,0.119200,pws>css>sns,-0.5
