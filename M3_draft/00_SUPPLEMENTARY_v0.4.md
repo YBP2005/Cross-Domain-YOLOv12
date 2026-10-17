@@ -50,7 +50,7 @@ Three of our readings bear on that statement, reported as evidence about the pla
 
 # Appendix C. Term-④ sensitivity: the sharp bound, the withdrawn interaction, and the algebra
 
-Term ④ is the target-domain optimal displacement cost $R_T(	heta^*_S)-R_T(	heta^*_T)$.
+Term ④ is the target-domain optimal displacement cost $R_T(\theta^*_S)-R_T(\theta^*_T)$.
 
 **The withdrawn interaction, recorded.** An earlier version of the bound carried an interaction term between term ④ and the curvature. **That term is withdrawn**, and no statement in this paper relies on it. We record the withdrawal here because a reader who saw the earlier form is entitled to know which part of it no longer holds.
 
