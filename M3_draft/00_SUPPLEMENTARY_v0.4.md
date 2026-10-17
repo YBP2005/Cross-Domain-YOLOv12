@@ -584,6 +584,32 @@ Table S1 lists the thirteen domain pairs studied: seven within-domain pairs; thr
 **Provenance.** These runs are a separate batch from the published ones: the registered stack (`train_obj.py`, ultralytics 8.4.120) with the `shapeiou` loss, each run driven by its own `*_3way.yaml` and recorded per run in the released per-seed file together with its two arms and its data-order seed. The batch follows the carve builder and precedes the held-out readout, which is the ordering the released record establishes; individual launch times are not preserved in the release.
 # Appendix N. The two modules transferred from the companion paper: detail and provenance
 
+### M.5-bis The clean 200-epoch endpoint: per-run readings and the derivation of the headline
+
+**Why this subsection exists.** §4.1 reports that the clean three-way re-run gives a 100-to-200 change of **−1.138 pp** against **−1.143 pp** on the registered column. The 20 runs behind the 200-epoch half are tabulated here **so that the number can be recomputed from released values rather than taken on assertion**. The per-run file is released as `provenance/appendix_E3_clean/E3_clean200_perrun.csv`, and the 100-epoch counterpart as `E3_clean100_perrun.csv`.
+
+Protocol: `train: train/20_percent/images`, `val: carve_dota15_20p_pct/images`, `test: images/val`, 200 epochs, `visdrone_pretrain.pt`, seeds 42–51, two arms (lr0 0.001 against 0.005).
+
+| seed | base (mAP50-95) | 5× (mAP50-95) | paired difference (pp) |
+|---:|---:|---:|---:|
+| 42 | 13.6100 | 16.2700 | +2.6600 |
+| 43 | 13.4900 | 16.1700 | +2.6800 |
+| 44 | 13.7000 | 16.4000 | +2.7000 |
+| 45 | 13.7400 | 16.4400 | +2.7000 |
+| 46 | 13.8700 | 16.1000 | +2.2300 |
+| 47 | 13.8100 | 16.4700 | +2.6600 |
+| 48 | 13.7500 | 16.2400 | +2.4900 |
+| 49 | 13.5900 | 16.1600 | +2.5700 |
+| 50 | 13.8800 | 16.1700 | +2.2900 |
+| 51 | 14.1200 | 16.2800 | +2.1600 |
+| **mean** | 13.7560 | 16.2700 | **+2.5140** |
+
+The paired gain at this endpoint is **+2.5140 pp** (SD **0.2106**, n = 10, t = **37.75**), and its own MDE is γ(10)·SD = **0.2095 pp**, i.e. **12.00× its own MDE** — the endpoint is resolvable in its own right, not merely as one half of a difference.
+
+**The like-for-like change.** The clean 100-epoch counterpart reads **+3.652 pp** on the same protocol (ten seeds, `E3_clean100_perrun.csv`), so the clean-to-clean 100→200 change is **-1.1380 pp**, against **−1.143 pp** on the registered column — the two columns differ by **0.005 pp**.
+
+**What this does and does not establish.** It establishes that the 100→200 change survives a re-run in which checkpoint selection and reporting use different directories. It does **not** isolate the split: as §4.1 states, the two clean endpoints share one training set and the two registered endpoints share another, and the two groups do not train on identical images. The clean run is a re-run of the same comparison, not an experiment that varies the split alone.
+
 ## N.1 The registered replication: registration, criterion and archive
 
 **The registration precedes every run and this is checkable, not asserted.** The protocol was frozen at **2026-09-13 01:37:27 UTC**, at which point the run directory did not exist, so the criterion could not have been chosen after seeing a result. The registration document is `预注册_新目标域复制实验_冻结_20260913.md`; the file records a **content hash** for the text above its signature line. That value **is reproducible, and we state the convention it is computed over**: the span is the first 77 lines, LF-normalised, with no trailing LF; the search was by exhaustive enumeration over start point, end point, trailing newline and line-ending convention, and only the two equivalent solutions (first 76 lines plus a trailing LF, equivalently the first 77 lines with no trailing LF) reproduce the recorded value. **One caveat, recorded because an independent reconstruction depends on it**: "the text above the signature line" is itself a phrase whose boundary has to be resolved, and a reader who resolves it by content rather than by line count lands on a **different** span and hashes it differently — the neighbouring readings are one line *shorter* and one line longer; the specification that reproduces the recorded value is the **line-count** reading given here (77 lines, LF-normalised, no trailing LF), and the primary statement of the registration is quoted above it, so a reader who cannot reproduce the hash should compare against that statement rather than against the hash alone. The full-file hash and the byte count do match the values recorded in this submission, and the freeze timestamp and the absence of any run directory at that time are established independently.
