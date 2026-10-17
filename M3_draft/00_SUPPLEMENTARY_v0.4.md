@@ -50,37 +50,16 @@ Three of our readings bear on that statement, reported as evidence about the pla
 
 # Appendix C. Term-④ sensitivity: the sharp bound, the withdrawn interaction, and the algebra
 
-Term ④ is the target-domain optimal displacement cost $R_T(\theta^*_S)-R_T(\theta^*_T)$. Write $\Delta:=\theta^*_S-\theta^*_T$ and $W_1:=W_1(\mu_S,\mu_T)$.
+Term ④ is the target-domain optimal displacement cost $R_T(	heta^*_S)-R_T(	heta^*_T)$.
 
-**Step 1 (Taylor expansion, Lemma 4).** There exists $\xi$ on the segment between $\theta^*_S$ and $\theta^*_T$ such that
+**The withdrawn interaction, recorded.** An earlier version of the bound carried an interaction term between term ④ and the curvature. **That term is withdrawn**, and no statement in this paper relies on it. We record the withdrawal here because a reader who saw the earlier form is entitled to know which part of it no longer holds.
 
-$$|R_T(\theta^*_S)-R_T(\theta^*_T)|\le \left|\langle\nabla R_T(\theta^*_S),\Delta\rangle\right|+\tfrac{1}{2}\varrho(H_T(\xi))\|\Delta\|^{2},$$ where $\varrho(\cdot)$ is the spectral radius. The second-order sign here differs from Lemma 4 by design: Lemma 4 states the expansion *equality* ($-\tfrac12\Delta^{\top}H_T(\xi)\Delta$), whereas this step bounds that term in magnitude via $|\Delta^{\top}H_T(\xi)\Delta|\le\varrho(H_T(\xi))\|\Delta\|^{2}$, where $\varrho$ is the **spectral radius** (the largest $|\lambda_i|$; writing $\lambda_{\max}$ alone would be wrong wherever the Hessian has a negative eigenvalue of larger magnitude than its largest positive one, which is exactly the off-basin case this step is used for). The two forms are consistent; the appendix does not carry the pre-correction sign.
+**Sharpness is not claimed.** The bound was described as sharp contingent on a family of constructions that the earlier algebra took for granted. **We no longer claim sharpness**, because the construction that would attain the bound is not exhibited: a point-mass family was referred to but never written down, and we will not assert an attainment we cannot show.
 
-**Step 2 (first-order term bound, Lemma 2; inner-product form).** From the stationarity condition $\nabla R_S(\theta^*_S)=0$ and the gradient-domain KR duality, what the bound needs is the *inner-product* estimate, which **Appendix J.3 carries in full with the interior/constrained case split** (this step states the interior case only):
+**A correction to the algebra.** Where the derivation writes the operator norm of the Hessian, a **spectral radius** is required: Appendix G records a negative smallest eigenvalue at **every** measured endpoint, and at such a point the two quantities differ. The earlier form is therefore not correct as written; the correction is stated here rather than silently applied.
 
-$$\langle\nabla R_T(\theta^*_S),\Delta\rangle\;\le\;L'W_1\|\Delta\|.$$
+**No number in the paper depends on this appendix** — it is cited zero times in the article — so nothing above licenses or withdraws a reported value. It is kept as a record of what was claimed and what is no longer claimed.
 
-**No bound on $\|\nabla R_T(\theta^*_S)\|$ is used**: that quantity is controlled only in the interior case, where it equals $\|\nabla R_T-\nabla R_S\|$, so a norm-based chain would silently exclude constrained minimisers (Appendix J.3). This step replaced an earlier norm-based chain, and the first-order term of step 1 is therefore stated in the inner-product form $|\langle\nabla R_T(\theta^*_S),\Delta\rangle|$; a norm form would require the bound on $\|\nabla R_T(\theta^*_S)\|$ that the paper deliberately does not use, and the two steps would then not compose.
-
-**Step 3 (displacement bound, Lemma 3).** Taking $\theta=\theta^*_S$ in the quadratic growth of H5, $R_T(\theta)\ge R_T(\theta^*_T)+\tfrac{\mu_T}{2}\|\theta-\theta^*_T\|^{2}$, and combining with Lemma 1 ($|R_T(\theta^*_S)-R_S(\theta^*_S)|\le LW_1$):
-
-$$\|\Delta\|\le\sqrt{\frac{4LW_1}{\mu_T}}.$$
-
-**Step 4 (curvature transfer, Lemma 7).** $\lambda_{\max}(H_T(\xi))\le\lambda_{\max}(H_T(\hat{\theta}))+\beta_H(\|\Delta\|+\|\hat{\theta}-\theta^*_S\|)$ (Weyl's eigenvalue perturbation inequality, standard; H4).
-
-**Step 5 (combination; the term this step prints is withdrawn — see the retraction at the end of this appendix, and Eq. (5) is the live bound).** Substituting steps 2–4 into step 1, with $\|\Delta\|^{2}\le(4L/\mu_T)W_1$ — **the substitution is stated for the interior case**: Step 1 bounds the *absolute value* of the inner product while Step 2 supplies a *one-sided* bound, so the sign has to come from somewhere, and the interior case is where it does (the constrained case is the second branch of the case split in **Appendix J.3**, which is the live proof):
-
-$$|R_T(\theta^*_S)-R_T(\theta^*_T)|\le 2L'\sqrt{L/\mu_T}\,W_1^{3/2}+\frac{2L}{\mu_T}\lambda_{\max}(H_T(\hat{\theta}))W_1+\mathcal{O}\!\left(\beta_H(L/\mu_T)^{3/2}W_1^{3/2}+\beta_H(2L/\mu_T)\|\hat{\theta}-\theta^*_S\|W_1\right).$$
-
-Combining gives the pure-displacement term and the interaction term (the latter is given directly by $\lambda_{\max}(H_T(\theta))$ and no longer goes through the flatness-spectrum definition $S_T$; the spectral definition of $S_T$ is in the remark after Lemma 5):
-
-$$\underbrace{2L'\sqrt{L/\mu_T}}_{C_4}\,W_1^{3/2}+\underbrace{\frac{2L}{\mu_T}}_{C_3}\,W_1\lambda_{\max}(H_T(\theta))+\text{curvature-transfer error}.$$
-
-Here the interaction constant is $C_3=2L/\mu_T$ (after merging the transfer constants of Lemma 7) (see **Note C.1**), and the pure-displacement constant is $C_4=2L'\sqrt{L/\mu_T}$. The same two constants are what Steps 1–4 give directly: the first term of Step 1 is bounded by Step 2 with Step 3, and the second is $\tfrac{1}{2}\varrho(H_T(\xi))\|\Delta\|^{2}\le\tfrac{1}{2}\cdot\tfrac{4LW_1}{\mu_T}[\lambda_{\max}(H_T(\hat{\theta}))+\mathcal{O}(\beta_H)]$, so the appendix does not depend on the discarded fragment. ∎
-
-> **Note C.1 — a corrupt source term, dropped rather than guessed.** The source document's trailing inline equation for $C_3$ is corrupt: it extracts as `C_3=2L/\mu_T rho^2)` with an unbalanced closing parenthesis, followed by a residual `mu_T)·(2/rho^2)` fragment of the withdrawn $S_T$-based form that has no left-hand side. The $C_3=2L/\mu_T$ shown above is read from the displayed combination equation and the paragraph's own running text; the $S_T$-residual has been **dropped rather than guessed**, and this note records the corruption instead of repairing it silently. **What can be added without guessing:** the discarded $\rho^{2}$ factor belongs to a *perturbation radius* the withdrawn $S_T$-based form used and that Steps 1–4 do not use — with $\varrho$ the **spectral radius** of Step 1 and the Weyl bound of Step 4 supplying the $\lambda_{\max}$ correction, those steps fix $C_3=2L/\mu_T$ and $C_4=2L'\sqrt{L/\mu_T}$ on their own, so no coefficient printed above rests on the fragment.
-
-The combination therefore yields the pure-displacement term $C_4W_1^{3/2}$ with $C_4=2L'\sqrt{L/\mu_T}$, and the interaction term $C_3W_1\lambda_{\max}(H_T(\theta))$ with $C_3=2L/\mu_T$. **The pure-displacement term is withdrawn**: it is never the lower envelope of Eq. (5)'s branches (**Appendix J.4**), and it is printed here only because this combination algebra is what the retraction concerns; the live bound is Eq. (5), whose quadratic branch carries $L'^2W_1^2/(2\mu_T)$.
 # Appendix D. Pipeline and seed protocol rules
 
 Dual-layer seed mechanism: the framework's `seed` argument is recorded in args.yaml, but the data-pipeline RNG does not consume it on these datasets (bit-identical replay); a `--shuffle-seed` CLI flag (deterministic permutation of the train split file order, validation untouched) restores seed validity — same value reproducible, different values provably different (controlled test). args.yaml does **not** record shuffle-seed; per-run registrations, with `train_obj` version numbers, are archived with this release. Pipeline-version rule: old/new pipeline mAP50-95 offsets measured 0.08–1.12 pp; every gain statement is same-pipeline paired; cross-pipeline numbers appear only in discovery narratives.
