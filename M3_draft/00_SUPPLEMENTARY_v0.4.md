@@ -17,6 +17,14 @@ Five figures are carried here rather than in the article file, so that the artic
 **Fig. S4. Measurement-hierarchy schematic** — trajectory-evaluated first-order reads (worst-direction increments, gradient norms, alignment cosines) against second-order stationary reads; the proposition bans a *use*, not the quantities.
 
 **Fig. S5. Prediction–evidence–status matrix** — per-prediction status across §6–§7 (four evidence lines; SNR floor 18/18 < 2).
+## Note on section references
+
+**How this file refers to the article.** References of the form `§4.1`, `§4.6`, `§6(c)` or `§8.3` point to the **part of the corresponding article section that makes that argument**, not to a numbered subsection heading: the article carries a heading for §7.1 only, and its other sections are continuous prose. A reader looking for `§4.1` should read it as "the first result part of §4", `§6(c)` as "the third audit part of §6", and so on. We state the convention here rather than leave a reader to guess, because the count of such references is large (164) and a dangling-looking pointer is worse than a stated convention.
+
+**The two exceptions are real dead pointers, and they are marked as such where they occur.** Where an appendix refers to material this submission does not contain, it says so at the point of use rather than pointing at it.
+
+---
+
 # Appendix A. Lemmas used by the bound, and the linear displacement refinement
 
 **Statements (assumption numbering H1–H10 as in Appendix J.1).** The derivations are **released** as `provenance/theory_supplement/` (three working notes; Lemma 1 and Lemma 2 are textbook Kantorovich–Rubinstein results and are cited as such, and **no result of §4 depends on any non-standard step** — Lemma 7 and Remark 6 carry the Appendix B anisotropy remark and the Appendix J diagnostic only). The lemmas are stated below without their derivations, which the released notes supply.
